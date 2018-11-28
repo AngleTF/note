@@ -28,13 +28,34 @@ sercice mysql restart
 
 ![](/assets/import.png)
 
-
-
 # 从服务器
 
 ---
 
 * ### 修改从服务器配置
+
+```
+log-bin=mysql-bin
+server-id=2
+		
+binlog-ignore-db=information_schema	
+binlog-ignore-db=mysql
+
+#只忽略指定的表
+replicate_ignore_table=tablename	
+replicate-ignore-db=mysql
+
+#只应用指定的库
+replicate-do-db=Easy			 
+replicate-do-db=test
+
+只应用指定的表
+replicate_do_table			
+
+log-slave-updates
+slave-skip-errors=all
+slave-net-timeout=60
+```
 
 
 
