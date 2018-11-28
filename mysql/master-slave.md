@@ -57,5 +57,30 @@ slave-skip-errors=all
 slave-net-timeout=60
 ```
 
+* ### 从服务器执行SQL
+
+```
+change master to master_host='101.132.182.191' , 
+master_user='test' , 
+master_password='test' ,
+
+//上面记录的file值
+master_log_file='AliYun-bin.000003' ,
+
+//上面记录的position值				
+master_log_pos=1402,								
+master_port=8765;	
+```
+
+* ### 启动从服务器
+
+\#启动
+
+> start slave
+
+\#停止	
+
+> stop slave
+
 
 
