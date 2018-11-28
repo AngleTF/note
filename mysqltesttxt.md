@@ -1,6 +1,0 @@
-| wqer | qwer |
-| :--- | :--- |
-| qwer |  |
-
-qwer
-
