@@ -23,8 +23,8 @@ sercice mysql restart
 * ### **主服务器添加Slave用户**
 
 > GRANT FILE,REPLICATION,SLAVE ON \*.\* TO 'slave\_host'@'%' IDENTIFIED BY '123456';
-
-
+>
+> FLUSH PRIVILEGES
 
 
 
