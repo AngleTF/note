@@ -67,9 +67,9 @@ master_password='test' ,
 //上面记录的file值
 master_log_file='AliYun-bin.000003' ,
 
-//上面记录的position值				
-master_log_pos=1402,								
-master_port=8765;	
+//上面记录的position值                
+master_log_pos=1402,                                
+master_port=8765;
 ```
 
 * ### 启动从服务器
@@ -78,7 +78,7 @@ master_port=8765;
 
 > start slave
 
-\#停止	
+\#停止
 
 > stop slave
 
