@@ -26,9 +26,15 @@ sercice mysql restart
 >
 > FLUSH PRIVILEGES
 
-
-
 ![](/assets/import.png)
+
+
+
+# 从服务器
+
+---
+
+* ### 修改从服务器配置
 
 
 
