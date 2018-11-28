@@ -1,6 +1,6 @@
 # Summary
 
 * [Introduction](README.md)
-* [test](test.md)
-  * [234](test/234.md)
+* [mysql](mysql.md)
+  * [Master-Slave](mysql/master-slave.md)
 
