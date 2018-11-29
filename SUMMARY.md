@@ -6,5 +6,5 @@
 * [golang](golang.md)
   * [http-proxy](golang/http-proxy.md)
 * [git](git.md)
-  * git-abstract
+  * [git-abstract](git/git-abstract.md)
 
