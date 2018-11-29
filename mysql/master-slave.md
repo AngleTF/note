@@ -80,7 +80,18 @@ master_port=8765;
 
 \#停止
 
-> <span style="color:red;">stop slave</span>
+> stop slave
 
 
 
+
+* ### 验证从服务器
+
+show slave status\G;
+\#此状态必须YES
+Slave_IO_Running: Yes 
+\#此状态必须YES
+Slave_SQL_Running: Yes 
+\#同步读取二进制日志的位置,大于等于>=Exec_Master_Log_Pos
+Read_Master_Log_Pos: 600 
+在主库上创建一个数据库，在从库查看是否存在，存在为ok。
