@@ -80,7 +80,7 @@ master_port=8765;
 
 \#停止
 
-> stop slave
+> <span style="color:red;">stop slave</span>
 
 
 
