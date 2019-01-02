@@ -19,7 +19,19 @@ while(true){
 }
 
 //string '12345670'
-var_dump($str)
+var_dump($str);
+
+//---------------------string cover int------------------------------
+$v1 = '12355';
+$v1 = strrev($v1);
+$v2 = 0;
+
+for ($i = 0; $i < strlen($v1); $i++){
+    $v2 += $v1[$i] * pow(10, $i);
+}
+
+//int(12355)
+var_dump($v2)
 
 ?>
 ```
