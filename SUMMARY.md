@@ -7,4 +7,7 @@
   * [http-proxy](golang/http-proxy.md)
 * [git](git.md)
   * [git-abstract](git/git-status.md)
+* [think-menu](think-menu.md)
+* [php](php.md)
+  * [intCoverString](php/intcoverstring.md)
 
