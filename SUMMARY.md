@@ -10,4 +10,5 @@
 * [think-menu](think-menu.md)
 * [php](php.md)
   * [intCoverString](php/intcoverstring.md)
+  * [lower-upper](php/lower-upper.md)
 
