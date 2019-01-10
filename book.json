@@ -1,5 +1,5 @@
 {
     "title" : "公共服务组文档库",
 	
-    "plugins": []
+    "plugins": ["Expandable-chapters-small"]
 }
