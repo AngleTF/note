@@ -11,4 +11,5 @@
   * [intCoverString](php/intcoverstring.md)
   * [lower-upper](php/lower-upper.md)
 * [think-menu](think-menu.md)
+* [install-gitbook](install-gitbook.md)
 
