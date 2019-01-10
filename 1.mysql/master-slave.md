@@ -92,8 +92,7 @@ show slave status\G;
 | Slave\_SQL\_Running | Yes |
 | Read\_Master\_Log\_Pos | 600 |
 
-
-\#Slave_IO_Running必须为YES
-\#Slave\_SQL\_Running必须为YES
+\#Slave\_IO\_Running必须为YES  
+\#Slave\_SQL\_Running必须为YES  
 \#在主库上创建一个数据库，在从库查看是否存在，存在为ok。
 
