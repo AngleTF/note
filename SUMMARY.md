@@ -1,6 +1,4 @@
-
-## 1.mysql
-
+- [1.mysql](1.mysql/README.md)
 
 - [主服务器](1.mysql/master-slave.md)
 - [2.php](2.php/README.md)
@@ -16,13 +14,3 @@
 - [http-proxy.md](4.golang/http-proxy.md)
 
 ## assets
-
-
-## mysql
-
-- [m.md](mysql/m.md)
-- [master-slave.md](mysql/master-slave.md)
-
-## test
-
-- [test.md](test/test.md)
