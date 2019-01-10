@@ -12,7 +12,7 @@
 * [4.golang](4.golang/README.md)
 * [http-proxy.md](4.golang/http-proxy.md)
 * [test](test.md)
-  * test
+  * [test](test/test.md)
 
 ## assets
 
