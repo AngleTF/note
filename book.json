@@ -3,5 +3,5 @@
 		"theme-default": {
             "showLevel": true
         },
-    "plugins": ["summary", "toggle-chapters", "theme-comscore"]
+    "plugins": ["toggle-chapters", "theme-comscore", "summary"]
 }
