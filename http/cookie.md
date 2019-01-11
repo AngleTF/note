@@ -3,7 +3,7 @@
 Set-Cookie的首部字段信息,通知客户端保存信息
 
 请求报文(无cookie)
-```
+```http
 GET /reader/ HTTP/1.1
 Host:hackr.jp
 ```
