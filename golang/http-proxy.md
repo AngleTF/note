@@ -4,57 +4,50 @@
 package main
 
 import (
-	"net/http"
-	"net/url"
-	"io/ioutil"
 	"fmt"
+	"net/url"
+	"net/http"
+	"io/ioutil"
 	"log"
 )
 
-
 func main() {
 	var (
-		u *url.URL
-		err error
-		tr *http.Transport
-		client http.Client
+		proxyUrl *url.URL
+		rep *http.Response
 		req *http.Request
-		rps *http.Response
-		ioData []byte
+		err error
+		data []byte
 	)
 
-	//解析代理地址
-	if u, err = url.ParseRequestURI("http://58.53.128.83:3128"); err != nil{
+	if req, err = http.NewRequest("GET", "https://www.baidu.com", nil); err != nil{
+		log.Fatal(err)
+	}
+	
+	//填入对应的信息
+	if proxyUrl, err = url.Parse("http://username:password@ip:port"); err != nil{
 		log.Fatal(err)
 	}
 
-	tr = &http.Transport{
-		//设置http代理地址
-		Proxy: http.ProxyURL(u),
+	client := &http.Client{
+		Transport: &http.Transport{
+			Proxy:           http.ProxyURL(proxyUrl),
+		},
 	}
 
-	client = http.Client{
-		Transport:tr,
-	}
-
-	//请求地址
-	if req, err = http.NewRequest("GET", "http://47.98.50.193:8888/test.php",nil); err != nil{
+	if rep, err = client.Do(req); err != nil{
 		log.Fatal(err)
 	}
 
-	if rps, err = client.Do(req); err != nil{
+	if data, err = ioutil.ReadAll(rep.Body); err != nil{
 		log.Fatal(err)
 	}
 
-	if ioData, err = ioutil.ReadAll(rps.Body); err != nil{
-		log.Fatal(err)
-	}
-
-	fmt.Println(string(ioData))
+	fmt.Println(string(data))
 }
 ```
 
-> ##请求地址, 已经变成了代理地址
+请求地址, 已经变成了代理地址
 
 ![](/assets/proxy.png)
 
