@@ -45,14 +45,32 @@
 ### 配置文件
 这里主要讲 book.json 的配置及参数，gitbook 使用该文件来配置整本书的基本信息，结构，使用的插件等等信息，这是一个非常重要的配置文件，这是一个json格式的文件。
 
-| Variable  | Description |
-| ------------- | ------------- |
-| root  | 文件根目录， 但不包括book.json  |
-| structure  | README, SUMMARY... 的路径  |
-| title | header中的title标签值  |
+| Variable    | Description |
+| ----------- | ------------- |
+| root        | 文件根目录， 但不包括book.json  |
+| structure   | README, SUMMARY... 的路径  |
+| title       | header中的title标签值  |
 | description | header中的meta标签name为description的值  |
-| author | header中的meta标签name为author的值  |
-| structure  | README, SUMMARY... 的路径  |
+| author      | header中的meta标签name为author的值  |
+| isbn        | 国际标准图书编号 |
+| language    | 默认值是en  |
+| title       | header中的title标签值  |
+| description | header中的meta标签name为description的值  |
+| author      | header中的meta标签name为author的值  |
+| isbn        | 国际标准图书编号 |
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
