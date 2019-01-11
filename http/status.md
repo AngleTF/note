@@ -33,11 +33,6 @@
 |403    | forbidden | 请求资源被服务器拒绝  | 
 | 404   | not found | 服务器没有请求的资源 | 
 | 500   | internal server error | 服务器执行时发生错误 | 
-| 503   | server unavailable | 服务器超负负荷或正在停机维护
+| 503   | server unavailable | 服务器超负负荷或正在停机维护| 
 
- | 
-
-
-500 internal server error    //服务器执行时发生错误   
-503 server unavailable      //服务器超负负荷或正在停机维护
 
