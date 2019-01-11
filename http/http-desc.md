@@ -1,4 +1,4 @@
-### 什么是 HTTP
+### 什么是 HTTP, ARP, DNS 他们之间是怎么工作的
 
 1. 超文本传输协议,基于TCP/IP协议,属于应用层的协议.
 2. IP协议的作用是把各个数据包发送给对方,其中两个重要的条件是IP地址和MAC地址.
@@ -13,7 +13,7 @@
 ### URL
 URI是Uniform Resource Identifier的缩写(RFC3986)
 
-| name  | value |
+| 名称  | 简介 |
 | ------------- | ------------- |
 | Uniform  | 规定统一的格式如 http, ftp  |
 | Resource  | 可标识的任何东西如 图片,电影  |
