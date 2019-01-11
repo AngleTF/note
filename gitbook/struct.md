@@ -1,4 +1,5 @@
 ### 目录结构
+
 ```
     +------------
     | README.md
@@ -9,6 +10,7 @@
 ### README.md
 
 关于这本书的简介, 书写语法是Markdown
+
 ```
 # Gitbook 使用入门
 
@@ -19,7 +21,9 @@
 ```
 
 ### SUMMARY.md
-关于这本书的目录结构, 用于显示gitbook左侧导航栏
+
+关于这本书的目录结构, 用于显示gitbook左侧导航栏, 书写语法是Markdown
+
 ```
 * [介绍](README.md)
 * [基本安装](installation/README.md)
@@ -37,3 +41,6 @@
    * [发布到公司文档服务器](publish/companyserver.md)
 * [结束](end/README.md)
 ```
+
+
+
