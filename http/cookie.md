@@ -9,7 +9,7 @@ Host:hackr.jp
 ```
 
 响应报文(设置cookie)
-```
+```http
 HTTP/1.1 200 OK
 Date:Sun 28 Aug 2016 03.08.56
 Server:Apache/2.4.10
@@ -18,3 +18,4 @@ Content-Length:9
 Content-Type:text/html; charset=UTF-8
 Set-Cookie:PHPSESSID=86be21bb32bb7ede2dfa8860ef5735f9; path=/
 ```
+
