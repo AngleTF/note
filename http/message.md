@@ -1,5 +1,5 @@
 ### 请求报文的组成
-```
+```http
 POST /test/test.php HTTP/1.1	
 Host:localhost								
 Content-type:application/x-www-form-urlencoded
