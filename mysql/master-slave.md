@@ -2,7 +2,7 @@
 
 ---
 
-* ### 修改主服务器配置
+### 修改主服务器配置
 
 ```
 #开启二进制日志
@@ -20,7 +20,7 @@ binlog-do-db=dbname
 sercice mysql restart
 ```
 
-* ### **主服务器添加Slave用户**
+### 主服务器添加Slave用户
 
 > GRANT FILE,REPLICATION,SLAVE ON \*.\* TO 'slave\_host'@'%' IDENTIFIED BY '123456';
 >
@@ -32,7 +32,7 @@ sercice mysql restart
 
 ---
 
-* ### 修改从服务器配置
+### 修改从服务器配置
 
 ```
 log-bin=mysql-bin
@@ -57,7 +57,7 @@ slave-skip-errors=all
 slave-net-timeout=60
 ```
 
-* ### 从服务器执行SQL
+### 从服务器执行SQL
 
 ```
 change master to master_host='101.132.182.191' , 
@@ -72,7 +72,7 @@ master_log_pos=1402,
 master_port=8765;
 ```
 
-* ### 启动从服务器
+### 启动从服务器
 
 \#启动
 
@@ -82,7 +82,7 @@ master_port=8765;
 
 > stop slave
 
-* ### 验证从服务器
+### 验证从服务器
 
 show slave status\G;
 
