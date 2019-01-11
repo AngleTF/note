@@ -10,7 +10,6 @@
 
 <br>
 ### modiffed \(已修改\)
-3. **staged** \(已暂存\)
 ![](/assets/gitstatus-4.png)
 
 > 而后我们使用git commit 提交到自己的仓库, -m 是提交的注释 这是必须的, 提交后你的状态就变成 已提交状态committed
