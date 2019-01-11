@@ -25,7 +25,7 @@ var_dump(
     strUpper('HELLO worD qwertyuiopasdfghjklzxcvbnm, 你好 世界')
 );
 ```
-字母A与a的ASCII相差32(十进制)
+提示: 字母A与a的ASCII相差32(十进制)
 
 ### 汇编show_str示例
 向界面输出 绿色的 "welcome to masm!"
