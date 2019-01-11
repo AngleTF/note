@@ -12,10 +12,10 @@
 * [golang](golang/README.md)
     * [http代理](golang/http-proxy.md)
 * [gitbook](gitbook/README.md)
-    * [安装](gitbook/install.md)
-    * [初始化](gitbook/init.md)
-    * [结构](gitbook/struct.md)
-    * [插件](gitbook/plugin.md)
+    * [1.0-安装](gitbook/install.md)
+    * [1.1-初始化](gitbook/init.md)
+    * [1.2-结构](gitbook/struct.md)
+    * [1.3-插件](gitbook/plugin.md)
 
 
 
