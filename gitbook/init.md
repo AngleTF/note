@@ -55,6 +55,38 @@ $ gitbook build ./ --log=debug --debug
 ```
 
 
+### 帮助
+
+```
+$ gitbook -h
+
+  Usage: gitbook [options] [command]
+
+
+  Options:
+
+    -v, --gitbook [version]  specify GitBook version to use
+    -d, --debug              enable verbose error
+    -V, --version            Display running versions of gitbook and gitbook-cli
+    -h, --help               output usage information
+
+
+  Commands:
+
+    ls                        List versions installed locally
+    current                   Display currently activated version
+    ls-remote                 List remote versions available for install
+    fetch [version]           Download and install a <version>
+    alias [folder] [version]  Set an alias named <version> pointing to <folder>
+    uninstall [version]       Uninstall a version
+    update [tag]              Update to the latest version of GitBook
+    help                      List commands for GitBook
+    *                         run a command with a specific gitbook version
+
+
+
+```
+
 
 
 
