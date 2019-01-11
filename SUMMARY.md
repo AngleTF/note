@@ -16,6 +16,15 @@
     * [1.1-初始化](gitbook/init.md)
     * [1.2-结构](gitbook/struct.md)
     * [1.3-插件](gitbook/plugin.md)
+* [http](http/README.md)
+    * [1.0-什么是http](http/http-desc.md)
+    * [1.1-请求报文和响应报文](http/message.md)
+    * [1.2-请求方式](http/method.md)
+    * [1.3-了解cookie](http/cookie.md)
+    * [1.4-响应报文的状态码](http/status.md)
+
+
+
 
 
 
