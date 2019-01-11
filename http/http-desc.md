@@ -13,8 +13,9 @@
 ### URL
 URI是Uniform Resource Identifier的缩写(RFC3986)
 
-Uniform: 规定统一的格式如 http, ftp
-		
-Resource: 可标识的任何东西如 图片,电影
-		
-Identifier: 可标识的对象 ,也称标识符
+| name  | value |
+| ------------- | ------------- |
+| Uniform  | 规定统一的格式如 http, ftp  |
+| Resource  | 可标识的任何东西如 图片,电影  |
+| Identifier| 可标识的对象 ,也称标识符  |
+
