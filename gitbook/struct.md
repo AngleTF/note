@@ -51,7 +51,7 @@
 | structure  | README, SUMMARY... 的路径  |
 | title | header中的title标签值  |
 | description | header中的meta标签name为description的值  |
-| structure  | README, SUMMARY... 的路径  |
+| author | README, SUMMARY... 的路径  |
 | structure  | README, SUMMARY... 的路径  |
 
 
