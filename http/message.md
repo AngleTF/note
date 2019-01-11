@@ -16,7 +16,7 @@ act=query&name=ghost
 
 
 ### 响应报文的组成
-```
+```http
 HTTP/1.1 200 OK	
 Date:Sun 28 Aug 2016 03.08.56
 Server:Apache/2.4.10
