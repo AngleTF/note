@@ -32,6 +32,6 @@ Content-Type:text/html
 | ------------- | ------------- |
 | 响应行| HTTP版本, 状态码和描述 |
 | 请求头| 字段名和字段值组成  key:value 形式|
-| 请求体 | 响应的数据, 例如上面的 act=query&name=ghost |
+| 请求体 | 响应的数据, 例如上面的html代码 |
 
 
