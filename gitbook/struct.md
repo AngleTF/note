@@ -54,10 +54,8 @@
 | author      | header中的meta标签name为author的值  |
 | isbn        | 国际标准图书编号 |
 | language    | 默认值是en  |
-| title       | header中的title标签值  |
-| description | header中的meta标签name为description的值  |
-| author      | header中的meta标签name为author的值  |
-| isbn        | 国际标准图书编号 |
+| direction   | 文本的方向 rtl 或 ltr  |
+| gitbook     | 应该使用的gitbook版本号, 例如 ">= 3.0.0"  |
 
 
 
