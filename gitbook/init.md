@@ -18,6 +18,7 @@ GitBook使用SUMMARY.md文件组织整个内容的目录，比如可以新建 Fa
 
 
 ### 开启本地服务器
+gitbook serve 命令实际会先调用 gitbook build 编译书籍，完成后打开 web 服务器，默认监听本地 4000 端口，在浏览器打开 http://localhost:4000 即可浏览电子书。
 ```
 $ gitbook serve
 Live reload server started on port: 35729
@@ -42,7 +43,7 @@ Serving book on http://localhost:4000
 ```
 
 ### 构建静态网站
-
+该命令会在当前目录生成 _book 文件夹, 这个文件是静态网页的电子书
 ```
 gitbook build
 ```
