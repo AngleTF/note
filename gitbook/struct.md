@@ -56,8 +56,8 @@
 | language    | 默认值是en  |
 | direction   | 文本的方向 rtl 或 ltr  |
 | gitbook     | 应该使用的gitbook版本号, 例如 ">= 3.0.0"  |
-| plugins     | 需要加载的插件列表   |
-| pluginsConfig| 插件的配置 |
+| plugins     | 需要加载的插件列表 (具体详见插件使用)  |
+| pluginsConfig| 插件的配置 (具体详见插件使用) |
 
 
 
