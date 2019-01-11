@@ -8,7 +8,7 @@ GET /reader/ HTTP/1.1
 Host:hackr.jp
 ```
 
-第一次响应报文(设置cookie)
+第一次响应报文, 服务端要求客户端存储这个cookie(设置cookie)
 ```http
 HTTP/1.1 200 OK
 Date:Sun 28 Aug 2016 03.08.56
