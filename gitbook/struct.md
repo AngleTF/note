@@ -56,29 +56,3 @@
 | language    | 默认值是en  |
 | direction   | 文本的方向 rtl 或 ltr  |
 | gitbook     | 应该使用的gitbook版本号, 例如 ">= 3.0.0"  |
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
