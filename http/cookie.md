@@ -8,7 +8,7 @@ GET /reader/ HTTP/1.1
 Host:hackr.jp
 ```
 
-响应报文(设置cookie)
+第一次响应报文(设置cookie)
 ```http
 HTTP/1.1 200 OK
 Date:Sun 28 Aug 2016 03.08.56
@@ -19,7 +19,7 @@ Content-Type:text/html; charset=UTF-8
 Set-Cookie:PHPSESSID=86be21bb32bb7ede2dfa8860ef5735f9; path=/
 ```
 
-请求报文(有cookie)
+第二次请求报文(有cookie)
 ```http
 GET /reader/ HTTP/1.1
 Host:hackr.jp
