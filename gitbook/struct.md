@@ -48,7 +48,18 @@
 | Variable  | Description |
 | ------------- | ------------- |
 | root  | 文件根目录， 但不包括book.json  |
-| structure  | Content Cell  |
+| structure  | README, SUMMARY... 的路径  |
+| title | README, SUMMARY... 的路径  |
+| structure  | README, SUMMARY... 的路径  |
+| structure  | README, SUMMARY... 的路径  |
+| structure  | README, SUMMARY... 的路径  |
+
+
+
+
+
+
+
 
 
 
