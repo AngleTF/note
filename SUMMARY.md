@@ -1,7 +1,7 @@
 # Summary
 
 * [简介](README.md)
-* [mysql](mysql/README.md)
+* mysql
     * [主从服务搭建和配置](mysql/master-slave.md)
 * [php](php/README.md)
     * [int与string强制转换的原理](php/intcoverstring.md)
