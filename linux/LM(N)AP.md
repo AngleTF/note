@@ -31,6 +31,7 @@ yum install php php-devel -y
 ```shell
 yum install httpd -y
 ```
+
 启动Apache
 ```
 service httpd start
@@ -45,6 +46,7 @@ systemctl enable httpd
 ```
 vi /etc/httpd/conf/httpd.conf
 ```
+
 将 DocumentRoot  "/var/www/html" 改为 DocumentRoot  "/var/www" 这是网站根目录 当然你也可以不更改
 ```	
 <Directory "/var/www">
@@ -62,6 +64,7 @@ DirectoryIndex index.php index.html index.htm	#(默认打开的FILES)
 ```shell
 yum install mariadb mariadb-server
 ```
+
 启动MariaDB
 ```
 service mariadb start
