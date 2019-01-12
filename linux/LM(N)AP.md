@@ -61,5 +61,5 @@ yum install mariadb mariadb-server
 ```
 启动MariaDB
 ```
-service mariadb restart
+service mariadb start
 ```
