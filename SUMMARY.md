@@ -26,6 +26,15 @@
     * [1.4-响应报文的状态码](http/status.md)
 * [linux](linux/README.md)
     * [LMNAP安装](linux/LMNAP.md)
+* [Jquery](jquery/README.md)
+    * [ajax](jquery/ajax.md)
+
+
+
+
+
+
+
 
 
 
