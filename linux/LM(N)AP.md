@@ -283,3 +283,10 @@ chown -R php:php /data/php
 echo "export PATH=\$PATH:/data/php/bin" >> /etc/profile
 source /etc/profile
 ```
+
+php-fpm 是php-cgi的管理器, php-cgi是nginx与php沟通的桥梁, 我们需要配置一下
+```
+echo "export PATH=\$PATH:/data/php/bin" >> /etc/profile
+source /etc/profile
+```
+
