@@ -21,3 +21,35 @@ setenforce 0
 yum安装很快, 如果你是新手并不推荐你使用yum安装, 适时使用源码安装, 了解编译安装过程还是非常必要的.
 
 ### yum安装
+
+安装PHP, -y自动安装依赖, 不需要手动yes
+```shell
+yum install php php-devel -y
+```
+
+安装并启动Apache
+```shell
+yum install httpd -y
+service httpd restart
+```
+
+设置Apache为开机启动
+```
+systemctl enable httpd
+```
+
+编辑Apache配置文件
+```
+vi /etc/httpd/conf/httpd.conf
+```
+将 DocumentRoot  "/var/www/html" 改为 DocumentRoot  "/var/www" #这是网址跟目录 当然你也可以不更改
+			
+<Directory "/var/www">
+AllowOverride none		#将none改为All(允许.htaccess文件进行apache规则重写)
+\# Allow open access:
+Require all granted
+</Directory>
+<IfModule dir_module>
+			DirectoryIndex index.php index.html index.htm	#(默认打开的FILES)
+</IfModule>
+		
