@@ -286,7 +286,16 @@ source /etc/profile
 
 php-fpm 是php-cgi的管理器, php-cgi是nginx与php沟通的桥梁, 我们需要配置一下
 ```
-echo "export PATH=\$PATH:/data/php/bin" >> /etc/profile
-source /etc/profile
+cp /data/package/php-7.2.5/sapi/fpm/init.d.php-fpm /etc/init.d/php-fpm
+chmod +x /etc/init.d/php-fpm
+
+cp /data/php/etc/php-fpm.conf.default /data/php/etc/php-fpm.conf
+
+cp /data/php/etc/php-fpm.d/www.conf.default /data/php/etc/php-fpm.d/www.conf
+cp /data/package/php-7.2.5/php.ini-production /etc/php.ini
 ```
 
+启动php-fpm
+```
+service php-fpm start
+```
