@@ -30,7 +30,10 @@ yum install php php-devel -y
 安装并启动Apache
 ```shell
 yum install httpd -y
-service httpd restart
+```
+启动Apache
+```
+service httpd start
 ```
 
 设置Apache为开机启动
