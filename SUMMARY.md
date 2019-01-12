@@ -24,7 +24,7 @@
     * [1.3-了解cookie](http/cookie.md)
     * [1.4-响应报文的状态码](http/status.md)
 * [linux](linux/README.md)
-    * [LMNAP安装](linux/linux/LM(N\)AP.md)
+    * [LMNAP安装](linux/linux/LMNAP.md)
 
 
 
