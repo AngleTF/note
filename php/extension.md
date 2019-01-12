@@ -17,11 +17,10 @@ https://pecl.php.net/index.php
 2. wget https://pecl.php.net/get/apcu-5.1.11.tgz
 3. tar -zxvf apcu-5.1.11.tgz
 4. cd apcu-5.1.11
-5. 通过 phpize 生成 configure 文件
-6. phpize
-7. 运行configure文件
-8. ./configure
-9. 编译 , 安装
-10. make && make install
-11. 重启 webservice
-12. nginx -s reload
+5. 通过 phpize 命令生成 configure 文件
+6. ./configure 
+7. make && make install
+8. 修改 php.ini 文件, extension = '/.../apcu.so'
+9. nginx -s reload
+
+注:: 有一些在configure时是需要参数的
