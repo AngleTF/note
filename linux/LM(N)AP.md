@@ -89,3 +89,15 @@ vim /var/www/index.php
 	phpinfo();
 ?>
 ```
+
+修改php配置文件, 开启报错
+```
+display_errors = Off
+error_reporting = E_ALL | E_STRICT
+```
+修改过配置文件后, 需要重启Apache
+```
+service httpd restart
+```
+
+
