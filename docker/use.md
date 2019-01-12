@@ -182,11 +182,13 @@ docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
 
 -t	分配一个伪终端
 ```
+
+```
 [root@password ~]# docker ps CONTAINER ID    IMAGE        COMMAND       CREATED       STATUS       PORTS        NAMES
 43d44ac8cf31    e934aafc2206    "/bin/bash"     17 hours ago    Up 17 hours               sharp_heyrovsky
 [root@password ~]# docker exec -ti 43d44ac8cf31 /bin/bash
 [root@43d44ac8cf31 /]# 
-
+```
 
 
 
