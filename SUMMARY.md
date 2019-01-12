@@ -7,6 +7,7 @@
     * [int与string强制转换的原理](php/intcoverstring.md)
     * [大小写转化原理](php/lower-upper.md)
     * [thinkphp框架](php/think-menu.md)
+    * [命名空间](php/namespace.md)
 * [git](git/README.md)
     * [git的三种状态](git/git-status.md)
 * [golang](golang/README.md)
@@ -22,6 +23,8 @@
     * [1.2-请求方式](http/method.md)
     * [1.3-了解cookie](http/cookie.md)
     * [1.4-响应报文的状态码](http/status.md)
+* [linux](linux/README.md)
+    * [LMNAP安装](linux/linux/LM(N)AP.md)
 
 
 
