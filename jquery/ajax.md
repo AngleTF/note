@@ -16,21 +16,13 @@
 
 
 
-
-
-
-
-
-
-
-
-
 ```js
 $.ajax({
 	type:'get',
 	url:'www.taolifeng',
 	data:{"in_val":'input_val'},
 	dateType:json,
+	contentType:"application/x-www-form-urlencoded"
 	success:function(data){
 		
 	},
