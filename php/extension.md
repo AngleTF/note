@@ -13,16 +13,15 @@ https://pecl.php.net/index.php
 ### Linux下
 一般源码包中都带有所有的扩展
 
-1. 从扩展库下载自己需要的 tar 包
+1. 从扩展库下载自己需要的 tar 包, 比如apcu
 2. wget https://pecl.php.net/get/apcu-5.1.11.tgz
-3. 解压tar包
-4. tar -zxvf apcu-5.1.11.tgz
-5. cd apcu-5.1.11
-6. 通过 phpize 生成 configure 文件
-7. phpize
-8. 运行configure文件
-9. ./configure
-10. 编译 , 安装
-11. make && make install
-12. 重启 webservice
-13. nginx -s reload
+3. tar -zxvf apcu-5.1.11.tgz
+4. cd apcu-5.1.11
+5. 通过 phpize 生成 configure 文件
+6. phpize
+7. 运行configure文件
+8. ./configure
+9. 编译 , 安装
+10. make && make install
+11. 重启 webservice
+12. nginx -s reload
