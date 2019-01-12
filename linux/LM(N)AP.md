@@ -42,15 +42,24 @@ systemctl enable httpd
 ```
 vi /etc/httpd/conf/httpd.conf
 ```
-将 DocumentRoot  "/var/www/html" 改为 DocumentRoot  "/var/www" #这是网站根目录 当然你也可以不更改
-			
+将 DocumentRoot  "/var/www/html" 改为 DocumentRoot  "/var/www" 这是网站根目录 当然你也可以不更改
+```	
 <Directory "/var/www">
-\#将none改为All(允许.htaccess文件进行apache规则重写)
+#将none改为All(允许.htaccess文件进行apache规则重写)
 AllowOverride none
-\# Allow open access:
+#Allow open access:
 Require all granted
 </Directory>
 <IfModule dir_module>
 DirectoryIndex index.php index.html index.htm	#(默认打开的FILES)
 </IfModule>
-		
+```
+
+安装MariaDB, CentOS 7.0中，已经使用MariaDB替代了MySQL数据库
+```shell
+yum install mariadb mariadb-server
+```
+启动MariaDB
+```
+service mariadb restart
+```
