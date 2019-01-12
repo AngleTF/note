@@ -10,7 +10,6 @@
 | dateType | 返回时被转化的类型 |
 | success| 请求成功的回调函数 |
 | error | 请求失败的回调函数 |
-| success| 请求成功的回调函数 |
 | timeout| 超时时间, 单位毫秒 |
 | async| 是否异步, 默认是true |
 | contentType| 请求时的http头部contentType信息 |
