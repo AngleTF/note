@@ -80,3 +80,12 @@ cp /usr/share/mysql/my-huge.cnf /etc/my.cnf
 mysql_secure_installation
 ```
 
+测试文件
+```
+vim /var/www/index.php
+	
+#写入
+<?php
+	phpinfo();
+?>
+```
