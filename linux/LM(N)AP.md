@@ -122,7 +122,7 @@ error_reporting = E_ALL | E_STRICT
 service httpd restart
 ```
 
-### LMNAP源码安装
+### LMNP源码安装
 
 首先我们先设置好目录结构
 
@@ -203,6 +203,7 @@ yum -y install libmcrypt libmcrypt-devel mhash mhash-devel libxml2 libxml2-devel
 ```
 
 下载并解压源码包
+
 ```
 tar zxvf ./mysql-boost-5.7.22.tar.gz -C /data/package 
 tar zxvf ./nginx-1.14.0.tar.gz -C /data/package
@@ -210,21 +211,23 @@ tar zxvf ./php-7.2.5.tar.gz -C /data/package
 ```
 
 编译安装mysql, mysql 5.7.5开始Boost库是必需的, 最新版的 mysql 都使用cmake命令进行安装
+
 ```
 cd /data/package/mysql-5.7.22 
 cmake -DCMAKE_INSTALL_PREFIX=/data/mysql   -DSYSCONFDIR=/etc -DMYSQL_USER=mysql  -DWITH_MYISAM_STORAGE_ENGINE=1  -DWITH_INNOBASE_STORAGE_ENGINE=1 -DWITH_ARCHIVE_STORAGE_ENGINE=1  -DWITH_MEMORY_STORAGE_ENGINE=1  -DWITH_READLINE=1   -DMYSQL_UNIX_ADDR=/tmp/mysql.sock  -DMYSQL_TCP_PORT=3306  -DENABLED_LOCAL_INFILE=1  -DENABLE_DOWNLOADS=1  -DWITH_PARTITION_STORAGE_ENGINE=1  -DEXTRA_CHARSETS=all  -DDEFAULT_CHARSET=utf8  -DDEFAULT_COLLATION=utf8_general_ci  -DWITH_DEBUG=0  -DMYSQL_MAINTAINER_MOODE=0 -DWITH_BOOST=/data/package/mysql-5.7.22/boost/boost_1_59_0
-make && make install 
+make && make install
 ```
 
 部分参数说明
 
 | cmake参数 | cmake值 |
-| ------------- | ------------- |
-| DCMAKE_INSTALL_PREFIX | mysql安装路径|
-| DMYSQL_DATADIR | mysql数据库位置 |
+| --- | --- |
+| DCMAKE\_INSTALL\_PREFIX | mysql安装路径 |
+| DMYSQL\_DATADIR | mysql数据库位置 |
 | DSYSCONFDIR | 默认my.cnf选项文件目录 |
 
 初始化mysql
+
 ```
 chown -R mysql:mysql /data/mysql
 /data/mysql/bin/mysqld --initialize-insecure --user=mysql --basedir=/data/mysql --datadir=/data/mysql/data
@@ -233,40 +236,47 @@ chmod 777 /etc/init.d/mysqld
 ```
 
 将mysql/bin加入全局变量
+
 ```
 echo "export PATH=\$PATH:/data/mysql/bin" >> /etc/profile
 source /etc/profile
 ```
 
 设置mysql为开机自启
+
 ```
 chkconfig mysqld  on 
 chkconfig --add mysqld
 ```
 
 启动mysql
+
 ```
 service mysqld start
 ```
 
 编译安装nginx
+
 ```
 cd /data/package/nginx-1.14.0
 ./configure --prefix=/data/nginx --sbin-path=/usr/sbin/nginx --conf-path=/etc/nginx/nginx.conf --error-log-path=/data/temp/nginx_error.log --http-log-path=/data/temp/nginx_access.log --user=nginx --group=nginx --with-http_ssl_module --with-http_realip_module --with-http_addition_module --with-http_sub_module --with-http_dav_module --with-http_flv_module --http-client-body-temp-path=/data/temp/client --http-proxy-temp-path=/data/temp/proxy --http-fastcgi-temp-path=/data/temp/fastcgi --with-mail --with-mail_ssl_module --with-pcre
-make && make install 
+make && make install
 ```
 
 赋予nginx目录权限
+
 ```
 chown -R nginx:nginx /data/nginx
 ```
 
 启动nginx
+
 ```
 /sbin/nginx
 ```
 
 编译安装PHP
+
 ```
 cd /data/package/php-7.2.5
 ./configure --prefix=/data/php --with-config-file-path=/etc --with-gd --with-iconv --with-zlib --enable-bcmath --enable-shmop --enable-sysvsem --enable-inline-optimization --enable-mbregex --enable-fpm --enable-mbstring --enable-ftp --with-openssl --enable-pcntl --enable-sockets --with-xmlrpc --enable-zip --enable-soap --with-png-dir --with-gettext --with-curl --with-jpeg-dir --with-freetype-dir --with-mysqli --enable-embedded-mysqli --with-pdo-mysql -enable-xml --with-bz2
@@ -274,17 +284,20 @@ make && make install
 ```
 
 赋予php目录权限
+
 ```
 chown -R php:php /data/php
 ```
 
 将php/bin加入全局变量
+
 ```
 echo "export PATH=\$PATH:/data/php/bin" >> /etc/profile
 source /etc/profile
 ```
 
 php-fpm 是php-cgi的管理器, php-cgi是nginx与php沟通的桥梁, 我们需要配置一下
+
 ```
 cp /data/package/php-7.2.5/sapi/fpm/init.d.php-fpm /etc/init.d/php-fpm
 chmod +x /etc/init.d/php-fpm
@@ -296,6 +309,10 @@ cp /data/package/php-7.2.5/php.ini-production /etc/php.ini
 ```
 
 启动php-fpm
+
 ```
 service php-fpm start
 ```
+
+
+
