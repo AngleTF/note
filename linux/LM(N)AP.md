@@ -9,11 +9,11 @@ Linux简称为L, Apache简称为A, Mysql简称为M, Php简称为P, Nginx简称�
 
 ### 关闭SELinux防火墙
 永久关闭防火墙, 编辑config将SELINUX=enforcing 改成 SELINUX=disabled
-```shell
+```
 vi /etc/selinux/config
 ```
 临时关闭防火墙
-```shell
+```
 setenforce 0
 ```
 
@@ -23,12 +23,12 @@ yum安装很快, 如果你是新手并不推荐你使用yum安装, 适时使用�
 ### yum安装
 
 安装PHP, -y自动安装依赖, 不需要手动yes
-```shell
+```
 yum install php php-devel -y
 ```
 
 安装并启动Apache
-```shell
+```
 yum install httpd -y
 ```
 
@@ -61,7 +61,7 @@ DirectoryIndex index.php index.html index.htm	#(默认打开的FILES)
 ```
 
 安装MariaDB, CentOS 7.0中，已经使用MariaDB替代了MySQL数据库
-```shell
+```
 yum install mariadb mariadb-server
 ```
 
@@ -69,3 +69,14 @@ yum install mariadb mariadb-server
 ```
 service mariadb start
 ```
+
+拷贝配置文件
+```
+cp /usr/share/mysql/my-huge.cnf /etc/my.cnf
+```
+
+初始化数据库
+```
+mysql_secure_installation
+```
+
