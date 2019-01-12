@@ -3,7 +3,7 @@
 ### 如何使用理解PHP的命名空间
 从下面这个例子可以看出 n1.php 声明了一个命名空间 , 然后 n2.php 对 n1.php 进行引入 , 但是结果却报错了 , 那这就是 namespace 导致的 , 那如何对 namespace 进行理解呢?
 
-### n1命名空间(n1.php)
+n1命名空间(n1.php)
 ```php
 namespace n1;
 
@@ -21,8 +21,7 @@ class test{
 }
 ```
 
-### 不声明命名空(n2.php)
-
+不声明命名空(n2.php)
 ```php
 include "n1.php";
 
@@ -40,8 +39,8 @@ nPrint();
 
 我个人对 namespace 的理解其实很简单 , 那就是给类 , 函数 , 常量 添加前缀 , 也有人理解为目录的层级关系 , 当然这样理解也是可以的 . 为什么我会怎么说呢? 我们来看看下面的几个例子 .
 
-
-### 不声明命名空间(n2.php)
+### 完全限定名称
+不声明命名空间(n2.php)
 ```php
 include "n1.php";
 
@@ -59,9 +58,8 @@ echo \n1\NAME;
 
 添加 n1 可以理解 , 但为什么还要添加 \ 这个呢? 当然你可以理解一旦声明命名空间 , 命名空间都是从 \ 根开始的 所有我们使用添加前缀的 \n1 , 向这种从根开始找命名空间的我们称之为 "完全限定名称"
 
-
-### n2\branch 命名空间(n1.php)
-
+### 限定名称
+n2\branch 命名空间(n1.php)
 ```php
 namespace n2\branch;
 
@@ -79,7 +77,7 @@ class test{
 }
 ```
 
-### n2命名空间(n2.php)
+n2命名空间(n2.php)
 ```php
 namespace n2;
 include "n1.php";
@@ -96,8 +94,8 @@ branch\nPrint();
 
 对 n1.php 和 n2.php 同时进行了修改 , n1.php 的命名空间是 n1\branch , 同时 n2.php 添加了一个命名空间为 n1 , 按照目录的原理 n1.php 的命名空间 比 n2.php 的命名空间更加深入(目录层级结构) , 而n2.php 只需要添加前缀 branch 就能够使用 , 这就是限定名称
 
-
-### n2\branch命名空间(n2.php)
+### 非限定名称
+n2\branch命名空间(n2.php)
 ```php
 namespace n2\branch;
 include "n1.php";
@@ -115,10 +113,11 @@ nPrint();
 对n2.php 再次进行修改 , 将命名空间 声明和 n1.php 一样 , 那么就不需要再前面添加任何前缀 , 这就想等同于 同级目录的概念, 这种声明我们称之为 非限定名称 .
 
 
+### USE
 如果你觉得每次调用 声明类 , 调用函数 , 调用常量 都需要写入命名空间的前缀 , 那么你可以使用 关键字 USE 进行全局命名
 
 
-### n2\branch命名空间(n2.php)
+n2\branch命名空间(n2.php)
 ```php
 include "n1.php";
 use \n1\branch as b;
