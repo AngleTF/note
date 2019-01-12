@@ -9,6 +9,8 @@
     * [thinkphp框架](php/think-menu.md)
     * [命名空间](php/namespace.md)
     * [加载扩展文件](php/extension.md)
+    * [composer](php/composer.md)
+
 * [git](git/README.md)
     * [git的三种状态](git/git-status.md)
 * [golang](golang/README.md)
