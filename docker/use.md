@@ -284,37 +284,31 @@ docker run -t -i ubuntu:15.10 /bin/bash
 
 
 
-获取docker镜像
+### 获取docker镜像
 
-
+```
 docker pull [OPTIONS] NAME[:TAG|@DIGEST]
 
 
 -a	拉取所有 tagged 镜像
 
 --disable-content-trust	忽略镜像的校验,默认开启
+```
 
-
-
+```
 docker pull ubuntu:13.10
+```
+
+当我们在本地主机上使用一个不存在的镜像时 Docker 就会自动下载这个镜像。如果我们想预先下载这个镜像，我们可以使用 docker pull 命令来下载它。
 
 
-当我们在本地主机上使用一个不存在的镜像时 Docker 就会自动下载这个镜像。
-
-如果我们想预先下载这个镜像，我们可以使用 docker pull 命令来下载它。
-
-
-
-
-
-
-
-镜像网站
+### 镜像网站
 
 
 https://hub.docker.com/
 
-
+### 镜像搜索
+```
 docker search [OPTIONS] TERM
 
 
@@ -323,92 +317,90 @@ docker search [OPTIONS] TERM
 --no-trunc	显示完整的镜像描述
 
 -s	列出收藏数不小于指定值的镜像
+```
 
+```
+docker search httpd
+```
 
+```
+NAME            镜像仓库源的名称
 
-		docker search httpd
+DESCRIPTION     镜像的描述
 
-NAME	镜像仓库源的名称
-
-DESCRIPTION	镜像的描述
-
-OFFICIAL	是否docker官方发布
-
+OFFICIAL        是否docker官方发布
+```
 
 使用docker pull httpd 拖取镜像
 
 
 
-更新镜像
+### 更新镜像
+```
+[root@password ~]# docker run -t -i ubuntu:15.10 /bin/bash
+root@0ec8f128b13c:/# apt-get update
+Ign http://archive.ubuntu.com wily InRelease     
+Ign http://archive.ubuntu.com wily-updates InRelease 
+Ign http://archive.ubuntu.com wily-security InRelease
+Ign http://archive.ubuntu.com wily Release.gpg
+Ign http://archive.ubuntu.com wily-updates Release.gpg
+Ign http://archive.ubuntu.com wily-security Release.gpg
+Ign http://archive.ubuntu.com wily Release
+Ign http://archive.ubuntu.com wily-updates Release
+Ign http://archive.ubuntu.com wily-security Release
+```
 
 
-		[root@password ~]# docker run -t -i ubuntu:15.10 /bin/bash
-		root@0ec8f128b13c:/# apt-get update
-		Ign http://archive.ubuntu.com wily InRelease     
-		Ign http://archive.ubuntu.com wily-updates InRelease 
-		Ign http://archive.ubuntu.com wily-security InRelease
-		Ign http://archive.ubuntu.com wily Release.gpg
-		Ign http://archive.ubuntu.com wily-updates Release.gpg
-		Ign http://archive.ubuntu.com wily-security Release.gpg
-		Ign http://archive.ubuntu.com wily Release
-		Ign http://archive.ubuntu.com wily-updates Release
-		Ign http://archive.ubuntu.com wily-security Release
 
 
+### 构建镜像
 
 
+我们使用命令 docker build ， 从零开始来创建一个新的镜像。为此，我们需要创建一个 Dockerfile 文件
 
-构建镜像
+```
+runoob@runoob:~$ cat Dockerfile 
+FROM  centos:6.7
+MAINTAINER   Fisher "fisher@sudops.com"
 
-
-我们使用命令 docker build ， 从零开始来创建一个新的镜像。
-
-为此，我们需要创建一个 Dockerfile 文件
-
-
-		runoob@runoob:~$ cat Dockerfile 
-		FROM  centos:6.7
-		MAINTAINER   Fisher "fisher@sudops.com"
-
-		RUN   /bin/echo 'root:123456' |chpasswd
-		RUN   useradd runoob
-		RUN   /bin/echo 'runoob:123456' |chpasswd
-		RUN   /bin/echo -e "LANG=\"en_US.UTF-8\"" >/etc/default/local
-		EXPOSE 22
-		EXPOSE 80
-		CMD   /usr/sbin/sshd -D
+RUN   /bin/echo 'root:123456' |chpasswd
+RUN   useradd runoob
+RUN   /bin/echo 'runoob:123456' |chpasswd
+RUN   /bin/echo -e "LANG=\"en_US.UTF-8\"" >/etc/default/local
+EXPOSE 22
+EXPOSE 80
+CMD   /usr/sbin/sshd -D
 		
-		docker build -t runoob/centos:6.7 ./
+docker build -t runoob/centos:6.7 ./
+```
 
 -t	指定要创建的目标镜像名
 
 ./	Dockerfile地址
 
 
+### 设置镜像标签( 标记本地镜像，将其归入某一仓库。)
 
-
-设置镜像标签( 标记本地镜像，将其归入某一仓库。)
-
-
-		docker tag [OPTIONS] IMAGE[:TAG] [REGISTRYHOST/][USERNAME/]NAME[:TAG]
+```
+docker tag [OPTIONS] IMAGE[:TAG] [REGISTRYHOST/][USERNAME/]NAME[:TAG]
 		
-		root@runoob:~# docker tag ubuntu:15.10 runoob/ubuntu:v3
-		root@runoob:~# docker images  runoob/ubuntu:v3
-		REPOSITORY     TAG         IMAGE ID      CREATED       SIZE
-		runoob/ubuntu    v3         4e3b13c8a266    3 months ago    136.3 MB
+root@runoob:~# docker tag ubuntu:15.10 runoob/ubuntu:v3
+root@runoob:~# docker images  runoob/ubuntu:v3
+REPOSITORY     TAG         IMAGE ID      CREATED       SIZE
+runoob/ubuntu    v3         4e3b13c8a266    3 months ago    136.3 MB
+```
 
 
+### 帮助
 
-帮助
-
-
+```
 docker stats --help
+```
 
 
+### 日志
 
-日志
-
-
+```
 docker logs [OPTIONS] CONTAINER 
 
 
@@ -419,3 +411,4 @@ docker logs [OPTIONS] CONTAINER
 -t	显示时间戳
 
 --tail	仅列出最新N条容器日志
+```
