@@ -174,6 +174,9 @@ useradd -rg mysql mysql
 groupadd -r nginx
 useradd -r -g nginx  nginx
 
+groupadd -r php
+useradd -rg php php
+
 groupadd -r www 
 useradd -rg www www
 ```
@@ -253,7 +256,7 @@ cd /data/package/nginx-1.14.0
 make && make install 
 ```
 
-给与权限
+赋予nginx目录权限
 ```
 chown -R nginx:nginx /data/nginx
 ```
@@ -263,5 +266,20 @@ chown -R nginx:nginx /data/nginx
 /sbin/nginx
 ```
 
+编译安装PHP
+```
+cd /data/package/php-7.2.5
+./configure --prefix=/data/php --with-config-file-path=/etc --with-gd --with-iconv --with-zlib --enable-bcmath --enable-shmop --enable-sysvsem --enable-inline-optimization --enable-mbregex --enable-fpm --enable-mbstring --enable-ftp --with-openssl --enable-pcntl --enable-sockets --with-xmlrpc --enable-zip --enable-soap --with-png-dir --with-gettext --with-curl --with-jpeg-dir --with-freetype-dir --with-mysqli --enable-embedded-mysqli --with-pdo-mysql -enable-xml --with-bz2
+make && make install
+```
 
+赋予php目录权限
+```
+chown -R php:php /data/php
+```
 
+将php/bin加入全局变量
+```
+echo "export PATH=\$PATH:/data/php/bin" >> /etc/profile
+source /etc/profile
+```
