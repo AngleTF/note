@@ -1,32 +1,21 @@
-docker使用
+### docker原理
 
+镜像是类 , 容器是对象 , 通过镜像实例化容器 , 容器是虚拟的系统环境 , docker run 是实例化操作
 
-原理 : 镜像是类 , 容器是对象 , 通过镜像实例化容器 , 容器是虚拟的系统环境 , docker run 是实例化操作
-
-
-
-
-修改国内镜像
-
-
+### 修改国内镜像
+```
 /etc/docker/daemon.json
-
-
-
+```
+```json
 {
-
 "registry-mirrors": ["http://hub-mirror.c.163.com"]
-
 }
+```
 
 
+### Docker命令
 
-初始化并且进入docker终端
-
-
-Docker 允许你在容器内运行应用程序， 使用 docker run 命令来在容器内运行一个应用程序
-
-
+```
 docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
 
 
@@ -72,44 +61,40 @@ OPTIONS
 -p	标识来绑定指定端口5000:5000
 
 -P	将容器内部使用的网络端口映射到我们使用的主机上
+```
+
+### 初始化并且进入docker终端
 
 
+Docker 允许你在容器内运行应用程序， 使用 docker run 命令来在容器内运行一个应用程序
+```
+docker run -d -p 5000:5000 training/webapp python app.py
 
-	docker run -d -p 5000:5000 training/webapp python app.py
-
-	docker run ubuntu:15.10 /bin/echo "Hello world"
-
-docker	Docker 的二进制执行文件。
-
-run	与前面的 docker 组合来运行一个容器。
-
-ubuntu:15.10	15.10指定要运行的镜像，Docker首先从本地主机上查找镜像是否存在，如果不存在,Docker 就会从镜像仓库 Docker Hub 下载公共镜像。
-
-/bin/echo "Hello world"	在启动的容器里执行的命令
+docker run ubuntu:15.10 /bin/echo "Hello world"
+```
+ubuntu:15.10	15.10指定要运行的镜像，Docker首先从本地主机上查找镜像是否存在，如果不存在,Docker 就会从镜像仓库 Docker Hub 下载公共镜像, /bin/echo "Hello world"	在启动的容器里执行的命令
 
 
-
-	docker run -i -t ubuntu:15.10 /bin/bash
-
+```
+docker run -i -t ubuntu:15.10 /bin/bash
+```
 我们可以通过运行exit命令或者使用CTRL+D来退出容器。
 
 
 
-#后台运行 , 并给出容器ID , 可以通过容器ID对容器启动 , 关闭 , 删除 , 重启 等操作
-
-	runoob@runoob:~$ docker run -d ubuntu:15.10 /bin/sh -c "while true; do echo hello world; sleep 1; done"
-	2b1b7a428627c51ab8810d541d759f072b4fc75487eed05812646b8534a2fe63
-
+### 容器ID
+```
+runoob@runoob:~$ docker run -d ubuntu:15.10 /bin/sh -c "while true; do echo hello world; sleep 1; done"
+2b1b7a428627c51ab8810d541d759f072b4fc75487eed05812646b8534a2fe63
+```
 上面输出的是容器ID , 唯一
 
 
 
-列出运行的容器
+### 列出运行的容器
 
 
-docker ps [OPTIONS]
-
-
+```
 docker ps -a
 
 
@@ -128,51 +113,40 @@ docker ps -a
 -q	静默模式，只显示容器编号
 
 -s	显示总的文件大小
+```
 
-
-Docker 开放了 5000 端口（默认 Python Flask 端口）映射到主机端口 32769 上。
-
-
-
-
-关闭容器
-
-
+### 关闭容器
+```
 docker stop [OPTIONS] CONTAINER [CONTAINER...]
+```
 
 
-
-启动容器
-
-
+### 启动容器
+```
 docker start [OPTIONS] CONTAINER [CONTAINER...]
+```
 
 
-
-重启容器
-
-
+### 重启容器
+```
 docker restart [OPTIONS] CONTAINER [CONTAINER...]
+```
 
 
-
-查看容器端口
-
-
+### 查看容器端口
+```
 docker port [OPTIONS] CONTAINER [PRIVATE_PORT[/PROTO]]
+```
 
 
-
-查看容器进程
-
-
+### 查看容器进程
+```
 docker top [OPTIONS] CONTAINER [ps OPTIONS]
+```
 
 
-
-移除容器
-
-
+### 移除容器
+```
 docker rm [OPTIONS] CONTAINER [CONTAINER...]
 
 
@@ -181,27 +155,24 @@ docker rm [OPTIONS] CONTAINER [CONTAINER...]
 -l	移除容器间的网络连接，而非容器本身
 
 -v	删除与容器关联的卷
-
-
-
+```
 删除容器时，容器必须是停止状态，否则会下错误
 
 
 
 
-杀掉一个运行中的容器
-
-
+### 杀掉一个运行中的容器
+```
 docker kill [OPTIONS] CONTAINER [CONTAINER...]
 
 
 -s	向容器发送一个信号
+```
 
 
+### 进入已启动的容器
 
-进入已启动的容器
-
-
+```
 docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
 
 
@@ -210,44 +181,29 @@ docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
 -i	即使没有附加也保持STDIN 打开
 
 -t	分配一个伪终端
-
-
-	[root@password ~]# docker ps 
-	CONTAINER ID    IMAGE        COMMAND       CREATED       STATUS       PORTS        NAMES
-	43d44ac8cf31    e934aafc2206    "/bin/bash"     17 hours ago    Up 17 hours               sharp_heyrovsky
-	[root@password ~]# docker exec -ti 43d44ac8cf31 /bin/bash
-	[root@43d44ac8cf31 /]# 
+```
+[root@password ~]# docker ps CONTAINER ID    IMAGE        COMMAND       CREATED       STATUS       PORTS        NAMES
+43d44ac8cf31    e934aafc2206    "/bin/bash"     17 hours ago    Up 17 hours               sharp_heyrovsky
+[root@password ~]# docker exec -ti 43d44ac8cf31 /bin/bash
+[root@43d44ac8cf31 /]# 
 
 
 
 
-暂停/恢复容器的所有进程
+### 暂停/恢复容器的所有进程
 
-
+```
 docker pause [OPTIONS] CONTAINER [CONTAINER...]	//暂停
 
 docker unpause [OPTIONS] CONTAINER [CONTAINER...]	//恢复
+```
 
 
 
+### 提交容器(容器建立新的镜像)
 
-提交容器(容器建立新的镜像)
-
-
+```
 docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]
-
-
-		[root@password ~]# docker commit -a "taolifeng" -m "this is lmnp tests" 43d44ac8cf31 test/lmap:v1
-		sha256:d28c02d47d3e5e17b8809f3c64acbd25de20197c36b04b092f39060eda0c0b86
-		[root@password ~]# docker images
-		REPOSITORY       TAG         IMAGE ID      CREATED       SIZE
-		test/lmap        v1         d28c02d47d3e    10 seconds ago   199 MB
-		test/centos       6.7         fe0c250bff03    19 hours ago    191 MB
-		docker.io/hello-world  latest       e38bc07ac18e    13 days ago     1.85 kB
-		docker.io/centos    latest       e934aafc2206    2 weeks ago     199 MB
-
-
-
 
 -a	提交的镜像作者
 
@@ -264,46 +220,67 @@ test/lmap:v1	指定要创建的目标镜像名
 
 
 
-列出docker镜像
+
+```
+
+```
+[root@password ~]# docker commit -a "taolifeng" -m "this is lmnp tests" 43d44ac8cf31 test/lmap:v1
+sha256:d28c02d47d3e5e17b8809f3c64acbd25de20197c36b04b092f39060eda0c0b86
+[root@password ~]# docker images
+REPOSITORY       TAG         IMAGE ID      CREATED       SIZE
+test/lmap        v1         d28c02d47d3e    10 seconds ago   199 MB
+test/centos       6.7         fe0c250bff03    19 hours ago    191 MB
+docker.io/hello-world  latest       e38bc07ac18e    13 days ago     1.85 kB
+docker.io/centos    latest       e934aafc2206    2 weeks ago     199 MB
+```
 
 
+
+
+
+
+
+### 列出docker镜像
+
+```
 docker images [OPTIONS] [REPOSITORY[:TAG]]
 
 
--a	列出本地所有的镜像（含中间映像层，默认情况下，过滤掉中间映像层）
+-a                列出本地所有的镜像（含中间映像层，默认情况下，过滤掉中间映像层）
 
---digests	显示镜像的摘要信息
+--digests         显示镜像的摘要信息
 
--f	显示满足条件的镜像
+-f                显示满足条件的镜像
 
---format	指定返回值的模板文件
+--format          指定返回值的模板文件
 
---no-trunc	显示完整的镜像信息
+--no-trunc        显示完整的镜像信息
 
--q	只显示镜像ID
+-q                只显示镜像ID
+```
 
+```
+[root@password ~]# docker images
+REPOSITORY       TAG         IMAGE ID      CREATED       SIZE
+docker.io/hello-world  latest       e38bc07ac18e    12 days ago     1.85 kB
+docker.io/ubuntu    15.10        9b9cb95443b5    21 months ago    137 MB
+```
+```
+REPOSITORY      表示镜像的仓库源
 
-		[root@password ~]# docker images
-		REPOSITORY       TAG         IMAGE ID      CREATED       SIZE
-		docker.io/hello-world  latest       e38bc07ac18e    12 days ago     1.85 kB
-		docker.io/ubuntu    15.10        9b9cb95443b5    21 months ago    137 MB
+TAG             镜像的标签
 
+IMAGE ID        镜像ID
 
-REPOSITORY	表示镜像的仓库源
+CREATED         镜像创建时间
 
-TAG	镜像的标签
+SIZE            镜像大小
+```
 
-IMAGE ID	镜像ID
-
-CREATED	镜像创建时间
-
-SIZE	镜像大小
-
-
-通过REPOSITORY:TAG来使用docker镜像
-
+### 通过REPOSITORY:TAG来使用docker镜像
+```
 docker run -t -i ubuntu:15.10 /bin/bash
-
+```
 
 
 
