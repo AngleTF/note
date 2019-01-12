@@ -29,6 +29,11 @@
     * [LMNAP安装](linux/LMNAP.md)
 * [Jquery](jquery/README.md)
     * [ajax](jquery/ajax.md)
+* [news](news/README.md)
+    * [内涵段子关停](news/neihanduanzi.md)
+
+
+
 
 
 
