@@ -34,5 +34,4 @@ rsync [option...] src... rsync://[user@]host[:port]/dest
 注意: 进程守护是 :: (两个冒号) 而shell备份是 : (一个冒号)
 
 ### 脚本免密码
-方法1: 环境变量RSYNC_CONNECT_PROG
-方法2: 使用--password-file
+将本机的id_rsa.pub的内容放入需要远程主机的用户中
