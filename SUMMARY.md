@@ -40,7 +40,75 @@
     * [安装](docker/install.md)
     * [使用](docker/use.md)
 * [rsync](rsync/README.md)
-    * [rsync](rsync/install.md)
+    * [1.0安装](rsync/install.md)
+    * [1.1使用](rsync/use.md)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
