@@ -39,6 +39,8 @@
 * [docker](docker/README.md)
     * [安装](docker/install.md)
     * [使用](docker/use.md)
+* [rsync](rsync/README.md)
+    * [rsync](rsync/install.md)
 
 
 
