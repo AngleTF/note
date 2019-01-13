@@ -3,7 +3,7 @@
 rsync --help
 ```
 
-### 语法
+### 使用语法
 本地备份
 ```
 rsync [option...] src... [desc]
