@@ -1,15 +1,21 @@
-### 声明视口
+### 适用
+移动端的(无缝/响应式/滑动)轮播
 
+### 效果
+![](/assets/demo.png)
+
+### 使用
+声明视口
 ```html
 <meta name="viewport"
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 ```
-### 引入banner.css
+引入banner.css
 ```html
 <link rel="stylesheet" href="css/banner.css">
 ```
 
-### reset代码
+reset代码
 
 ```css
 body, html{
@@ -20,21 +26,18 @@ ul{
 }
 ```
 
-### 声明html代码
-
+声明html代码
 ```html
 <div class="banner">
 </div>
 ```
 
-### 引入banner.js
-
+引入banner.js
 ```html
 <script src="js/banner.js"></script>
 ```
 
-### 调用函数, 设置参数
-
+调用函数, 设置参数
 ```js
 <script>
 
