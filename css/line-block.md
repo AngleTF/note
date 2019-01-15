@@ -59,6 +59,8 @@ div span:nth-child(1){
 
 ### 解决高度
 经过长时间的尝试 , 得出结论 可能是转化 Line-block 时会在div内span外产生额外的空白符 , 或者是BFC造成的
+![](/assets/Line-block-height-2.jpg)
+
 最终得出两种解决方案
 方法一: 父容器的 `font-size` 设置为0
 ```css
