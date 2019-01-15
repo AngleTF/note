@@ -16,9 +16,6 @@
             width: 100%;
             text-align: center;
             border: 1px solid #000;
-            position: absolute;
-            top: 0;
-            left: 0;
         }
         div span{
             display: inline-block;
@@ -68,9 +65,6 @@ div{
   width: 100%;
   text-align: center;
   border: 1px solid #000;
-  position: absolute;
-  top: 0;
-  left: 0;
   font-size:0;
 }
 ```
@@ -80,9 +74,6 @@ div{
   width: 100%;
   text-align: center;
   border: 1px solid #000;
-  position: absolute;
-  top: 0;
-  left: 0;
   line-height: 0;
 }
 div span{
