@@ -6,3 +6,57 @@ Less （Leaner Style Sheets 的缩写） 是一门向后兼容的 CSS 扩展语�
 ![](/assets/kaola.png)
 
 ### Less的基本使用
+定义一个变量为Test 值为rgb(0,0,0)
+
+```less
+@Test:rgb(0,0,0)
+
+/*使用变量*/
+root{
+	color:@Test;	
+}
+```
+
+嵌套使用
+```less
+.box{
+  width:@100 ;
+  height:@100 ;
+  border:1px solid red ;
+    .son{
+    background-color: #fff;
+    /*伪元素*/﻿
+    &::before{
+      content: "";
+      clear: both;
+      display: none;
+    }
+  }
+}
+```
+
+使用, 定义类
+```less
+.Test{
+	background:red;
+	color:red;
+}
+	
+body{
+	.Test;
+}
+```
+
+定义ID函数 并且可以传入参数 , 默认值为red
+```less
+﻿#Tag(@color:red){
+  background:@color;
+  color:@color;
+  border: 1px solid @color;
+}
+
+//使用ID函数
+body{
+  #Tag(yellow);
+}
+```
