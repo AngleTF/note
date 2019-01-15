@@ -55,7 +55,7 @@ body{
   border: 1px solid @color;
 }
 
-//使用ID函数
+/*使用ID函数*/
 body{
   #Tag(yellow);
 }
