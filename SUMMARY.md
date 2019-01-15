@@ -39,6 +39,7 @@
 * [代码仓库](code-repos/README.md)
     * [淘宝放大镜](code-repos/tb-magnifying.md)
     * [lnmp一键安装脚本](code-repos/lnmp-package.md)
+    * [移动端无缝轮播](code-repos/banner.md)
 * [docker](docker/README.md)
     * [安装](docker/install.md)
     * [使用](docker/use.md)
