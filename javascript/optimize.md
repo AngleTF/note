@@ -17,12 +17,8 @@
 ### 服务层
 > 1. webService使用Nginx(异步非阻塞) , 启用适当的worker分支 , 配置合适的事件驱动模块(epoll库) , 开启防止惊群现象 (accept_mutex on)
 > 2. 适当的对服务器配置进行升级
-
 > 3. 使用 mecache / redis 对不常更改的数据进行缓存
-
-16.
-
-17.配置适当的mysql配置 , 开启慢查询日志, 对慢查询SQL语句进行 review
+> 4. 配置适当的mysql配置 , 开启慢查询日志, 对慢查询SQL语句进行 review
 
 
 
