@@ -1,7 +1,7 @@
-### worker生成线程 , 主进程和线程如何实现通讯
+### 主进程和线程如何实现通讯
 
 
-master.html
+worker生成线程(master.html)
 ```js
 <script defer>
 
