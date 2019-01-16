@@ -53,6 +53,8 @@
 * [js](javascript/README.md)
     * [单线程定时器](javascript/async.md)
     * [worke多线程](javascript/worke.md)
+* [算法](algorithm/README.md)
+    * [二分查询](algorithm/binary-query.md)
 
 
 
