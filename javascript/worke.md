@@ -1,9 +1,7 @@
 ### worker生成线程 , 主进程和线程如何实现通讯
 
 
-//H5标准
-
-//master.html
+master.html
 ```js
 <script defer>
 
@@ -22,7 +20,7 @@ worker.postMessage("hello i am master");
 </script>
 ```
 
-### 线程(thread.js)
+线程(thread.js)
 ```js
 self.addEventListener('message',function (e) {
 console.log("主进程对象:" , e);
