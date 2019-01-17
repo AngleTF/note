@@ -234,7 +234,7 @@ call(this[,param1,param2....])
 apply(this[,[param1,param2...]])
 ```
 具体使用还得看需求, 比如获取最大值
-```
+```js
 var arr = [1,2,3,4,5];
 //这个时候你就不能用call了
 console.log(Math.max.apply(Math, arr));
