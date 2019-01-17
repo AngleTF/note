@@ -40,3 +40,4 @@ console.log(Object.prototype.__proto__ === Object.prototype === demo.__proto__._
 //object
 console.log(typeof null);
 ```
+
