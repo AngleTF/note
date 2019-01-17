@@ -93,3 +93,115 @@ try {
 //undefined
 console.log(c);
 ```
+function和catch稍有不同,function作用域是直接报错,而cache是会隐式声明,注意是声明而不是赋值,google兼容ES5以下的块级作用域就是通过try抛出数据 , catch接收数据并且声明赋值进行向下兼容
+
+**作用域的原理**
+当函数进行调用时,CPU会在开辟一块内存空间当做栈,使用段寄存器SS存放栈顶的段地址,用寄存器SP存放偏移地址, 操作栈无非是两种情况,一种是push(入栈),一种是pop(出栈),每种操作都会对SP进行修改,来改变SS:SP的栈顶地址,函数中的变量声明,就是一种入栈操作,当一个函数运行完后这些数据也就没用了,就会出栈(一般语言都会自动出栈),出栈后的数据就不存在了,所有函数执行完后,函数内的数据就消失了,这就是为什么会有作用域这种东西,那有没有什么办法保存这个函数作用域呢?答案是有的,这个就是后面要说的闭包
+
+### JS的优化之预解析导致的变量提升原则
+说说js的预解析吧, js在执行时会将代码交给编译器进行编译, 在编译之前编译器会做一些优化, 它会将变量提升至自身作用域的最顶端
+
+比如以下代码
+```js
+console.log(a);
+var variable = 'a';
+```
+//这个时候你觉得他会打出什么东西?
+//是ReferenceError or undefined ?
+//调用在前, 声明在后
+//按照正常思维必然是内部抛出ReferenceError的异常
+//但是!! js会将代码进行优化成下面的样子 , 这就是预解析
+
+```js
+var variable;
+//undefined
+console.log(a);
+variable = 'a';
+```
+
+在看个例子
+```js
+var variable = 'a';
++ function () {
+    console.log(variable);
+    var variable = 'b';
+}()
+```
+
+**js优化后**
+```js
+var variable = 'a';
++ function () {
+    var variable
+    //undefined
+    console.log(variable);
+    variable = 'b';
+}()
+```
+
+### 静态成员和对象成员
+```js
+function Demo() {
+    //添加对象成员
+    this.title = 'tao'
+}
+//添加静态成员可以理解为后端语言的 public static TITLE = 'feng'
+Demo.title = 'feng';
+
+var demo = new Demo;
+
+//tao
+console.log(demo.title);
+//feng
+console.log(Demo.title);
+```
+
+### 闭包的原理, 闭包有哪些好处
+
+什么是闭包? 很多人都说是函数嵌套函数, 其实这是一个模糊的概念, 因为你根本不知道它为什么要弄成闭包
+
+其实我个人认为闭包是一个作用域的映射,对函数内部的作用域映射, 之前我讲过作用域的原理中函数执行完,数据会丢失,数据会被pop,如何保存这个数据, 闭包就是一个很好的机制. 它会对js底层说 你TM别把这个给我pop了,不然我跟你拼命, ^_^好家伙.
+
+至于闭包的好处我就不多说了吧?
+
+你执行N个函数需要创建N*函数内部的变量
+
+而你可以用闭包映射(通常是return一个函数)的作用域直接对函数内部结构进行修改,而不需要创建.你说哪个更加省时省力?
+
+### JS严格模式与非严格模式有哪些区别
+严格模式: `'use strict'`
+
+严格模式的作用主要体现在禁止隐式声明和禁止this指向window
+
+**禁止隐式声明**
+```js
+variable = 'hhh';
+//hhh
+console.log(variable);
+
+
+'use strict';
+variable = 'hhh';
+//大兄弟报错啦
+console.log(variable);
+代码variable = 'hhh' 是一种隐式声明
+```
+
+**禁止this指向window**
+```js
+var variable = 'aaa';
++ function () {
+    //aaa
+    console.log(this.variable);
+}()
+
+
+'use strict';
+var variable = 'aaa';
++ function () {
+    //大兄弟报错啦
+    console.log(this.variable);
+}()
+```
+
+不允许删除变量或对象, 不允许删除函数, 不允许变量重名, 不允许使用8进制, 不允许使用转移符等...
