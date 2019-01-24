@@ -49,6 +49,12 @@ composer install
 在composer install后，在项目文件夹下还生成了一个composer.lock文件，在安装包的时候，composer会先检查是否存在composer.lock文件,如果不存在，则会创建一个，然后将安装的包的确切的版本号写入到composer.lock中
 
 ### 引入自动加载文件
+index.php
+```php
+<?php
+  
+?>
+```
 
 ### 安装 ThinkPHP 为例
 ```linux
