@@ -37,7 +37,10 @@ composer config -g repositories.packagist composer https://packagist.phpcomposer
    }
 }
 ```
-
+安装配置文件所指定的
+```
+composer install 
+```
 
 ### 安装 ThinkPHP 为例
 ```linux
