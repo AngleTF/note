@@ -2,9 +2,9 @@
 Composer是 PHP 用来管理依赖（dependency）关系的工具。你可以在自己的项目中声明所依赖的外部工具库（libraries），Composer 会帮你安装这些依赖的库文件。
 
 ### Composer解决了什么?
-1. 没有统一的资源仓库,到处乱找
-2. 没有统一的安装方式.rar,zip,tar各种包都有.下载后自己得整理.
-3. 遇到库的依赖关系,得自己再次下载解决.
+1. 统一的资源仓库,不用到处乱找库文件代码
+2. 统一的安装方式
+3. 解决库之间的依赖关系
 
 
 ### windows安装 Composer
@@ -46,7 +46,7 @@ composer install
 安装完成后生成了`composer.lock`文件和`vendor`目录
 
 ### composer.lock
-
+在composer install后，在项目文件夹下还生成了一个composer.lock文件，在安装包的时候，composer会先检查是否存在composer.lock文件,如果不存在，则会创建一个，然后将安装的包的确切的版本号写入到composer.lock中
 
 ### 安装 ThinkPHP 为例
 ```linux
