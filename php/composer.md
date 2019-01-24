@@ -38,7 +38,7 @@ composer config -g repositories.packagist composer https://packagist.phpcomposer
 }
 ```
 
-安装配置文件所指定的
+使用命令安装配置文件所指定的库
 ```
 composer install 
 ```
@@ -47,6 +47,8 @@ composer install
 
 ### composer.lock
 在composer install后，在项目文件夹下还生成了一个composer.lock文件，在安装包的时候，composer会先检查是否存在composer.lock文件,如果不存在，则会创建一个，然后将安装的包的确切的版本号写入到composer.lock中
+
+
 
 ### 安装 ThinkPHP 为例
 ```linux
