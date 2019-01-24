@@ -43,6 +43,8 @@ composer config -g repositories.packagist composer https://packagist.phpcomposer
 composer install 
 ```
 
+安装完成后生成了composer.lock和vendor
+
 ### 安装 ThinkPHP 为例
 ```linux
 cd C:\Users\Administrator\Desktop\
