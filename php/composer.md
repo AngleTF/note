@@ -52,9 +52,12 @@ composer install
 index.php
 ```php
 <?php
-  
+  require "vendor/autoload.php"
 ?>
 ```
+
+自动加载遵循,psr4规范, 通过命名空间来require文件
+
 
 ### 安装 ThinkPHP 为例
 ```linux
