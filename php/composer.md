@@ -19,10 +19,17 @@ Composer是 PHP 用来管理依赖（dependency）关系的工具。你可以在
 ![](/assets/composer-1.png)
 
 ### 切换到国内镜像源
-
+```
+composer config -g repositories.packagist composer https://packagist.phpcomposer.com
+```
 
 ### Composer架构思路
 ![](/assets/composer.png)
+
+### composer.json
+新建一个目录并且新建文件命名为composer.json
+
+
 
 ### 安装 ThinkPHP 为例
 ```linux
