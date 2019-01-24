@@ -29,6 +29,14 @@ composer config -g repositories.packagist composer https://packagist.phpcomposer
 ### composer.json
 新建一个目录并且新建文件命名为`composer.json`
 
+格式
+```json
+{
+  "require":{
+     "github用户名/仓库名称":"版本"
+   }
+}
+```
 
 
 ### 安装 ThinkPHP 为例
