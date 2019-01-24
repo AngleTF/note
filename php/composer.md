@@ -50,7 +50,9 @@ vendor          //autoload 文件
 关于composer.json的写法请参考 http://docs.phpcomposer.com/01-basic-usage.html
 
 ### 官方网站
+英文
 https://packagist.org
+中文
 http://www.phpcomposer.com
 
 
