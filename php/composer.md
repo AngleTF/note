@@ -7,7 +7,7 @@ Composer是 PHP 用来管理依赖（dependency）关系的工具。你可以在
 3. 遇到库的依赖关系,得自己再次下载解决.
 
 
-### windows安装
+### windows安装 Composer
 下载并且运行 [Composer-Setup.exe](https://getcomposer.org/Composer-Setup.exe)，它将安装最新版本的 Composer ，并设置好系统的环境变量，因此你可以在任何目录下直接使用 `composer` 命令。
 
 ### Composer架构思路
