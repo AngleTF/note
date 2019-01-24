@@ -13,10 +13,13 @@ Composer是 PHP 用来管理依赖（dependency）关系的工具。你可以在
 安装依赖
 1. PHP > 5.3
 2. 打开OpenSSL扩展
-3. 下载CA证书, 修改php.ini `openssl.cafile="D:/cafile/cacert2018-03-07.pem"`
+3. [下载CA证书](https://curl.haxx.se/docs/caextract.html), 修改php.ini `openssl.cafile="D:/cafile/cacert2018-03-07.pem"`
 
 ### 命令行输入Composer
 ![](/assets/composer-1.png)
+
+### 切换到国内镜像源
+
 
 ### Composer架构思路
 ![](/assets/composer.png)
