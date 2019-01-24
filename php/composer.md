@@ -33,7 +33,7 @@ composer config -g repositories.packagist composer https://packagist.phpcomposer
 ```json
 {
   "require":{
-     "github用户名/仓库名称":"版本"
+     "github用户名/仓库名称":"类库版本"
    }
 }
 ```
