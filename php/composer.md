@@ -27,7 +27,7 @@ composer config -g repositories.packagist composer https://packagist.phpcomposer
 ![](/assets/composer.png)
 
 ### composer.json
-新建一个目录并且新建文件命名为composer.json
+新建一个目录并且新建文件命名为`composer.json`
 
 
 
