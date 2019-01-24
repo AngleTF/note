@@ -43,7 +43,7 @@ vendor          //autoload 文件
 ### 更多
 关于composer.json的写法请参考 http://docs.phpcomposer.com/01-basic-usage.html
 
-
+### 官方网站
 
 ### 自动加载
 除了库的下载，Composer 还准备了一个自动加载文件，它可以加载 Composer 下载的库中所有的类文件。使用它，你只需要将下面这行代码添加到你项目的引导文件中
