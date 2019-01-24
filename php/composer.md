@@ -8,8 +8,15 @@ Composer是 PHP 用来管理依赖（dependency）关系的工具。你可以在
 
 
 ### windows安装 Composer
-PHP > 5.3
 下载并且运行 [Composer-Setup.exe](https://getcomposer.org/Composer-Setup.exe)，它将安装最新版本的 Composer ，并设置好系统的环境变量，因此你可以在任何目录下直接使用 `composer` 命令。
+
+安装依赖
+1. PHP > 5.3
+2. 打开OpenSSL扩展
+3. 下载CA证书, 修改php.ini `openssl.cafile="D:/cafile/cacert2018-03-07.pem"`
+
+### 命令行输入Composer
+![](/assets/composer-1.png)
 
 ### Composer架构思路
 ![](/assets/composer.png)
