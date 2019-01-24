@@ -43,7 +43,10 @@ composer config -g repositories.packagist composer https://packagist.phpcomposer
 composer install 
 ```
 
-安装完成后生成了composer.lock文件和vendor目录
+安装完成后生成了`composer.lock`文件和`vendor`目录
+
+### composer.lock
+
 
 ### 安装 ThinkPHP 为例
 ```linux
