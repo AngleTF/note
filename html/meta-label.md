@@ -129,6 +129,7 @@ IE8的一个专有<meta>属性，它告诉IE8采用何种IE版本去渲染网页
 ```html		
 <meta name="full-screen" content="yes"/>
 ```	
+
 ### 强制坚屏显示, 部分移动端浏览器的属性
 ```html
 <meta name="browsermode" content="application"/>
