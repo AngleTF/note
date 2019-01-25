@@ -111,20 +111,25 @@ IE8的一个专有<meta>属性，它告诉IE8采用何种IE版本去渲染网页
 |minimum-scale|允许用户的最小缩放值|
 
 
-		#iPhone手机是否解析手机号码,邮箱号码,地址 , 如果解析会变成拨号连接,跳转链接
-		<meta name="format-detection" content="telephone=no,email=no,adress=no"/>
+### iPhone手机是否解析手机号码,邮箱号码,地址 , 如果解析会变成拨号连接,跳转链接
+```html
+<meta name="format-detection" content="telephone=no,email=no,adress=no"/>
+```
+### iPhone手机是否显示默认的苹果工具栏和菜单栏。
+```html
+<meta name="apple-mobile-web-app-capable" content="no" >
+```
+	
+### 控制iPhone控制栏颜色
+```html
+<meta name="apple-mobile-web-app-status-bar-style" content="your color"> 
+```
 		
-		#iPhone手机是否显示默认的苹果工具栏和菜单栏。
-		<meta name="apple-mobile-web-app-capable" content="no" >
-		
-		#控制iPhone控制栏颜色
-		<meta name="apple-mobile-web-app-status-bar-style" content="your color"> 
-		
-		#全屏显示网页, 部分移动端浏览器的属性
-		<meta name="full-screen" content="yes"/>
-		
-		#强制坚屏显示, 部分移动端浏览器的属性
-		<meta name="browsermode" content="application"/>
-		
-		
-		关于mate的http-equiv和对应的content值可参考我的 blog http的首部字段讲解
+### 全屏显示网页, 部分移动端浏览器的属性
+```html		
+<meta name="full-screen" content="yes"/>
+```	
+### 强制坚屏显示, 部分移动端浏览器的属性
+```html
+<meta name="browsermode" content="application"/>
+```	
