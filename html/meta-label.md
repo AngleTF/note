@@ -85,11 +85,7 @@ IE8的一个专有<meta>属性，它告诉IE8采用何种IE版本去渲染网页
 			ie-stand		IE标准核
 
 ```		
-			
-			
-			
-			
-			
+					
 ### 移动端视口
 ```html
 <meta name="viewport"
