@@ -57,18 +57,18 @@ IE8的一个专有<meta>属性，它告诉IE8采用何种IE版本去渲染网页
 
 告诉IE浏览器，无论是否用DTD声明文档标准，IE8/9都会以IE7引擎来渲染页面。
 ```html
-<meta http-equiv = "X-UA-Compatible" content = "IE=7" >   
+<meta http-equiv = "X-UA-Compatible" content = "IE=7" />   
 ```
 
 告诉IE浏览器，IE8/9都会以IE8引擎来渲染页面。 
 ```html 
-<meta http-equiv = "X-UA-Compatible" content = "IE=8" >   
+<meta http-equiv = "X-UA-Compatible" content = "IE=8" />   
 ```	
 
 
 告诉IE浏览器，IE8/9及以后的版本都会以Edge引擎来渲染页面 
 ```html
-<meta http-equiv = "X-UA-Compatible" content = "IE=edge" >   
+<meta http-equiv = "X-UA-Compatible" content = "IE=edge" />   
 ```
 	
 告诉IE浏览器 , 使用chrome内核渲染页面
