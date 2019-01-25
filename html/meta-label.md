@@ -111,9 +111,6 @@ IE8的一个专有<meta>属性，它告诉IE8采用何种IE版本去渲染网页
 |minimum-scale|允许用户的最小缩放值|
 
 
-	
-		//	
-		
 		#iPhone手机是否解析手机号码,邮箱号码,地址 , 如果解析会变成拨号连接,跳转链接
 		<meta name="format-detection" content="telephone=no,email=no,adress=no"/>
 		
