@@ -88,11 +88,9 @@ composer remove github用户名/仓库名称
 移除A库但不会移除C库, 因为B库也依赖C库, 如果B库不依赖C库, 那么C库将会被删除
 
 ### 创建项目, 以ThinkPHP 为例
-上面讲的都是类库, 现在是项目的操作, 类库下载安装后是放入 vendor目录下, 但是框架不一样, 框架是一个单独成立的, 他不需要当成类库使用, 框架是载体, 类库的物品
+上面讲的都是类库, 现在是项目的操作, 类库下载安装后是放入 vendor目录下, 但是框架不一样, 框架是一个单独成立的, 他不需要当成类库使用, 框架是载体, 类库是载体的物品
 ```
-cd C:\Users\Administrator\Desktop\
-mkdir test
-﻿cd test
+composer create-project topthink/think=5.1.* "项目路径"
 ﻿```
 
 使用Think核心包的 [composer.json](https://github.com/top-think/think/blob/5.1/composer.json) 放入test目录中
