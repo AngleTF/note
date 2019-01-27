@@ -78,7 +78,7 @@ composer update
 ```
 composer update  github用户名/仓库名称
 ```
-
+更新的版本会受到PHP版本的约束
 
 
 ### 安装 ThinkPHP 为例
