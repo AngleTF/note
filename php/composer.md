@@ -72,7 +72,7 @@ composer require github用户名/仓库名称=版本号
 ```
 composer update 
 ```
-`composer update`(会更新所有的类库, 谨慎操作)
+`composer update`(会更新所有的非指定固定版本类库, 谨慎操作)
 
 单个更新
 ```
@@ -80,6 +80,12 @@ composer update  github用户名/仓库名称
 ```
 假如我们更新和require不指定版本, 会下载会受到PHP版本的约束的最新版本
 
+### 删除类库
+``` 
+composer remove github用户名/仓库名称
+```
+删除操作会移除指定的类库和类库的依赖. 但是不会删除其他类库所依赖的文件, 也就是说A库和B库依赖C库,
+移除A库但不会移除C库, 因为B库也依赖C库
 
 ### 安装 ThinkPHP 为例
 ```linux
