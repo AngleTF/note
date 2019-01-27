@@ -85,9 +85,9 @@ composer update  github用户名/仓库名称
 composer remove github用户名/仓库名称
 ```
 删除操作会移除指定的类库和类库的依赖. 但是不会删除其他类库所依赖的文件, 也就是说A库和B库依赖C库,
-移除A库但不会移除C库, 因为B库也依赖C库
+移除A库但不会移除C库, 因为B库也依赖C库, 如果B库不依赖C库, 那么C库将会被删除
 
-### 安装 ThinkPHP 为例
+### 创建项目 ThinkPHP 为例
 ```linux
 cd C:\Users\Administrator\Desktop\
 mkdir test
