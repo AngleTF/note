@@ -78,7 +78,7 @@ composer update
 ```
 composer update  github用户名/仓库名称
 ```
-更新的版本会受到PHP版本的约束
+假如我们更新和require不指定版本, 会下载会受到PHP版本的约束的最新版本
 
 
 ### 安装 ThinkPHP 为例
