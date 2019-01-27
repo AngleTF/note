@@ -89,7 +89,7 @@ composer remove github用户名/仓库名称
 
 ### 创建项目, 以ThinkPHP 为例
 上面讲的都是类库, 现在是项目的操作, 类库下载安装后是放入 vendor目录下, 但是框架不一样, 框架是一个单独成立的, 他不需要当成类库使用, 框架是载体, 类库的物品
-```linux
+```
 cd C:\Users\Administrator\Desktop\
 mkdir test
 ﻿cd test
