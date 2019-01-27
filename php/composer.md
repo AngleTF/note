@@ -59,17 +59,25 @@ index.php
 自动加载遵循,psr4规范, 通过命名空间来require文件
 
 ### 追加新库
-可以在composer.json内新增库, 然后通过`composer update`就行了
-```
-composer update 
-```
-
-
-追加新库的另一种方式, 自动会加入composer.json
 ```
 composer require github用户名/仓库名称=版本号
 ```
+自动会加入composer.json
+
 ![](/assets/composer-2.png)
+
+### 更新
+
+全部更新
+```
+composer update 
+```
+`composer update`(会更新所有的类库, 谨慎操作)
+
+单个更新
+```
+composer update 
+```
 
 
 
