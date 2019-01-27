@@ -76,7 +76,7 @@ composer update
 
 单个更新
 ```
-composer update 
+composer update  github用户名/仓库名称
 ```
 
 
