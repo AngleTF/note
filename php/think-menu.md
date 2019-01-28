@@ -6,6 +6,6 @@ https://www.kancloud.cn/manual/thinkphp5_1/353946
 
 ### 5.0和5.1差异
 1. 目录结构调整
-2. 命名空间调整
+2. 命名空间调整(think\facade\....)
 3. 配置文件获取调整为二级获取方式
 4. 取消内置常量, 通过APP类获取
