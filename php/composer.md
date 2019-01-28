@@ -93,7 +93,10 @@ composer remove github用户名/仓库名称
 composer create-project topthink/think=5.1.* "项目路径"
 ﻿```
 
-### 如果之前已经安装过, 那么切换到你的应用根目录
+### 如果之前已经安装过, 那么切换到你的应用根目录进行更新
+```
+composer update topthink/framework
+```
 
 ### 目录结构
 
