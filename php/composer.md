@@ -93,19 +93,7 @@ composer remove github用户名/仓库名称
 composer create-project topthink/think=5.1.* "项目路径"
 ﻿```
 
-使用Think核心包的 [composer.json](https://github.com/top-think/think/blob/5.1/composer.json) 放入test目录中
-
-### 生成ThinkPHP核心文件
-```
-C:\Users\Administrator\Desktop\test>composer install
-Loading composer repositories with package information
-Updating dependencies (including require-dev)
-Package operations: 2 installs, 0 updates, 0 removals
- - Installing topthink/think-installer (v1.0.12): Downloading (100%)
- - Installing topthink/framework (v5.1.8): Downloading (100%)
-Writing lock file
-Generating autoload files
-```
+### 如果之前已经安装过, 那么切换到你的应用根目录
 
 ### 目录结构
 
