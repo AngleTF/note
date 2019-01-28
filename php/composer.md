@@ -98,17 +98,6 @@ composer create-project topthink/think=5.1.* "项目路径"
 composer update topthink/framework
 ```
 
-### 目录结构
-
-```
-thinkphp        //TP核心文件
-
-composer.json   //composer 下载列表
-
-composer.lock   //composer 锁文件
-
-vendor          //autoload 文件
-```
 
 ### 更多
 关于composer.json的写法请参考 http://docs.phpcomposer.com/01-basic-usage.html
