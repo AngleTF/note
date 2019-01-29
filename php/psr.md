@@ -22,7 +22,51 @@ psr
 ├─psr4.php
 ```
 
-
+psr4.php
 ```php
+<?php
+namespace psr;
 
+define('BASE_DIR', __DIR__);
+
+class AutoLoader{
+
+    public static function register($class_name){
+
+        $psr4 = [
+            'app' => BASE_DIR . '/app'
+        ];
+
+        $sub_space_list = explode('\\', $class_name);
+
+        $first_sub_space = array_shift($sub_space_list);
+        if($first_sub_space === null){
+            return;
+        }
+
+        if(!isset($psr4[$first_sub_space])){
+            return;
+        }
+
+        $base = $psr4[$first_sub_space];
+
+        //类名第一个字母大写
+        $last_sub_space = array_pop($sub_space_list);
+        if($last_sub_space === null){
+            return;
+        }
+
+        array_push($sub_space_list, ucfirst($last_sub_space));
+
+        $target = join('/', $sub_space_list);
+
+        include_once "{$base}/{$target}.php";
+    }
+}
+
+spl_autoload_register(__NAMESPACE__ . "\\AutoLoader::register");
+
+
+var_dump(new \app\controller\Index());
 ```
+其核心原理就是通过解析命名空间, 拼接路径并且引入
