@@ -113,5 +113,11 @@ app_debug = true
 app_trace = true
 ```
 
+读取.env的配置
+```php
+Env::get('app_debug')
+```
+
+
 
 ### 控制器
