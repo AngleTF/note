@@ -55,6 +55,9 @@ return view('admin@member/edit',['think' => 'php'])
 不带任何参数 自动定位当前模块 **view/类名/操作.html** 的模板文件, 以上模板路径是 ** admin/view/member/edit.html **, 并且将模板对应的think变量替换成php
 
 ### 模型
+
+实例化模型之前先要将 ** 账户/密码/库名 ** 填入配置文件的 database.php 文件
+
 实例化模型调用
 ```php
 $p = new Person();
@@ -66,15 +69,25 @@ $p->getUserInfo();
 Person::getUserInfo();
 ```
 
-助手函数
+助手函数调用
 ```php
 model('Person')->getUserInfo();
 ```
 
-Db方式
+Db方式调用
 ```php
 
 ```
 
+### 配置
+
+模块优先级
+`惯例配置->应用配置->模块配置->动态配置`
+
+惯例配置
+框架核心配置, 无需更改
+
+应用配置
+应用配置文件是应用初始化的时候首先加载的公共配置文件，默认位于application/config.php(5.0), 5.01 版本位于 config目录
 
 ### 控制器
