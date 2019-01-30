@@ -130,6 +130,7 @@ password = 456
 Env::get('database.username', 'default_username');
 ```
 . 的目的是获取二级配置, 也就是获取 database 项的username, 第二个参数是默认值
+
 ### 控制器
 
 
