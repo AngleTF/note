@@ -84,12 +84,16 @@ __惯例配置__
 框架核心配置, 无需更改, 位于 thinkphp/convention.php
 
 __应用配置__
-应用初始化的时候首先加载的公共配置文件，默认位于application/config.php(5.0), 5.01 版本位于 config 目录
+应用初始化的时候首先加载的公共配置文件，默认位于application/config.php(5.0), 5.01 版本位于 config 目录下的所有配置文件
 
 __模块配置__
 每个模块会自动加载自己的配置文件位于 application/当前模块名/config.php
 
 __动态配置__
 通过控制器设置配置时动态的配置
+
+配置文件作用
+
+
 
 ### 控制器
