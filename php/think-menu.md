@@ -94,6 +94,16 @@ __动态配置__
 
 配置文件作用
 
-
+|文件名|描述|
+|---|---|
+|app.php|应用配置|
+|cache.php|缓存配置|
+|cookie.php|cookie配置|
+|database.php|数据库配置|
+|log.php|日志配置|
+|session.php|session配置|
+|template.php|模板引擎配置|
+|trace.php|页面trace配置|
+|paginate.php|分页配置|
 
 ### 控制器
