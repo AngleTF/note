@@ -43,13 +43,38 @@ https://www.kancloud.cn/manual/thinkphp5_1/353946
 ### 视图
 可以使用助手函数 view 或者 控制器方法 fetch,
 
-
 fetch
 ```php
 return $this->fetch('admin@member/edit',['think' => 'php']);
 ```
+view助手
+```php
+return view('admin@member/edit',['think' => 'php'])
+```
+
 不带任何参数 自动定位当前模块 **view/类名/操作.html** 的模板文件, 以上模板路径是 ** admin/view/member/edit.html **, 并且将模板对应的think变量替换成php
 
-view('[模板文件]'[,'模板变量（数组）'][,模板替换（数组）]
+### 模型
+实例化模型调用
+```php
+$p = new Person();
+$p->getUserInfo();
+```
+
+静态方式调用
+```php
+Person::getUserInfo();
+```
+
+助手函数
+```php
+model('Person')->getUserInfo();
+```
+
+Db方式
+```php
+
+```
+
 
 ### 控制器
