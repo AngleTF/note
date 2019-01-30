@@ -74,10 +74,6 @@ Person::getUserInfo();
 model('Person')->getUserInfo();
 ```
 
-Db方式调用
-```php
-
-```
 
 ### 配置
 
@@ -89,5 +85,8 @@ Db方式调用
 
 应用配置
 应用初始化的时候首先加载的公共配置文件，默认位于application/config.php(5.0), 5.01 版本位于 config 目录
+
+模块配置
+每个模块会自动加载自己的配置文件位于 application/当前模块名/config.php
 
 ### 控制器
