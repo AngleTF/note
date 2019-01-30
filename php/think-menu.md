@@ -115,7 +115,7 @@ app_trace = true
 
 读取.env的配置
 ```php
-Env::get('app_debug')
+Env::get('app_debug');
 ```
 
 
