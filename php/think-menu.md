@@ -1,10 +1,13 @@
-### tp5.0手册地址 
-https://www.kancloud.cn/manual/thinkphp5/118003
+### tp5.0手册地址
+
+[https://www.kancloud.cn/manual/thinkphp5/118003](https://www.kancloud.cn/manual/thinkphp5/118003)
 
 ### tp5.1手册地址
-https://www.kancloud.cn/manual/thinkphp5_1/353946
+
+[https://www.kancloud.cn/manual/thinkphp5\_1/353946](https://www.kancloud.cn/manual/thinkphp5_1/353946)
 
 ### 先决条件
+
 1. 了解命名空间
 2. 了解composer自动加载机制
 3. 了解psr4规范
@@ -12,42 +15,46 @@ https://www.kancloud.cn/manual/thinkphp5_1/353946
 5. 了解smarty模板引擎机制
 
 ### 5.0和5.1差异
+
 1. 目录结构调整
-2. 命名空间调整(think\facade\....)
+2. 命名空间调整\(think\facade....\)
 3. 配置文件获取调整为二级获取方式`config('app.app_debug')`
 4. 取消内置常量, 通过APP类获取`|THINK_VERSION| App::version()|`
 5. 取消配置项`app_namespace`, 改成环境变量
 
-
 ### 规范
+
 1. 目录使用小写 + 下划线命名
 2. 类库、函数文件统一以.php为后缀
 3. 类的文件名均以命名空间定义，并且命名空间的路径和类库文件所在路径一致
-4. 类文件采用驼峰法命名(首字母大写), 其它文件采用小写+下划线命名
+4. 类文件采用驼峰法命名\(首字母大写\), 其它文件采用小写+下划线命名
 5. 类名和类文件名保持一致，统一采用驼峰法命名
-6. 类的命名采用大驼峰法 (User , UserType), 不需要添加后缀
-7. 函数的命名使用小写字母和下划线(小写字母开头)的方式, 例如 get_client_ip
-8. 方法的命名使用驼峰法(首字母小写) , 例如 getUserName
-9. 属性的命名使用驼峰法(首字母小写), 例如 tableName
-10. 常量以大写字母和下划线命名, 例如 APP_PATH
-11. 配置参数以小写字母和下划线命名, 例如 url_route_on
-12. 数据表和字段采用小写加下划线方式命名, 并注意字段名不要以下划线开头, 例如 think_user 表和 user_name字段
-
-
+6. 类的命名采用大驼峰法 \(User , UserType\), 不需要添加后缀
+7. 函数的命名使用小写字母和下划线\(小写字母开头\)的方式, 例如 get\_client\_ip
+8. 方法的命名使用驼峰法\(首字母小写\) , 例如 getUserName
+9. 属性的命名使用驼峰法\(首字母小写\), 例如 tableName
+10. 常量以大写字母和下划线命名, 例如 APP\_PATH
+11. 配置参数以小写字母和下划线命名, 例如 url\_route\_on
+12. 数据表和字段采用小写加下划线方式命名, 并注意字段名不要以下划线开头, 例如 think\_user 表和 user\_name字段
 
 ### 入口文件
+
 ```
 项目根目录/public/index.php/modelName/controllerName/actionName
 ```
 
 ### 视图
+
 可以使用助手函数 view 或者 控制器方法 fetch,
 
 fetch
+
 ```php
 return $this->fetch('admin@member/edit',['think' => 'php']);
 ```
+
 view助手
+
 ```php
 return view('admin@member/edit',['think' => 'php'])
 ```
@@ -59,65 +66,71 @@ return view('admin@member/edit',['think' => 'php'])
 实例化模型之前先要将 ** 账户/密码/库名 ** 填入配置文件的 database.php 文件
 
 实例化模型调用
+
 ```php
 $p = new Person();
 $p->getUserInfo();
 ```
 
 静态方式调用
+
 ```php
 Person::getUserInfo();
 ```
 
 助手函数调用
+
 ```php
 model('Person')->getUserInfo();
 ```
 
-
 ### 配置
 
-__模块优先级__
+**模块优先级**  
 `惯例配置->应用配置->模块配置->动态配置`
 
-__惯例配置__
+**惯例配置**  
 框架核心配置, 无需更改, 位于 thinkphp/convention.php
 
-__应用配置__
-应用初始化的时候首先加载的公共配置文件，默认位于application/config.php(5.0), 5.01 版本位于 config 目录下的所有配置文件
+**应用配置**  
+应用初始化的时候首先加载的公共配置文件，默认位于application/config.php\(5.0\), 5.01 版本位于 config 目录下的所有配置文件
 
-__模块配置__
+**模块配置**  
 每个模块会自动加载自己的配置文件位于 application/当前模块名/config.php
 
-__动态配置__
+**动态配置**  
 通过控制器设置配置时动态的配置
 
-__配置文件__
+**配置文件**
 
-|文件名|描述|
-|---|---|
-|app.php|应用配置|
-|cache.php|缓存配置|
-|cookie.php|cookie配置|
-|database.php|数据库配置|
-|log.php|日志配置|
-|session.php|session配置|
-|template.php|模板引擎配置|
-|trace.php|页面trace配置|
-|paginate.php|分页配置|
+| 文件名 | 描述 |
+| --- | --- |
+| app.php | 应用配置 |
+| cache.php | 缓存配置 |
+| cookie.php | cookie配置 |
+| database.php | 数据库配置 |
+| log.php | 日志配置 |
+| session.php | session配置 |
+| template.php | 模板引擎配置 |
+| trace.php | 页面trace配置 |
+| paginate.php | 分页配置 |
 
-__环境变量配置__
+**环境变量配置**  
 在开发过程中，可以在应用根目录下面的.env来模拟环境变量配置，.env文件中的配置参数定义格式采用ini方式, 例如:
+
 ```ini
-app_debug = true
-app_trace = true
+[database]
+username = 123
+password = 456
 ```
 
 读取.env的配置
+
 ```php
-Env::get('app_debug');
+Env::get('database.username');
 ```
 
-
-
 ### 控制器
+
+
+
