@@ -131,10 +131,14 @@ Env::get('database.username', 'default_username');
 ```
 (.)的目的是获取二级配置, 也就是获取 database 项的username, 第二个参数是默认值
 
-**获取配置信息**
+**静态方法获取配置信息**
 ```php
 Config::get('参数名');
 ```
+
+**助手函数获取配置信息**
+config('参数名')
+
 
 ### 控制器
 
