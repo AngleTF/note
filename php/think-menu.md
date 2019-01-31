@@ -124,12 +124,17 @@ username = 123
 password = 456
 ```
 
-读取.env的配置
+**读取.env的配置**
 
 ```php
 Env::get('database.username', 'default_username');
 ```
 (.)的目的是获取二级配置, 也就是获取 database 项的username, 第二个参数是默认值
+
+**获取配置信息**
+```php
+
+```
 
 ### 控制器
 
