@@ -133,7 +133,7 @@ Env::get('database.username', 'default_username');
 
 **获取配置信息**
 ```php
-
+Config::get('参数名');
 ```
 
 ### 控制器
