@@ -201,9 +201,16 @@ Route::rule('new/:id','index/News/read');
 通过访问 `http://serverName/new/5`, 会将其映射到`http://serverName/index/news/read/id/5` 并且原来的访问地址会自动失效。
 
 
-**路由配置**
+**强制路由**
 ```
 url_route_must 开启后无法使用pathinfo模式访问, 只能通过路由规则访问
+```
+
+**路由参数传递方式**
+```
+url_param_type 为0, 则成对解析
+http://serverName/getUserInfo/name/tao/age/22
+getUserInfo是路由的映射, 而 name/tao/age/22 是参数名和参数值, 以 key/value 形式展现
 ```
 
 ### 控制器
