@@ -208,12 +208,18 @@ url_route_must 开启后无法使用pathinfo模式访问, 只能通过路由规�
 
 **路由参数传递方式**
 ```
-url_param_type 为0, 则成对解析
+//路由为
+Route::get('getUserInfo/:name/:age', 'index/test/index');
+
+url_param_type 为 0, 则成对解析
 http://serverName/getUserInfo/name/tao/age/22
 getUserInfo是路由的映射, 而 name/tao/age/22 是参数名和参数值, 以 key/value 形式展现
 
 url_param_type 为1, 则顺序解析
+http://serverName/getUserInfo/tao/22
 
+
+dump(Request::param());
 ```
 
 ### 控制器
