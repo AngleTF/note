@@ -176,6 +176,36 @@ config([
     '配置参数2'=>'配置值'
 ]);
 ```
+
+### 路由
+
+**路由规则文件**
+```
+├─route                 路由定义目录
+│  ├─route.php          路由定义
+│  ├─api.php            路由定义
+│  └─...                更多路由定义
+```
+
+**定义路由规则**
+```php
+Route::rule('路由表达式','路由地址','请求类型');
+```
+
+
+**例子**
+```php
+// 注册路由到index模块的News控制器的read操作
+Route::rule('new/:id','index/News/read');
+```
+通过访问 `http://serverName/new/5`, 会将其映射到`http://serverName/index/news/read/id/5` 并且原来的访问地址会自动失效。
+
+
+**路由配置**
+```
+url_route_must 开启后无法使用pathinfo模式访问, 只能通过路由访问
+```
+
 ### 控制器
 
 
