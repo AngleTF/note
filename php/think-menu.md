@@ -196,9 +196,9 @@ Route::rule('路由表达式','路由地址','请求类型','路由参数','变�
 **例子**
 ```php
 // 注册路由到index模块的News控制器的read操作
-Route::rule('new/:id','index/News/read');
+Route::rule('new/:id','index/News/read', ['ext' => 'html']);
 ```
-通过访问 `http://serverName/new/5`, 会将其映射到`http://serverName/index/news/read/id/5` 并且原来的访问地址会自动失效。
+通过访问 `http://serverName/new/5.html`, 会将其映射到`http://serverName/index/news/read/id/5` 并且原来的访问地址会自动失效。
 
 
 **强制路由**
