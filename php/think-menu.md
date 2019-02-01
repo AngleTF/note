@@ -189,7 +189,7 @@ config([
 
 **定义路由规则**
 ```php
-Route::rule('路由表达式','路由地址','请求类型');
+Route::rule('路由表达式','路由地址','请求类型','路由参数','变量规则');
 ```
 
 
@@ -218,8 +218,12 @@ getUserInfo是路由的映射, 而 name/tao/age/22 是参数名和参数值, 以
 url_param_type 为1, 则顺序解析
 http://serverName/getUserInfo/tao/22
 
-
+//打印
 dump(Request::param());
+
+array (size=2)
+  'name' => string 'name' (length=4)
+  'age' => string '22' (length=2)
 ```
 
 ### 控制器
