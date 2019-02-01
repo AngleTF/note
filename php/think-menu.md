@@ -196,7 +196,7 @@ Route::rule('路由表达式','路由地址','请求类型','路由参数','变�
 **例子**
 ```php
 // 注册路由到index模块的News控制器的read操作
-Route::rule('new/:id','index/News/read', ['ext' => 'html']);
+Route::rule('new/:id','index/News/read', ['ext' => 'html'],['id' => '\d+']);
 ```
 通过访问 `http://serverName/new/5.html`, 会将其映射到`http://serverName/index/news/read/id/5` 并且原来的访问地址会自动失效。
 
@@ -205,6 +205,13 @@ Route::rule('new/:id','index/News/read', ['ext' => 'html']);
 ```
 url_route_must 开启后无法使用pathinfo模式访问, 只能通过路由规则访问
 ```
+
+**路由选项**
+Route::rule方法的第三个参数, 有以下选项
+![](/assets/thinkphp-rule.png)
+
+**路由参数效验**
+上面例子中 ['id' => '\d+'], 则是对路由参数的正则验证
 
 **路由参数传递方式**
 ```
