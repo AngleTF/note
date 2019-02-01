@@ -203,7 +203,7 @@ Route::rule('new/:id','index/News/read');
 
 **路由配置**
 ```
-url_route_must 开启后无法使用pathinfo模式访问, 只能通过路由访问
+url_route_must 开启后无法使用pathinfo模式访问, 只能通过路由规则访问
 ```
 
 ### 控制器
