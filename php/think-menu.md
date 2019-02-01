@@ -186,14 +186,38 @@ config([
 │  ├─api.php            路由定义
 │  └─...                更多路由定义
 ```
+通过修改路由文件来注册相应的规则
 
-**定义路由规则**
+**注册路由规则**
 ```php
 Route::rule('路由表达式','路由地址','请求类型','路由参数','变量规则');
 ```
 
+**数组形式注册路由**
+```php
+return [
+    '路由规则' => ['路由地址', ['路由选项'], ['变量规则']]
+]
+```
+
+**路由规则**
+```
+路由标识符/:变量名1/:变量名2/[:可选变量名1]
+```
+
+**路由地址**
+通过匹配相应的路由规则, 映射到对应的路由地址
+![](/assets/thinkphp-rule-1.png)
+
+**路由选项**
+Route::rule方法的第三个参数, 有以下选项
+![](/assets/thinkphp-rule.png)
+
+**路由参数效验**
+上面例子中 ['id' => '\d+'], 则是对路由参数的正则验证
 
 **例子**
+
 ```php
 // 注册路由到index模块的News控制器的read操作
 Route::rule('new/:id','index/News/read', ['ext' => 'html'],['id' => '\d+']);
@@ -206,32 +230,33 @@ Route::rule('new/:id','index/News/read', ['ext' => 'html'],['id' => '\d+']);
 url_route_must 开启后无法使用pathinfo模式访问, 只能通过路由规则访问
 ```
 
-**路由选项**
-Route::rule方法的第三个参数, 有以下选项
-![](/assets/thinkphp-rule.png)
-
-**路由参数效验**
-上面例子中 ['id' => '\d+'], 则是对路由参数的正则验证
-
 **路由参数传递方式**
-```
-//路由为
-Route::get('getUserInfo/:name/:age', 'index/test/index');
 
-url_param_type 为 0, 则成对解析
+假如路由为
+```php
+Route::get('getUserInfo/:name/:age', 'index/test/index');
+```
+
+`url_param_type` 为 0, 则成对解析
 http://serverName/getUserInfo/name/tao/age/22
 getUserInfo是路由的映射, 而 name/tao/age/22 是参数名和参数值, 以 key/value 形式展现
 
-url_param_type 为1, 则顺序解析
+`url_param_type` 为1, 则顺序解析
 http://serverName/getUserInfo/tao/22
 
-//打印
+打印
+```php
 dump(Request::param());
+```
 
+```
 array (size=2)
   'name' => string 'name' (length=4)
   'age' => string '22' (length=2)
 ```
+
+
+
 
 ### 控制器
 
