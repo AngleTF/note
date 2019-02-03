@@ -1,8 +1,8 @@
-# 主服务器
+### 主服务器
 
 ---
 
-### 修改主服务器配置
+__修改主服务器配置__
 
 ```
 #开启二进制日志
@@ -20,19 +20,21 @@ binlog-do-db=dbname
 sercice mysql restart
 ```
 
-### 主服务器添加Slave用户
+__主服务器添加Slave用户__
 
-> GRANT FILE,REPLICATION,SLAVE ON \*.\* TO 'slave\_host'@'%' IDENTIFIED BY '123456';
->
-> FLUSH PRIVILEGES
+```
+GRANT FILE,REPLICATION,SLAVE ON \*.\* TO 'slave\_host'@'%' IDENTIFIED BY '123456';
+
+FLUSH PRIVILEGES
+```
 
 ![](/assets/import.png)
 
-# 从服务器
+### 从服务器
 
 ---
 
-### 修改从服务器配置
+__修改从服务器配置__
 
 ```
 log-bin=mysql-bin
@@ -57,7 +59,7 @@ slave-skip-errors=all
 slave-net-timeout=60
 ```
 
-### 从服务器执行SQL
+__从服务器执行SQL__
 
 ```
 change master to master_host='101.132.182.191' , 
@@ -72,19 +74,19 @@ master_log_pos=1402,
 master_port=8765;
 ```
 
-### 启动从服务器
+__启动从服务器__
+```
+start slave
+```
+__停止从服务器__
+```
+stop slave
+```
 
-\#启动
-
-> start slave
-
-\#停止
-
-> stop slave
-
-### 验证从服务器
-
+__验证从服务器__
+```
 show slave status\G;
+```
 
 | KEY | VALUE |
 | :--- | :--- |
@@ -92,7 +94,7 @@ show slave status\G;
 | Slave\_SQL\_Running | Yes |
 | Read\_Master\_Log\_Pos | 600 |
 
-\#Slave\_IO\_Running必须为YES  
-\#Slave\_SQL\_Running必须为YES  
-\#在主库上创建一个数据库，在从库查看是否存在，存在为ok。
+`Slave\_IO\_Running`必须为YES  
+`Slave\_SQL\_Running`必须为YES  
+在主库上创建一个数据库，在从库查看是否存在，存在为ok
 
