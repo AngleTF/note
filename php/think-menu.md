@@ -259,9 +259,35 @@ array (size=2)
 **变量映射**
 
 ```php
-// 注册路由到index模块的News控制器的read操作
-Route::rule('new/:id','index/:id');
+//将路由匹配到的version的值映射到跳转地址中
+Route::rule('api/:version','index/:version/index');
 ```
+
+**变量的全局规则定义**
+```php
+Route::pattern([
+    'age' => '\d+'
+]);
+```
+
+**路由调用控制器方法**
+```php
+Reute::rule('demo', '[@模块名][/控制器][/方法]')
+```
+
+**路由调用类方法**
+```php
+Reute::rule('demo', '命名空间@方法')
+```
+
+**路由调用回调函数(小型方法)**
+```php
+Reute::rule('demo', function(){
+    return 'demo'
+})
+```
+
+
 
 
 ### 控制器
