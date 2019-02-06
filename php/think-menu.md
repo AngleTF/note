@@ -309,7 +309,7 @@ Reute::rule('demo', function(){
 
 格式
 ```php
-Route::group('分组名或者分组参数','分组路由规则');
+Route::group('分组名或者分组参数','分组路由规则','路由选项','变量规则');
 ```
 
 例子    
