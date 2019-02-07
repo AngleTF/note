@@ -309,7 +309,7 @@ Reute::rule('demo', function(){
 
 格式
 ```php
-Route::group('分组名或者分组参数','分组路由规则','路由选项','变量规则');
+Route::group('分组名或者分组参数','分组路由规则',['路由选项]',['变量规则']);
 ```
 
 例子    
@@ -327,7 +327,37 @@ Route::group('blog', function () {
 })->ext('html')->pattern(['id' => '\d+', 'name' => '\w+']);
 ```
 
+**路由别名**
+格式
+```php
+Route::alias('路由别名', '路由地址', ['路由选项']);
+```
+**示例**
+```php
+Route::alias('math', 'index/index');
+```
 
+index控制器,index模块, add方法
+```
+function add($n1 = 0, $n2 = 0)
+{
+    return $n1 + $n2;
+}
+```
+
+通过 `http://localhost/math/add/1/2` 进行访问
+
+
+路由别名的黑白名单
+```php
+Route::alias('math', 'index/index', [
+    //允许的方法
+    'allow' => 'index,read',
+    
+    //禁止的方法
+    'except' => 'edit,delete'
+]);
+```
 
 ### 控制器
 
