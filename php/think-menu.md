@@ -359,6 +359,13 @@ Route::alias('math', 'index/index', [
 ]);
 ```
 
+**miss路由**
+当路由没有匹配后执行的路由
+```php
+Route::miss('路由地址或者闭包')
+```
+
+
 ### 控制器
 
 
