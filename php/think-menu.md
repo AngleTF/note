@@ -387,4 +387,22 @@ Route::miss('路由地址或者闭包')
 ```
 通过 http://www.tp51.com/index/service.index/dump 进行访问service层的dump方法, 使用 . 来访问多层控制器
 
+如果想把 . 转换成 / 使用, 那么只要将`'controller_auto_search' => true`即可
 
+**空操作/空控制器**
+```
+//控制器内, 错误的操作名调用的函数
+public function _empty(){
+    return '空操作';
+}
+```
+
+定义一个Error的控制器, 并且定义index方法
+```
+class Error
+{
+    public function index(){
+        return "空控制器";
+    }
+}
+```
