@@ -385,6 +385,6 @@ Route::miss('路由地址或者闭包')
 |      ├─service            控制器的service目录
 |         ├─IndexController service目录下的Index控制器
 ```
-
+通过 http://www.tp51.com/index/service.index/dump 进行访问service层的dump方法, 使用 . 来访问多层控制器
 
 
