@@ -14,6 +14,7 @@
     * [图片压缩/马赛克/验证码](php/image-class.md)
     * [设计模式](php/design-mode.md)
     * [psr](php/psr.md)
+    * [Route原理](php/route.md)
 * [git](git/README.md)
     * [git的三种状态](git/git-status.md)
 * [golang](golang/README.md)
