@@ -372,8 +372,8 @@ Route::miss('路由地址或者闭包')
 只有public的方法才能具有访问权限
 
 **控制器名后缀**
-修改 config/app.php 中的 
+修改 config/app.php 中的, 开启后文件和类名需要加后缀Controller 
 ```
-'controller_suffix' => false
+'controller_suffix' => true
 ```
 
