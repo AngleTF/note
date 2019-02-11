@@ -377,3 +377,14 @@ Route::miss('路由地址或者闭包')
 'controller_suffix' => true
 ```
 
+
+**多层控制器**
+```
+├─index                     index模块
+│  ├─controller             
+|      ├─service            控制器的service目录
+|         ├─IndexController service目录下的Index控制器
+```
+
+
+
