@@ -398,7 +398,7 @@ controller('Mail', 'service')
 
 
 **空操作 / 空控制器**
-```
+```php
 //控制器内, 错误的操作名调用的函数
 public function _empty(){
     return '空操作';
