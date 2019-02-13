@@ -405,8 +405,8 @@ public function _empty(){
 }
 ```
 
-定义一个Error的控制器, 并且定义index方法
-```
+定义一个Error的控制器, 并且定义index方法, 访问错误的控制器就能调用此方法
+```php
 class Error
 {
     public function index(){
@@ -414,3 +414,14 @@ class Error
     }
 }
 ```
+
+
+**控制器前置操作**
+```php
+protected $beforeActionList = [
+    'beforeActions',        //所有方法的前置操作
+    'beforeActions' => ['except' => 'index'],    //除了index外其他都能调用的前置操作
+    'beforeActions' => ['only' => 'index']        //只有index方法才能调用的前置操作
+];
+```
+覆写父类 beforeActionList  属性, 数组`key`是调用的前置方法名
