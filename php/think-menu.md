@@ -428,6 +428,7 @@ protected $beforeActionList = [
 
 
 **重定向 / 跳转**
+
 系统的\think\Controller类内置了两个跳转方法success和error，用于页面跳转提示
 ```php
 $this->success('新增成功', 'User/list', [], 3, []);
