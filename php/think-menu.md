@@ -425,3 +425,28 @@ protected $beforeActionList = [
 ];
 ```
 覆写父类 beforeActionList  属性, 数组`key`是调用的前置方法名
+
+
+**重定向 / 跳转**
+系统的\think\Controller类内置了两个跳转方法success和error，用于页面跳转提示
+```php
+$this->success('新增成功', 'User/list', [], 3, []);
+
+$this->error('新增失败', 'User/list', [], 3, []);
+```
+
+跳转对应的模板文件
+```
+//默认错误跳转对应的模板文件
+'dispatch_error_tmpl' => 'public/error',
+//默认成功跳转对应的模板文件
+'dispatch_success_tmpl' => 'public/success',
+```
+
+**url生成**
+```php
+Url::build('模块/控制器/操作',['参数'],['url后缀'],['域名']);
+
+//助手函数
+url('模块/控制器/操作',['参数'],['url后缀'],['域名']);
+```
