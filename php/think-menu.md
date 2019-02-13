@@ -454,7 +454,7 @@ $this->redirect('模块/控制器/操作', ['参数'], 'httpcode', ['session dat
 redirect('News/category')->remember();
 ```
 
-使用上传记住的url
+使用上次记住的url
 ```php
 redirect()->restore();
 ```
