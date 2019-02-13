@@ -338,7 +338,7 @@ Route::alias('math', 'index/index');
 ```
 
 index控制器,index模块, add方法
-```
+```php
 function add($n1 = 0, $n2 = 0)
 {
     return $n1 + $n2;
@@ -443,10 +443,31 @@ $this->error('新增失败', 'User/list', [], 3, []);
 'dispatch_success_tmpl' => 'public/success',
 ```
 
+
+重定向
+```php
+$this->redirect('模块/控制器/操作', ['参数'], 'httpcode', ['session data']);
+```
+
+助手函数支持跳转前记住当前url
+```php
+redirect('News/category')->remember();
+```
+
+使用上传记住的url
+```php
+redirect()->restore();
+```
+
+
 **url生成**
 ```php
 Url::build('模块/控制器/操作',['参数'],['url后缀'],['域名']);
 
 //助手函数
 url('模块/控制器/操作',['参数'],['url后缀'],['域名']);
+```
+例子
+```php
+echo Url::build('index/index/index',['name' => 'tao'], 'html', true);
 ```
