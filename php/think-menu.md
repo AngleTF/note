@@ -468,7 +468,115 @@ Url::build('模块/控制器/操作',['参数'],['url后缀'],['域名']);
 //助手函数
 url('模块/控制器/操作',['参数'],['url后缀'],['域名']);
 ```
+
 例子
 ```php
 echo Url::build('index/index/index',['name' => 'tao'], 'html', true);
 ```
+
+### 请求
+
+**实例化Request**
+```php
+//依赖注入方式, 使用注入需要 `use think\Request`
+public function __construct(Request $request)
+{
+	$this->request = $request;
+}
+
+
+//继承think\Controller后直接使用
+public function index()
+{
+	return $this->request->param('name');
+}
+
+//Facade调用
+public function index()
+{
+	return think\facade\Request::param('name');
+} 
+
+
+//助手函数
+public function index()
+{
+    return request()->param('name');
+}
+
+```
+
+
+**请求方法**
+
+请求信息的方法
+
+|方法|含义|
+|---|---|
+|host	|当前访问域名或者IP|
+|scheme	|当前访问协议|
+|port	|当前访问的端口|
+|remotePort	|当前请求的REMOTE_PORT|
+|protocol	|当前请求的SERVER_PROTOCOL|
+|contentType	|当前请求的CONTENT_TYPE|
+|domain	|当前包含协议的域名|
+|subDomain	|当前访问的子域名|
+|panDomain	|当前访问的泛域名|
+|rootDomain	|当前访问的根域名（V5.1.6+）|
+|url	|当前完整URL|
+|baseUrl	|当前URL（不含QUERY_STRING）|
+|query	|当前请求的QUERY_STRING参数|
+|baseFile	|当前执行的文件|
+|root	|URL访问根地址|
+|rootUrl	|URL访问根目录|
+|pathinfo	|当前请求URL的pathinfo信息（含URL后缀）|
+|path	|请求URL的pathinfo信息(不含URL后缀)|
+|ext	|当前URL的访问后缀|
+|time	|获取当前请求的时间|
+|type	|当前请求的资源类型|
+|method	|当前请求类型|
+
+请求变量获取的方法
+
+|方法|含义|
+|---|---|
+|param	|获取当前请求的变量 包含 PUT/GET/POST/FEIL/SESSION/ROUTE...|
+|get	|获取 $_GET 变量|
+|post	|获取 $_POST 变量|
+|put	|获取 PUT 变量|
+|delete	|获取 DELETE 变量|
+|session|	获取 $_SESSION 变量|
+|cookie	|获取 $_COOKIE 变量|
+|request	|获取 $_REQUEST 变量|
+|server	|获取 $_SERVER 变量|
+|env	|获取 $_ENV 变量|
+|route	|获取 路由（包括PATHINFO） 变量|
+|file	|获取 $_FILES 变量|
+
+
+判断请求的类型
+
+|方法|含义|
+|---|---|
+|获取当前请求类型|	method|
+|判断是否GET请求|	isGet|
+|判断是否POST请求|	isPost|
+|判断是否PUT请求|	isPut|
+|判断是否DELETE请求|	isDelete|
+|判断是否AJAX请求|	isAjax|
+|判断是否PJAX请求|	isPjax|
+|判断是否手机访问|	isMobile|
+|判断是否HEAD请求|	isHead|
+|判断是否PATCH请求|	isPatch|
+|判断是否OPTIONS请求|	isOptions|
+|判断是否为CLI执行|	isCli|
+|判断是否为CGI模式|	isCgi|
+
+**检测变量**
+```php
+Request::has('id','get');
+```
+变量检测可以支持所有支持的系统变量, 包括get/post/put/request/cookie/server/session/env/file
+
+
+
