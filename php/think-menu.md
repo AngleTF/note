@@ -554,7 +554,7 @@ public function index()
 |file	|获取 $_FILES 变量|
 
 
-判断请求的类型
+**判断请求的类型**
 
 |方法|含义|
 |---|---|
