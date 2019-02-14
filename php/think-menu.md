@@ -578,5 +578,5 @@ Request::has('id','get');
 ```
 变量检测可以支持所有支持的系统变量, 包括get/post/put/request/cookie/server/session/env/file
 
-
+**请求头信息**
 
