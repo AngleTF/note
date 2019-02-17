@@ -579,4 +579,161 @@ Request::has('id','get');
 变量检测可以支持所有支持的系统变量, 包括get/post/put/request/cookie/server/session/env/file
 
 **请求头信息**
+```php
+Request::header('user-agent');
+```
+
+### 验证器
+
+**定义验证器**
+```php
+namespace app\index\validate;
+
+use think\Validate;
+
+class User extends Validate
+{
+    protected $rule =   [
+        'name'  => 'require|max:25',
+        'age'   => 'number|between:1,120',
+        'email' => 'email',    
+    ];
+    
+    protected $message  =   [
+        'name.require' => '名称必须',
+        'name.max'     => '名称最多不能超过25个字符',
+        'age.number'   => '年龄必须是数字',
+        'age.between'  => '年龄只能在1-120之间',
+        'email'        => '邮箱格式错误',    
+    ];
+	
+	protected $scene = [
+        'edit'  =>  ['name','age'],
+    ];
+    
+}
+```
+我们定义一个\app\index\validate\User验证器类用于User的验证
+rule属性是验证的规则
+message是验证错误的提示
+scene是验证场景, 如上是 edit 场景, 需要验证两个参数 (name 和 age)
+
+**快速生成验证器**
+```
+php think make:validate index/User
+```
+
+**实例化验证器使用**
+```php
+namespace app\index\controller;
+
+use think\Controller;
+
+class Index extends Controller
+{
+    public function index()
+    {
+        $data = [
+            'name'  => 'thinkphp',
+            'email' => 'thinkphp@qq.com',
+        ];
+
+        $validate = new \app\index\validate\User;
+
+        if (!$validate->check($data)) {
+            dump($validate->getError());
+        }
+		
+		/*
+		如果使用场景
+		if (!$validate->scene('edit')->check($data)) {
+            dump($validate->getError());
+        }
+		*/
+    }
+}
+```
+
+**控制器中使用验证器**
+```php
+namespace app\index\controller;
+
+use think\Controller;
+
+class Index extends Controller
+{
+    public function index()
+    {
+        $result = $this->validate(
+            [
+                'name'  => 'thinkphp',
+                'email' => 'thinkphp@qq.com',
+            ],
+            'app\index\validate\User');
+
+		/*
+		如果使用场景
+		$result = $this->validate(
+            [
+                'name'  => 'thinkphp',
+                'email' => 'thinkphp@qq.com',
+            ],
+            'app\index\validate\User.edit');
+		
+		*/
+			
+			
+        if (true !== $result) {
+            // 验证失败 输出错误信息
+            dump($result);
+        }
+    }
+}
+```
+
+
+### 响应
+
+```php
+<?php
+namespace app\index\controller;
+
+class Index
+{
+    public function hello($name='thinkphp')
+    {
+        return 'Hello,' . $name . '!';
+    }
+}
+```
+控制器返回数据后默认输出 `Html` 格式, 可以通过修改 `default_return_type`
+```php
+// 默认输出类型
+'default_return_type'    => 'json',
+```
+
+**快捷输出方法**
+```php
+<?php
+namespace app\index\controller;
+
+class Index
+{
+    public function hello()
+    {
+        $data = ['name' => 'thinkphp', 'status' => '1'];
+        return json($data);
+    }
+}
+```
+
+|输出类型		|快捷方法	|对应Response类
+|---|---|
+|HTML输出		|response	|\think\Response
+|渲染模板输出	|view		|\think\response\View
+|JSON输出		|json		|\think\response\Json
+|JSONP输出		|jsonp		|\think\response\Jsonp
+|XML输出		|xml		|\think\response\Xml
+|页面重定向		|redirect	|\think\response\Redirect
+|附件下载（V5.1.21+）	|download	|\think\response\Download
 
