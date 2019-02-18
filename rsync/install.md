@@ -25,7 +25,7 @@ rsync --version
 我下载的是3.1.3版本的
 
 ```
-wegt https://download.samba.org/pub/rsync/src/rsync-3.1.3.tar.gz
+wget https://download.samba.org/pub/rsync/src/rsync-3.1.3.tar.gz
 ```
 
 ### 配置, 编译, 安装
