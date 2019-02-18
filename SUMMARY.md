@@ -34,6 +34,7 @@
     * [1.4-响应报文的状态码](http/status.md)
 * [linux](linux/README.md)
     * [LMNAP安装](linux/LMNAP.md)
+    * [挂载/分区/格式化磁盘](linux/mount.md)
 * [Jquery](jquery/README.md)
     * [ajax](jquery/ajax.md)
 * [news](news/README.md)
