@@ -20,5 +20,6 @@ tmpfs           379M     0  379M   0% /run/user/0
 
 ### 创建挂载点
 ```
-
+mkdir dir /resource /spider_log
 ```
+
