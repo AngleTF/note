@@ -33,5 +33,10 @@ rsync [option...] src... rsync://[user@]host[:port]/dest
 ```
 注意: 进程守护是 :: (两个冒号) 而shell备份是 : (一个冒号)
 
+例子
+```
+rsync -avz root@192.64.98.96:/data/ /backup/
+```
+
 ### 脚本免密码
 将本机的id_rsa.pub的内容放入需要远程主机的用户中
