@@ -21,6 +21,7 @@
     * [http代理](golang/http-proxy.md)
     * [类型转换](golang/type-conver.md)
     * [go编译](golang/go-build.md)
+    * [下载golang.org/x包](golang/golang.org-package-download.md)
 * [gitbook](gitbook/README.md)
     * [1.0-安装](gitbook/install.md)
     * [1.1-初始化](gitbook/init.md)
