@@ -737,3 +737,31 @@ class Index
 |页面重定向		|redirect	|\think\response\Redirect
 |附件下载（V5.1.21+）	|download	|\think\response\Download
 
+### facade
+门面为容器中的类提供了一个静态调用接口
+**common中的FacadeTest类**
+```php
+namespace app\common;
+
+class FacadeTest
+{
+    public function say(){
+        return "hello";
+    }
+}
+```
+
+**facade目录创建FacadeTest类的映射**
+```php
+namespace app\facade;
+
+use think\facade;
+
+class Test extends facade
+{
+    protected static function getFacadeClass()
+    {
+        return 'app\common\FacadeTest';
+    }
+}
+```
