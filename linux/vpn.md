@@ -55,8 +55,11 @@ service pptpd start
 ![](/assets/pptp-1.png)
 ![](/assets/pptp-2.png)
 ![](/assets/pptp-3.png)
+
 填入VPN的IP地址
 
+
 ![](/assets/pptp-4.png)
+
 填入VPN的用户名和密码(例如上述例子使用的是 用户名:abc, 密码:taolifeng)
 
