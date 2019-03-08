@@ -35,7 +35,7 @@ abc pptpd taolifeng *
 net.ipv4.ip_forward=1
 ```
 
-**修改后退出报错**
+**修改后退出保存**
 ```
 sysctl -p
 ```
