@@ -61,29 +61,6 @@ return view('admin@member/edit',['think' => 'php'])
 
 不带任何参数 自动定位当前模块 **view/类名/操作.html** 的模板文件, 以上模板路径是 ** admin/view/member/edit.html **, 并且将模板对应的think变量替换成php
 
-### 模型
-
-实例化模型之前先要将 ** 账户/密码/库名 ** 填入配置文件的 database.php 文件
-
-实例化模型调用
-
-```php
-$p = new Person();
-$p->getUserInfo();
-```
-
-静态方式调用
-
-```php
-Person::getUserInfo();
-```
-
-助手函数调用
-
-```php
-model('Person')->getUserInfo();
-```
-
 ### 配置
 
 **模块优先级**  
@@ -409,7 +386,7 @@ public function _empty(){
 ```php
 class Error
 {
-    public function index(){
+    public function _empty(){
         return "空控制器";
     }
 }
@@ -764,4 +741,65 @@ class Test extends facade
         return 'app\common\FacadeTest';
     }
 }
+```
+1. 需要继承 think\Facade类
+2. 需要实现 getFacadeClass 方法
+
+### 模型
+
+**静态Db连接**
+先要将 ** 账户/密码/库名 ** 填入配置文件的 database.php 文件
+
+**动态Db连接**
+```php
+
+    public function dbConnect()
+    {
+
+        $config = [
+            // 数据库类型
+            'type' => 'mysql',
+            // 服务器地址
+            'hostname' => '127.0.0.1',
+            // 数据库名
+            'database' => 'backstage',
+            // 用户名
+            'username' => 'root',
+            // 密码
+            'password' => 'mysql',
+            // 端口
+            'hostport' => '3307',
+        ];
+
+        $link = Db::connect($config);
+
+        dump($link->table('user')->select());
+    }
+
+
+```
+
+**Db类, 预处理方式**
+```
+$res = Db::query("select * from book_user where id = ?", [ 1 ]);
+```
+
+
+**实例化模型调用**
+
+```php
+$p = new Person();
+$p->getUserInfo();
+```
+
+**静态方式模型调用**
+
+```php
+Person::getUserInfo();
+```
+
+**助手函数模型调用**
+
+```php
+model('Person')->getUserInfo();
 ```
