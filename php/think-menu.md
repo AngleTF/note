@@ -745,7 +745,7 @@ class Test extends facade
 1. 需要继承 think\Facade类
 2. 需要实现 getFacadeClass 方法
 
-### 模型
+### DB类
 
 **静态Db连接**
 先要将 ** 账户/密码/库名 ** 填入配置文件的 database.php 文件
@@ -784,6 +784,28 @@ class Test extends facade
 $res = Db::query("select * from book_user where id = ?", [ 1 ]);
 ```
 
+### 模型
+
+**生成模型文件**
+```
+php think make:model 模块名/模型名
+```
+
+**模型定义**
+```php
+<?php
+namespace app\index\model;
+
+use think\Model;
+
+class User extends Model
+{
+	protected $pk = 'uid';		//定义主键
+	protected $table = 'user'	//表名
+	protected $visible = ['id'] //显示字段
+	protected $hidden = ['id']  //隐藏字段
+}
+```
 
 **实例化模型调用**
 
@@ -803,3 +825,168 @@ Person::getUserInfo();
 ```php
 model('Person')->getUserInfo();
 ```
+
+**新增多个/一个**
+```
+$user = new User;
+$user->save([
+    'name'  =>  'thinkphp',
+    'email' =>  'thinkphp@qq.com'
+]);
+
+
+$user = new User;
+$list = [
+    ['name'=>'thinkphp','email'=>'thinkphp@qq.com'],
+    ['name'=>'onethink','email'=>'onethink@qq.com']
+];
+$user->saveAll($list);
+
+//save方法返回影响的记录数
+```
+
+**更新多个/一个**
+```
+$stu = new Student();
+$stu->save(['name' => 'tao'], ['id' => 1]);
+
+
+//当数据中存在主键的时候会认为是更新操作
+$user = new User;
+$list = [
+    ['id'=>1, 'name'=>'thinkphp', 'email'=>'thinkphp@qq.com'],
+    ['id'=>2, 'name'=>'onethink', 'email'=>'onethink@qq.com'],
+];
+$user->saveAll($list, false);
+```
+
+**删除多个/一个**
+```php
+//根据主键删除
+User::destroy(1);
+// 支持批量删除多个数据
+User::destroy('1,2,3');
+
+//条件删除
+User::where('id','>',10)->delete();
+```
+
+**获取器**
+
+获取器模型方法命名, FieldName为数据表字段的驼峰转换
+> getFieldNameAttr
+
+例子
+```
+<?php
+class User extends Model 
+{
+    public function getStatusAttr($value)
+    {
+        $status = [-1=>'删除',0=>'禁用',1=>'正常',2=>'待审核'];
+        return $status[$value];
+    }
+}
+```
+我取出某条User数据时, 本来status在数据库中是 int类型, 但是经过的获取器, 拿到的数据, 经过上面的针对status的过滤, 拿到了字符类型
+
+
+**修改器**
+
+修改器模型方法命名, FieldName为数据表字段的驼峰转换
+> setFieldNameAttr
+
+例子
+```
+<?php
+class User extends Model 
+{
+    public function setNameAttr($value)
+    {
+        return strtolower($value);
+    }
+}
+```
+我设置某条User数据时, 将Name的值进行小写后在插入数据库
+
+**类型转换**
+
+> 支持给字段设置类型自动转换，会在写入和读取的时候自动进行类型转换处理
+```php
+<?php
+class User extends Model 
+{
+    protected $type = [
+        'status'    =>  'integer',
+        'score'     =>  'float',
+        'birthday'  =>  'datetime',
+        'info'      =>  'array',
+    ];
+}
+```
+
+|类型|简介|
+|---|---|
+|integer|设置为integer（整型）后，该字段写入和输出的时候都会自动转换为整型。|
+|float|该字段的值写入和输出的时候自动转换为浮点型。|
+|boolean|该字段的值写入和输出的时候自动转换为布尔型。|
+|array|如果设置为强制转换为array类型，系统会自动把数组编码为json格式字符串写入数据库，取出来的时候会自动解码。|
+|object|该字段的值在写入的时候会自动编码为json字符串，输出的时候会自动转换为stdclass对象。|
+|serialize|指定为序列化类型的话，数据会自动序列化写入，并且在读取的时候自动反序列化。|
+|json|指定为json类型的话，数据会自动json_encode写入，并且在读取的时候自动json_decode处理。|
+|timestamp|指定为时间戳字段类型的话，该字段的值在写入时候会自动使用strtotime生成对应的时间戳，输出的时候会自动转换为dateFormat属性定义的时间字符串格式，默认的格式为Y-m-d H:i:s|
+
+**自动写入时间搓**
+
+修改数据库配置
+```
+// 开启自动写入时间戳字段
+'auto_timestamp' => true,
+```
+
+或者在模型里单独开启
+```php
+<?php
+namespace app\index\model;
+
+use think\Model;
+
+class User extends Model
+{
+    protected $autoWriteTimestamp = true;
+}
+```
+
+一旦配置开启的话，会自动写入create_time和update_time两个字段的值，默认为整型（int），如果你的时间字段不是int类型的话，可以直接使用：
+
+```
+// 开启自动写入时间戳字段
+'auto_timestamp' => 'datetime'
+```
+
+系统创建新数据后会自动插入 create_time 字段, 数据修改后会自动插入 update_time
+
+修改 修改/插入字段
+```php
+<?php
+namespace app\index\model;
+
+use think\Model;
+
+class User extends Model 
+{
+    // 定义时间戳字段名
+    protected $createTime = 'create_at';
+    protected $updateTime = 'update_at';
+}
+```
+
+如果你只需要使用create_time字段而不需要自动写入update_time
+```php
+class User extends Model 
+{
+    // 关闭自动写入update_time字段
+    protected $updateTime = false;
+}
+```
+
