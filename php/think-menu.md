@@ -912,6 +912,7 @@ class User extends Model
 **类型转换**
 
 > 支持给字段设置类型自动转换，会在写入和读取的时候自动进行类型转换处理
+
 ```php
 <?php
 class User extends Model 
@@ -990,3 +991,47 @@ class User extends Model
 }
 ```
 
+**查询范围**
+
+例子
+```php
+<?php
+namespace app\index\model;
+
+use think\Model;
+
+class User extends Model
+{
+
+    public function scopeThinkphp($query)
+    {
+        $query->where('name','thinkphp')->field('id,name');
+    }
+	
+	
+	//方法名 按照 scope + 自定义名称进行拼接
+    public function scopeAge($query)
+    {
+        $query->where('age','>',20)->limit(10);
+    }    
+    
+}
+```
+
+控制器中使用, scope除了第一个参数, 其他都会传入 模型的scope自定义方法中, 第二个参数用来接收
+```php
+// 查找name为thinkphp的用户
+User::scope('thinkphp')->find();
+// 查找年龄大于20的10个用户
+User::scope('age')->select();
+// 查找name为thinkphp的用户并且年龄大于20的10个用户
+User::scope('thinkphp,age')->select();
+```
+
+
+**模型输出**
+
+|||
+|---|---|
+|$user->toArray()|数组|
+|$user->toJson()|json字符串|
