@@ -20,5 +20,6 @@ Running on: Windows NT TF 6.1 build 7601 (Windows 7 Ultimate Edition Service Pac
 ```
 
 ### 另一种方式
-另一种安装方式是直接`双击php目录下的go-pear.bat`
+
+直接`双击php目录下的go-pear.bat`
 
