@@ -19,6 +19,14 @@ Zend Engine Version: 2.6.0
 Running on: Windows NT TF 6.1 build 7601 (Windows 7 Ultimate Edition Service Pack 1)
 ```
 
+### ini的改动
+```ini
+;***** Added by go-pear
+include_path=".;D:\WMAP\php-5.6.32\pear"
+;*****
+```
+
+
 ### 另一种安装方式
 
 直接`双击php目录下的go-pear.bat`
