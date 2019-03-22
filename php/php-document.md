@@ -23,7 +23,7 @@ phpDocumentor version 2.9.0
 ### 添加PHP_PEAR_BIN_DIR环境变量
 PHP_PEAR_BIN_DIR = you phpdoc path
 
-不进行这一步退出doc后会出现
+不进行这一步退出后会出现
 Could not open input file: \phpdoc.php
 
 ### 生成文档
