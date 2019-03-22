@@ -20,8 +20,8 @@ D:\WMAP\php-5.6.32>phpdoc -V
 phpDocumentor version 2.9.0
 ```
 
-### 环境变量
-将当前生成的文件phpdoc, 注册到系统环境变量中, 供全局使用
+### 自动环境变量
+安装完成后phpdoc，将显示一个名为的全局命令。
 
 ### 生成文档
 ```
