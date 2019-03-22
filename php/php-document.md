@@ -8,7 +8,7 @@ D:\WMAP\php-5.6.32>pear channel-discover pear.phpdoc.org
 Adding Channel "pear.phpdoc.org" succeeded
 Discovery of channel "pear.phpdoc.org" succeeded
 
-D:\WMAP\php-5.6.32>pear install phpdoc/phpDocumentor-alpha
+D:\WMAP\php-5.6.32>pear install phpdoc/phpDocumentor
 downloading phpDocumentor-2.9.0.tgz ...
 Starting to download phpDocumentor-2.9.0.tgz (16,175,113 bytes)
 ........done: 16,175,113 bytes
