@@ -14,5 +14,16 @@ Starting to download phpDocumentor-2.9.0.tgz (16,175,113 bytes)
 ........done: 16,175,113 bytes
 install ok: channel://pear.phpdoc.org/phpDocumentor-2.9.0
 ```
+### 验证
+```
+D:\WMAP\php-5.6.32>phpdoc -V
+phpDocumentor version 2.9.0
+```
+
+### 注册PATH
+将当前生成的文件, 注册到系统环境变量中, 供全局使用
 
 ### 生成文档
+```
+phpdoc -f hello.php -t doc
+```
