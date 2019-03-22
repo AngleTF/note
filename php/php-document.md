@@ -20,10 +20,16 @@ D:\WMAP\php-5.6.32>phpdoc -V
 phpDocumentor version 2.9.0
 ```
 
-### 自动环境变量
-安装完成后phpdoc，将显示一个名为的全局命令。
+### 添加PHP_PEAR_BIN_DIR环境变量
+PHP_PEAR_BIN_DIR = you phpdoc path
 
 ### 生成文档
 ```
 phpdoc -f hello.php -t doc
+
+-d 对于目录输入
+-f 对于文件输入
+
+-t 文档输出
 ```
+
