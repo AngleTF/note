@@ -36,3 +36,13 @@ phpdoc -f hello.php -t doc
 -t 文档输出
 ```
 
+
+### 生成文档过程中的错误
+```
+PHPDocumentor - Graphviz 'dot' command not found
+```
+解决此错误的步骤如下：
+
+1. 从 https://graphviz.gitlab.io/_pages/Download/Download_windows.html 下载zip解压到 c:\some\where\graphviz
+2. 添加c:\some\where\graphviz\bin到您的环境变量PATH
+3. 运行phpdoc
