@@ -34,6 +34,8 @@ phpdoc -f hello.php -t doc
 -f 对于文件输入
 
 -t 文档输出
+
+--template 选择模板 (zend/checkstyle/clan/responsive-twig)
 ```
 
 
