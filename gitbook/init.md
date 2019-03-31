@@ -42,6 +42,28 @@ Starting server ...
 Serving book on http://localhost:4000
 ```
 
+### 启动时的错误
+```
+Error: ENOENT: no such file or directory,
+stat 'E:\gitbook\Import\book\_book\gitbook\gitbook-plugin-fontsettings\fontsettings.js'
+```
+
+解决方式编辑下面这个文件, 修改112行
+vim ~/.gitbook/versions/3.2.3/lib/output/website/copyPluginAssets.js
+
+```js
+return fs.copyDir(
+assetsFolder,
+assetOutputFolder,
+{
+deleteFirst: false,
+overwrite: true,
+// Edited this line
+confirm: false
+}
+);
+```
+
 ### 构建静态网站
 该命令会在当前目录生成 _book 文件夹, 这个文件是静态网页的电子书
 ```

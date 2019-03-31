@@ -14,6 +14,20 @@ php go-pear.phar
 ```
 安装过程中需要指定system和local模式和php.exe的目录路径, 其他的一般都有默认安装地址
 
+### win10和php7安装过程中碰到的问题
+```
+Warning: require_once(phar://go-pear.phar/PEAR/REST/13.php):
+failed to open stream: phar error: "PEAR/REST/13.php" is not a file in phar "go-pear.phar"
+in phar://E:/WMAP/php-7.2.16-Win32-VC15-x64/pear/go-pear.phar/PEAR/Config.php on line 2067
+```
+
+我在stackoverflow中找到了正确的解决方式
+https://stackoverflow.com/questions/55295935/install-pear-on-macos-mojave-10-14-3/55302957#55302957?newreg=0fd6c0d00347439cba7f3a1de726ced7
+
+download the phar
+https://objects-us-east-1.dream.io/kbfiles/pear/go-pear.phar
+
+
 ### 验证安装
 ```
 D:\WMAP\php-5.6.32>pear version

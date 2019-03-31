@@ -16,6 +16,7 @@
     * [psr](php/psr.md)
     * [Route原理](php/route.md)
     * [pear安装](php/pear.md)
+	* [phpdoc安装](php/php-document.md)
 * [git](git/README.md)
     * [git的三种状态](git/git-status.md)
 * [golang](golang/README.md)
