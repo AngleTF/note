@@ -1,6 +1,6 @@
 # Summary
 
-* [简介](README.md)
+* [summary](README.md)
 * [mysql](mysql/README.md)
     * [主从服务搭建和配置](mysql/master-slave.md)
     * [sql注入攻击](mysql/inject.md)
