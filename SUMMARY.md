@@ -66,6 +66,8 @@
     * [单线程定时器](javascript/async.md)
     * [worke多线程](javascript/worke.md)
     * [基础](javascript/base.md)
+    * [优化点](javascript/optimize.md)
+    * [JSONP](javascript/jsonp.md)
 * [algorithm](algorithm/README.md)
     * [二分查询](algorithm/binary-query.md)
 * [html](html/README.md)
