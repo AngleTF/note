@@ -1,4 +1,4 @@
-```
+```linux
 #!/bin/bash
 
 #mysqlVar
