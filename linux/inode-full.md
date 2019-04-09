@@ -5,6 +5,7 @@ no space left on device
 
 ### /resource磁盘被文件INode被占满, 无法创建新的文件, 但是硬盘空间还有57G可以使用
 ![](/assets/inode.png)
+
 INode是文件的索引文件信息, 占了一部分磁盘空间, 文件过多导致Inode不够用可以通过 `df -ih` 来查看所有磁盘INode的使用情况, 使用 `df -h`查看所有磁盘使用量
 
 
@@ -23,3 +24,5 @@ mkfs.ext3 /dev/sda6 -N "inode节点数"
 #挂载文件系统
 mout  /dev/sda6  /data
 ```
+
+[注意] 调整inode数会格式化磁盘，执行前应确定磁盘上没有重要数据或是先备份数据
