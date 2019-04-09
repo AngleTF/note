@@ -39,6 +39,7 @@
     * [LMNAP安装](linux/LMNAP.md)
     * [挂载/分区/格式化磁盘](linux/mount.md)
     * [vpn](linux/vpn.md)
+    * [INode被占满](linux/inode-full.md)
 * [Jquery](jquery/README.md)
     * [ajax](jquery/ajax.md)
 * [news](news/README.md)
