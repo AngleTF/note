@@ -54,7 +54,7 @@
     * [1.0安装](docker/install.md)
     * [1.1使用](docker/use.md)
 * [rsync](rsync/README.md)
-    * [1.0安装](rsync/install.md)
+    * [1.0安装](rsync/install.md) n
     * [1.1使用](rsync/use.md)
 * [css](css/README.md)
     * [less的使用](css/less.md)
