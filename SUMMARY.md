@@ -57,7 +57,7 @@
     * [less的使用](css/less.md)
     * [BFC](css/BFC.md)
     * [行内块元素line-block](css/line-block.md)
-* [安全](security/README.md)
+* [security](security/README.md)
     * [xss注入攻击](security/xss.md)
 * [js](javascript/README.md)
     * [单线程定时器](javascript/async.md)
