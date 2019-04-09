@@ -3,8 +3,10 @@
 no space left on device
 ```
 
-### /resource磁盘被文件INode被占满, 无法创建新的文件, 但是硬盘空间还有57G可以使用
+### INode满了
 ![](/assets/inode.png)
+
+/resource磁盘被文件INode被占满, 无法创建新的文件, 但是硬盘空间还有57G可以使用
 
 INode是文件的索引文件信息, 占了一部分磁盘空间, 文件过多导致Inode不够用可以通过 `df -ih` 来查看所有磁盘INode的使用情况, 使用 `df -h`查看所有磁盘使用量
 
