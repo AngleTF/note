@@ -42,7 +42,9 @@ Staring MySQL...         [ ok ]
 ```
 
 **旧配置找问题**
+
 ![](/assets/20190412120141.png)
+
 发现 group_concat_max_len 导致的, 可能原因是设置过大, 或者是无效参数, 这里把他注释掉.
 
 ### client does not support, mysql8.0
