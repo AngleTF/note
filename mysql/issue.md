@@ -89,6 +89,7 @@ mysql> select user, host, plugin, authentication_string from user where user='ro
 对于查询时间长、运行状态（State 列）是`Sending data`, `Copying to tmp table`, `Copying to tmp table on disk`, `Sorting result`, `Using filesort`等都可能是有性能问题的查询（SQL）
 
 **杀掉mysql内部的进程**
+
 可以通过执行类似 kill 12 进行来终止长时间执行的会话, 12是进程ID, 通过`show processlist`查看进程ID
 
 
