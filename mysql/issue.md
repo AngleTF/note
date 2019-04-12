@@ -45,7 +45,7 @@ Staring MySQL...         [ ok ]
 ![](/assets/20190412120141.png)
 发现 group_concat_max_len 导致的, 可能原因是设置过大, 或者是无效参数, 这里把他注释掉.
 
-### client does not support
+### client does not support, mysql8.0
 
 如果你没有设置认证方式，默认的密码加密方式是：caching_sha2_password，而现在很多客户端工具还不支持这种加密认证方式，连接测试的时候就会报错：client does not support  authentication protocol requested by server; consider upgrading MySQL client，这里的错误信息就是不支持身份认证方式，没关系，去my.ini里面在[mysqld]下面加上这句话即可：
 ```ini
