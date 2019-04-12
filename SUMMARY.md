@@ -4,6 +4,7 @@
 * [mysql](mysql/README.md)
     * [主从服务搭建和配置](mysql/master-slave.md)
     * [sql注入攻击](mysql/inject.md)
+    * [mysql报错](mysql/issue.md)
 * [php](php/README.md)
     * [int与string强制转换的原理](php/intcoverstring.md)
     * [大小写转化原理](php/lower-upper.md)
