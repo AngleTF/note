@@ -78,3 +78,48 @@ mysql> select user, host, plugin, authentication_string from user where user='ro
 +------+-----------+-----------------------+-------------------------------------------+
 1 row in set (0.00 sec)
 ```
+
+### MySQLCPU使用过高
+通过 `show processlist` 或 `show full processlist` 查看当前执行的语句
+
+![](/assets/20190412121119.png)
+
+对于查询时间长、运行状态（State 列）是`Sending data`, `Copying to tmp table`, `Copying to tmp table on disk`, `Sorting result`, `Using filesort`等都可能是有性能问题的查询（SQL）
+
+**杀掉mysql内部的进程**
+可以通过执行类似 kill 12 进行来终止长时间执行的会话, 12是进程ID, 通过`show processlist`查看进程ID
+
+
+### ERROR 1840 @@GLOBAL.GTID_EXECUTED is empty
+
+**报错信息**
+```
+ERROR 1840 (HY000) at line 24: @@GLOBAL.GTID_PURGED can only be set when @@GLOBAL.GTID_EXECUTED is empty
+```
+
+**解决方法一**
+```
+reset mater
+```
+这个操作可以将当前库的GTID_EXECUTED值置空
+
+**解决方法二**
+```
+mysqldump -uroot -p --set-gtid-purged=off -d sso > sso1.sql
+```
+在dump导出时，添加--set-gtid-purged=off参数，避免将gtid信息导出
+
+### MySQL server has gone away
+造成这样的原因一般是sql操作的时间过长，或者是传送的数据太大(例如使用insert ... values的语句过长， 这种情况可以通过修改max_allowed_packed的配置参数来避免，也可以在程序中将数据分批插入)。
+```
+mysql> show global variables like 'max_allowed_packet';
++--------------------+---------+
+| Variable_name      | Value   |
++--------------------+---------+
+| max_allowed_packet | 1048576 |
++--------------------+---------+
+1 row in set (0.00 sec)
+
+
+mysql> set global max_allowed_packet=1024*1024*128;
+```
