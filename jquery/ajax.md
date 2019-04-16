@@ -19,7 +19,7 @@ $.ajax({
 	type:'post',
 	url:'www.taolifeng',
 	data:{"in_val":'input_val'},
-	dateType:json,
+	dataType:json,
 	contentType:"application/x-www-form-urlencoded"
 	success:function(data){
 		
