@@ -17,3 +17,8 @@ https://xdebug.org/download.php
 mv ./xdebug.dll /path/to/php/ext/
 ```
 
+**修改php.ini**
+```
+echo "zend_extension = \"C:/path/to/php/ext/xdebug.dll\"" >> C:/path/to/php/php.ini
+```
+
