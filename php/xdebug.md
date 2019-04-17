@@ -12,7 +12,7 @@ pecl install xdebug
 https://xdebug.org/download.php
 ```
 
-**移动文件放入到php的ext文件下**
+**移动文件到php的ext文件下**
 ```
 mv ./xdebug.dll /path/to/php/ext/
 ```
