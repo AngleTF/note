@@ -31,3 +31,4 @@ xdebug.remote_host= localhost
 xdebug.remote_port = 9001
 ```
 
+**函数使用**
