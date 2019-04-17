@@ -21,5 +21,12 @@ mv ./xdebug.dll /path/to/php/ext/
 ```
 [xdebug]
 zend_extension = "E:/WMAP/php-7.2.16-Win32-VC15-x64/ext/php_xdebug.dll"
-
+xdebug.auto_trace=on
+xdebug.collect_params=on
+xdebug.collect_return=on
+xdebug.idekey = PHPSTORM
+xdebug.remote_enable = on
+xdebug.remote_handler = dbgp
+xdebug.remote_host= localhost
+xdebug.remote_port = 9001
 ```
