@@ -30,3 +30,4 @@ xdebug.remote_handler = dbgp
 xdebug.remote_host= localhost
 xdebug.remote_port = 9001
 ```
+
