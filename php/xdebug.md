@@ -19,6 +19,7 @@ mv ./xdebug.dll /path/to/php/ext/
 
 **修改php.ini**
 ```
-echo "zend_extension = \"C:/path/to/php/ext/xdebug.dll\"" >> C:/path/to/php/php.ini
-```
+[xdebug]
+zend_extension = "E:/WMAP/php-7.2.16-Win32-VC15-x64/ext/php_xdebug.dll"
 
+```
