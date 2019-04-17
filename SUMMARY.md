@@ -15,7 +15,7 @@
     * [图片压缩/马赛克/验证码](php/image-class.md)
     * [设计模式](php/design-mode.md)
     * [psr](php/psr.md)
-    * [Route原理](php/route.md)
+    * [route原理](php/route.md)
     * [pear安装](php/pear.md)
     * [phpdoc安装](php/php-document.md)
     * [提供用户下载](php/download-file.md)
