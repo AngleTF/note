@@ -1,4 +1,4 @@
- ### tp5.0手册地址
+### tp5.0手册地址
 
 [https://www.kancloud.cn/manual/thinkphp5/118003](https://www.kancloud.cn/manual/thinkphp5/118003)
 
@@ -42,7 +42,6 @@
 ```
 项目根目录/public/index.php/modelName/controllerName/actionName
 ```
-
 
 不带任何参数 自动定位当前模块 **view/类名/操作.html** 的模板文件, 以上模板路径是 ** admin/view/member/edit.html **, 并且将模板对应的think变量替换成php
 
@@ -266,15 +265,16 @@ Reute::rule('demo', function(){
 })
 ```
 
-
 **路由分组**
 
 格式
+
 ```php
 Route::group('分组名或者分组参数','分组路由规则',['路由选项]',['变量规则']);
 ```
 
-例子    
+例子
+
 ```php
 //数组直接定义规则
 Route::group('blog', [
@@ -289,17 +289,21 @@ Route::group('blog', function () {
 })->ext('html')->pattern(['id' => '\d+', 'name' => '\w+']);
 ```
 
-**路由别名**
+**路由别名**  
 格式
+
 ```php
 Route::alias('路由别名', '路由地址', ['路由选项']);
 ```
+
 **示例**
+
 ```php
 Route::alias('math', 'index/index');
 ```
 
 index控制器,index模块, add方法
+
 ```php
 function add($n1 = 0, $n2 = 0)
 {
@@ -309,57 +313,62 @@ function add($n1 = 0, $n2 = 0)
 
 通过 `http://localhost/math/add/1/2` 进行访问
 
-
 路由别名的黑白名单
+
 ```php
 Route::alias('math', 'index/index', [
     //允许的方法
     'allow' => 'index,read',
-    
+
     //禁止的方法
     'except' => 'edit,delete'
 ]);
 ```
 
-**miss路由**
+**miss路由**  
 当路由没有匹配后执行的路由
+
 ```php
 Route::miss('路由地址或者闭包')
 ```
 
-
 ### 控制器
+
 在父类控制器当中，定义了相关的操作方法，以及加载了不同功能需要使用的业务类，能够一定意义的节省在子类当中的代码书写量
 
 只有public的方法才能具有访问权限
 
-**控制器名后缀**
-修改 config/app.php 中的, 开启后文件和类名需要加后缀Controller 
+**控制器名后缀**  
+修改 config/app.php 中的, 开启后文件和类名需要加后缀Controller
+
 ```
 'controller_suffix' => true
 ```
 
-
 **多层控制器**
+
 ```
 ├─index                     index模块
 │  ├─controller             
 |      ├─service            控制器的service目录
 |         ├─IndexController service目录下的Index控制器
 ```
-通过 http://www.tp51.com/index/service.index/dump 进行访问service层的dump方法, 使用 . 来访问多层控制器
+
+通过 [http://www.tp51.com/index/service.index/dump](http://www.tp51.com/index/service.index/dump) 进行访问service层的dump方法, 使用 . 来访问多层控制器
 
 如果想把 . 转换成 / 使用, 那么只要将`'controller_auto_search' => true`即可
 
-**分层控制器**
+**分层控制器**  
 分层控制器是url无法直接访问到的, 直接在模块下定义新的控制器文件夹, 并且创建新文件, 由于遵循psr4规范 可直接利用命名空间实例化类, 也可以直接使用controller方法进行实例化
+
 ```php
 controller('Mail', 'service')
 ```
+
 实例化 service控制器下的Mail类
 
-
 **空操作 / 空控制器**
+
 ```php
 //控制器内, 错误的操作名调用的函数
 public function _empty(){
@@ -368,6 +377,7 @@ public function _empty(){
 ```
 
 定义一个Error的控制器, 并且定义index方法, 访问错误的控制器就能调用此方法
+
 ```php
 class Error
 {
@@ -377,8 +387,8 @@ class Error
 }
 ```
 
-
 **控制器前置操作**
+
 ```php
 protected $beforeActionList = [
     'beforeActions',        //所有方法的前置操作
@@ -386,12 +396,13 @@ protected $beforeActionList = [
     'beforeActions' => ['only' => 'index']        //只有index方法才能调用的前置操作
 ];
 ```
-覆写父类 beforeActionList  属性, 数组`key`是调用的前置方法名
 
+覆写父类 beforeActionList  属性, 数组`key`是调用的前置方法名
 
 **重定向 / 跳转**
 
 系统的\think\Controller类内置了两个跳转方法success和error，用于页面跳转提示
+
 ```php
 $this->success('新增成功', 'User/list', [], 3, []);
 
@@ -399,6 +410,7 @@ $this->error('新增失败', 'User/list', [], 3, []);
 ```
 
 跳转对应的模板文件
+
 ```
 //默认错误跳转对应的模板文件
 'dispatch_error_tmpl' => 'public/error',
@@ -406,24 +418,26 @@ $this->error('新增失败', 'User/list', [], 3, []);
 'dispatch_success_tmpl' => 'public/success',
 ```
 
-
 重定向
+
 ```php
 $this->redirect('模块/控制器/操作', ['参数'], 'httpcode', ['session data']);
 ```
 
 助手函数支持跳转前记住当前url
+
 ```php
 redirect('News/category')->remember();
 ```
 
 使用上次记住的url
+
 ```php
 redirect()->restore();
 ```
 
-
 **url生成**
+
 ```php
 Url::build('模块/控制器/操作',['参数'],['url后缀'],['域名']);
 
@@ -432,6 +446,7 @@ url('模块/控制器/操作',['参数'],['url后缀'],['域名']);
 ```
 
 例子
+
 ```php
 echo Url::build('index/index/index',['name' => 'tao'], 'html', true);
 ```
@@ -439,24 +454,25 @@ echo Url::build('index/index/index',['name' => 'tao'], 'html', true);
 ### 请求
 
 **实例化Request**
+
 ```php
 //依赖注入方式, 使用注入需要 `use think\Request`
 public function __construct(Request $request)
 {
-	$this->request = $request;
+    $this->request = $request;
 }
 
 
 //继承think\Controller后直接使用
 public function index()
 {
-	return $this->request->param('name');
+    return $this->request->param('name');
 }
 
 //Facade调用
 public function index()
 {
-	return think\facade\Request::param('name');
+    return think\facade\Request::param('name');
 } 
 
 
@@ -465,82 +481,80 @@ public function index()
 {
     return request()->param('name');
 }
-
 ```
-
-
 
 **请求信息获取的方法**
 
-|方法|含义|
-|---|---|
-|host	|当前访问域名或者IP|
-|scheme	|当前访问协议|
-|port	|当前访问的端口|
-|remotePort	|当前请求的REMOTE_PORT|
-|protocol	|当前请求的SERVER_PROTOCOL|
-|contentType	|当前请求的CONTENT_TYPE|
-|domain	|当前包含协议的域名|
-|subDomain	|当前访问的子域名|
-|panDomain	|当前访问的泛域名|
-|rootDomain	|当前访问的根域名（V5.1.6+）|
-|url	|当前完整URL|
-|baseUrl	|当前URL（不含QUERY_STRING）|
-|query	|当前请求的QUERY_STRING参数|
-|baseFile	|当前执行的文件|
-|root	|URL访问根地址|
-|rootUrl	|URL访问根目录|
-|pathinfo	|当前请求URL的pathinfo信息（含URL后缀）|
-|path	|请求URL的pathinfo信息(不含URL后缀)|
-|ext	|当前URL的访问后缀|
-|time	|获取当前请求的时间|
-|type	|当前请求的资源类型|
-|method	|当前请求类型|
-
+| 方法 | 含义 |
+| --- | --- |
+| host | 当前访问域名或者IP |
+| scheme | 当前访问协议 |
+| port | 当前访问的端口 |
+| remotePort | 当前请求的REMOTE\_PORT |
+| protocol | 当前请求的SERVER\_PROTOCOL |
+| contentType | 当前请求的CONTENT\_TYPE |
+| domain | 当前包含协议的域名 |
+| subDomain | 当前访问的子域名 |
+| panDomain | 当前访问的泛域名 |
+| rootDomain | 当前访问的根域名（V5.1.6+） |
+| url | 当前完整URL |
+| baseUrl | 当前URL（不含QUERY\_STRING） |
+| query | 当前请求的QUERY\_STRING参数 |
+| baseFile | 当前执行的文件 |
+| root | URL访问根地址 |
+| rootUrl | URL访问根目录 |
+| pathinfo | 当前请求URL的pathinfo信息（含URL后缀） |
+| path | 请求URL的pathinfo信息\(不含URL后缀\) |
+| ext | 当前URL的访问后缀 |
+| time | 获取当前请求的时间 |
+| type | 当前请求的资源类型 |
+| method | 当前请求类型 |
 
 **请求变量获取的方法**
 
-|方法|含义|
-|---|---|
-|param	|获取当前请求的变量 包含 PUT/GET/POST/FEIL/SESSION/ROUTE...|
-|get	|获取 $_GET 变量|
-|post	|获取 $_POST 变量|
-|put	|获取 PUT 变量|
-|delete	|获取 DELETE 变量|
-|session|	获取 $_SESSION 变量|
-|cookie	|获取 $_COOKIE 变量|
-|request	|获取 $_REQUEST 变量|
-|server	|获取 $_SERVER 变量|
-|env	|获取 $_ENV 变量|
-|route	|获取 路由（包括PATHINFO） 变量|
-|file	|获取 $_FILES 变量|
-
+| 方法 | 含义 |
+| --- | --- |
+| param | 获取当前请求的变量 包含 PUT/GET/POST/FEIL/SESSION/ROUTE... |
+| get | 获取 $\_GET 变量 |
+| post | 获取 $\_POST 变量 |
+| put | 获取 PUT 变量 |
+| delete | 获取 DELETE 变量 |
+| session | 获取 $\_SESSION 变量 |
+| cookie | 获取 $\_COOKIE 变量 |
+| request | 获取 $\_REQUEST 变量 |
+| server | 获取 $\_SERVER 变量 |
+| env | 获取 $\_ENV 变量 |
+| route | 获取 路由（包括PATHINFO） 变量 |
+| file | 获取 $\_FILES 变量 |
 
 **判断请求的类型**
 
-|方法|含义|
-|---|---|
-|获取当前请求类型|	method|
-|判断是否GET请求|	isGet|
-|判断是否POST请求|	isPost|
-|判断是否PUT请求|	isPut|
-|判断是否DELETE请求|	isDelete|
-|判断是否AJAX请求|	isAjax|
-|判断是否PJAX请求|	isPjax|
-|判断是否手机访问|	isMobile|
-|判断是否HEAD请求|	isHead|
-|判断是否PATCH请求|	isPatch|
-|判断是否OPTIONS请求|	isOptions|
-|判断是否为CLI执行|	isCli|
-|判断是否为CGI模式|	isCgi|
+| 方法 | 含义 |
+| --- | --- |
+| 获取当前请求类型 | method |
+| 判断是否GET请求 | isGet |
+| 判断是否POST请求 | isPost |
+| 判断是否PUT请求 | isPut |
+| 判断是否DELETE请求 | isDelete |
+| 判断是否AJAX请求 | isAjax |
+| 判断是否PJAX请求 | isPjax |
+| 判断是否手机访问 | isMobile |
+| 判断是否HEAD请求 | isHead |
+| 判断是否PATCH请求 | isPatch |
+| 判断是否OPTIONS请求 | isOptions |
+| 判断是否为CLI执行 | isCli |
+| 判断是否为CGI模式 | isCgi |
 
 **检测变量**
+
 ```php
 Request::has('id','get');
 ```
+
 变量检测可以支持所有支持的系统变量, 包括get/post/put/request/cookie/server/session/env/file
 
 **请求头信息**
+
 ```php
 Request::header('user-agent');
 ```
@@ -548,6 +562,7 @@ Request::header('user-agent');
 ### 验证器
 
 **定义验证器**
+
 ```php
 namespace app\index\validate;
 
@@ -560,7 +575,7 @@ class User extends Validate
         'age'   => 'number|between:1,120',
         'email' => 'email',    
     ];
-    
+
     protected $message  =   [
         'name.require' => '名称必须',
         'name.max'     => '名称最多不能超过25个字符',
@@ -568,24 +583,27 @@ class User extends Validate
         'age.between'  => '年龄只能在1-120之间',
         'email'        => '邮箱格式错误',    
     ];
-	
-	protected $scene = [
+
+    protected $scene = [
         'edit'  =>  ['name','age'],
     ];
-    
+
 }
 ```
-我们定义一个\app\index\validate\User验证器类用于User的验证
-rule属性是验证的规则
-message是验证错误的提示
-scene是验证场景, 如上是 edit 场景, 需要验证两个参数 (name 和 age)
+
+我们定义一个\app\index\validate\User验证器类用于User的验证  
+rule属性是验证的规则  
+message是验证错误的提示  
+scene是验证场景, 如上是 edit 场景, 需要验证两个参数 \(name 和 age\)
 
 **快速生成验证器**
+
 ```
 php think make:validate index/User
 ```
 
 **实例化验证器使用**
+
 ```php
 namespace app\index\controller;
 
@@ -605,18 +623,19 @@ class Index extends Controller
         if (!$validate->check($data)) {
             dump($validate->getError());
         }
-		
-		/*
-		如果使用场景
-		if (!$validate->scene('edit')->check($data)) {
+
+        /*
+        如果使用场景
+        if (!$validate->scene('edit')->check($data)) {
             dump($validate->getError());
         }
-		*/
+        */
     }
 }
 ```
 
 **控制器中使用验证器**
+
 ```php
 namespace app\index\controller;
 
@@ -633,18 +652,18 @@ class Index extends Controller
             ],
             'app\index\validate\User');
 
-		/*
-		如果使用场景
-		$result = $this->validate(
+        /*
+        如果使用场景
+        $result = $this->validate(
             [
                 'name'  => 'thinkphp',
                 'email' => 'thinkphp@qq.com',
             ],
             'app\index\validate\User.edit');
-		
-		*/
-			
-			
+
+        */
+
+
         if (true !== $result) {
             // 验证失败 输出错误信息
             dump($result);
@@ -652,7 +671,6 @@ class Index extends Controller
     }
 }
 ```
-
 
 ### 响应
 
@@ -668,13 +686,16 @@ class Index
     }
 }
 ```
+
 控制器返回数据后默认输出 `Html` 格式, 可以通过修改 `default_return_type`
+
 ```php
 // 默认输出类型
 'default_return_type'    => 'json',
 ```
 
 **快捷输出方法**
+
 ```php
 <?php
 namespace app\index\controller;
@@ -689,19 +710,21 @@ class Index
 }
 ```
 
-|输出类型		|快捷方法	|对应Response类
-|---|---|
-|HTML输出		|response	|\think\Response
-|渲染模板输出	|view		|\think\response\View
-|JSON输出		|json		|\think\response\Json
-|JSONP输出		|jsonp		|\think\response\Jsonp
-|XML输出		|xml		|\think\response\Xml
-|页面重定向		|redirect	|\think\response\Redirect
-|附件下载（V5.1.21+）	|download	|\think\response\Download
+| 输出类型 | 快捷方法 | 对应Response类 |
+| :--- | :--- | :--- |
+| HTML输出 | response | \think\Response |
+| 渲染模板输出 | view | \think\response\View |
+| JSON输出 | json | \think\response\Json |
+| JSONP输出 | jsonp | \think\response\Jsonp |
+| XML输出 | xml | \think\response\Xml |
+| 页面重定向 | redirect | \think\response\Redirect |
+| 附件下载（V5.1.21+） | download | \think\response\Download |
 
 ### facade
-门面为容器中的类提供了一个静态调用接口
+
+门面为容器中的类提供了一个静态调用接口  
 **common中的FacadeTest类**
+
 ```php
 namespace app\common;
 
@@ -714,6 +737,7 @@ class FacadeTest
 ```
 
 **facade目录创建FacadeTest类的映射**
+
 ```php
 namespace app\facade;
 
@@ -727,17 +751,18 @@ class Test extends facade
     }
 }
 ```
+
 1. 需要继承 think\Facade类
 2. 需要实现 getFacadeClass 方法
 
 ### DB类
 
-**静态Db连接**
+**静态Db连接**  
 先要将 ** 账户/密码/库名 ** 填入配置文件的 database.php 文件
 
 **动态Db连接**
-```php
 
+```php
     public function dbConnect()
     {
 
@@ -760,11 +785,10 @@ class Test extends facade
 
         dump($link->table('user')->select());
     }
-
-
 ```
 
 **Db类, 预处理方式**
+
 ```
 $res = Db::query("select * from book_user where id = ?", [ 1 ]);
 ```
@@ -772,11 +796,13 @@ $res = Db::query("select * from book_user where id = ?", [ 1 ]);
 ### 模型
 
 **生成模型文件**
+
 ```
 php think make:model 模块名/模型名
 ```
 
 **模型定义**
+
 ```php
 <?php
 namespace app\index\model;
@@ -785,10 +811,10 @@ use think\Model;
 
 class User extends Model
 {
-	protected $pk = 'uid';		//定义主键
-	protected $table = 'user'	//表名
-	protected $visible = ['id'] //显示字段
-	protected $hidden = ['id']  //隐藏字段
+    protected $pk = 'uid';        //定义主键
+    protected $table = 'user'    //表名
+    protected $visible = ['id'] //显示字段
+    protected $hidden = ['id']  //隐藏字段
 }
 ```
 
@@ -812,6 +838,7 @@ model('Person')->getUserInfo();
 ```
 
 **新增多个/一个**
+
 ```
 $user = new User;
 $user->save([
@@ -831,6 +858,7 @@ $user->saveAll($list);
 ```
 
 **更新多个/一个**
+
 ```
 $stu = new Student();
 $stu->save(['name' => 'tao'], ['id' => 1]);
@@ -846,6 +874,7 @@ $user->saveAll($list, false);
 ```
 
 **删除多个/一个**
+
 ```php
 //根据主键删除
 User::destroy(1);
@@ -859,9 +888,11 @@ User::where('id','>',10)->delete();
 **获取器**
 
 获取器模型方法命名, FieldName为数据表字段的驼峰转换
+
 > getFieldNameAttr
 
 例子
+
 ```
 <?php
 class User extends Model 
@@ -873,15 +904,17 @@ class User extends Model
     }
 }
 ```
-我取出某条User数据时, 本来status在数据库中是 int类型, 但是经过的获取器, 拿到的数据, 经过上面的针对status的过滤, 拿到了字符类型
 
+我取出某条User数据时, 本来status在数据库中是 int类型, 但是经过的获取器, 拿到的数据, 经过上面的针对status的过滤, 拿到了字符类型
 
 **修改器**
 
 修改器模型方法命名, FieldName为数据表字段的驼峰转换
+
 > setFieldNameAttr
 
 例子
+
 ```
 <?php
 class User extends Model 
@@ -892,6 +925,7 @@ class User extends Model
     }
 }
 ```
+
 我设置某条User数据时, 将Name的值进行小写后在插入数据库
 
 **类型转换**
@@ -911,26 +945,28 @@ class User extends Model
 }
 ```
 
-|类型|简介|
-|---|---|
-|integer|设置为integer（整型）后，该字段写入和输出的时候都会自动转换为整型。|
-|float|该字段的值写入和输出的时候自动转换为浮点型。|
-|boolean|该字段的值写入和输出的时候自动转换为布尔型。|
-|array|如果设置为强制转换为array类型，系统会自动把数组编码为json格式字符串写入数据库，取出来的时候会自动解码。|
-|object|该字段的值在写入的时候会自动编码为json字符串，输出的时候会自动转换为stdclass对象。|
-|serialize|指定为序列化类型的话，数据会自动序列化写入，并且在读取的时候自动反序列化。|
-|json|指定为json类型的话，数据会自动json_encode写入，并且在读取的时候自动json_decode处理。|
-|timestamp|指定为时间戳字段类型的话，该字段的值在写入时候会自动使用strtotime生成对应的时间戳，输出的时候会自动转换为dateFormat属性定义的时间字符串格式，默认的格式为Y-m-d H:i:s|
+| 类型 | 简介 |
+| --- | --- |
+| integer | 设置为integer（整型）后，该字段写入和输出的时候都会自动转换为整型。 |
+| float | 该字段的值写入和输出的时候自动转换为浮点型。 |
+| boolean | 该字段的值写入和输出的时候自动转换为布尔型。 |
+| array | 如果设置为强制转换为array类型，系统会自动把数组编码为json格式字符串写入数据库，取出来的时候会自动解码。 |
+| object | 该字段的值在写入的时候会自动编码为json字符串，输出的时候会自动转换为stdclass对象。 |
+| serialize | 指定为序列化类型的话，数据会自动序列化写入，并且在读取的时候自动反序列化。 |
+| json | 指定为json类型的话，数据会自动json\_encode写入，并且在读取的时候自动json\_decode处理。 |
+| timestamp | 指定为时间戳字段类型的话，该字段的值在写入时候会自动使用strtotime生成对应的时间戳，输出的时候会自动转换为dateFormat属性定义的时间字符串格式，默认的格式为Y-m-d H:i:s |
 
 **自动写入时间搓**
 
 修改数据库配置
+
 ```
 // 开启自动写入时间戳字段
 'auto_timestamp' => true,
 ```
 
 或者在模型里单独开启
+
 ```php
 <?php
 namespace app\index\model;
@@ -943,16 +979,17 @@ class User extends Model
 }
 ```
 
-一旦配置开启的话，会自动写入create_time和update_time两个字段的值，默认为整型（int），如果你的时间字段不是int类型的话，可以直接使用：
+一旦配置开启的话，会自动写入create\_time和update\_time两个字段的值，默认为整型（int），如果你的时间字段不是int类型的话，可以直接使用：
 
 ```
 // 开启自动写入时间戳字段
 'auto_timestamp' => 'datetime'
 ```
 
-系统创建新数据后会自动插入 create_time 字段, 数据修改后会自动插入 update_time
+系统创建新数据后会自动插入 create\_time 字段, 数据修改后会自动插入 update\_time
 
 修改 修改/插入字段
+
 ```php
 <?php
 namespace app\index\model;
@@ -967,7 +1004,8 @@ class User extends Model
 }
 ```
 
-如果你只需要使用create_time字段而不需要自动写入update_time
+如果你只需要使用create\_time字段而不需要自动写入update\_time
+
 ```php
 class User extends Model 
 {
@@ -979,6 +1017,7 @@ class User extends Model
 **查询范围**
 
 例子
+
 ```php
 <?php
 namespace app\index\model;
@@ -992,18 +1031,19 @@ class User extends Model
     {
         $query->where('name','thinkphp')->field('id,name');
     }
-	
-	
-	//方法名 按照 scope + 自定义名称进行拼接
+
+
+    //方法名 按照 scope + 自定义名称进行拼接
     public function scopeAge($query)
     {
         $query->where('age','>',20)->limit(10);
     }    
-    
+
 }
 ```
 
 控制器中使用, scope除了第一个参数, 其他都会传入 模型的scope自定义方法中, 第二个参数用来接收
+
 ```php
 // 查找name为thinkphp的用户
 User::scope('thinkphp')->find();
@@ -1013,16 +1053,16 @@ User::scope('age')->select();
 User::scope('thinkphp,age')->select();
 ```
 
-
 **模型输出**
 
-|操作|结果类型|
-|---|---|
-|$user->toArray()|数组|
-|$user->toJson()|json字符串|
+| 操作 | 结果类型 |
+| --- | --- |
+| $user-&gt;toArray\(\) | 数组 |
+| $user-&gt;toJson\(\) | json字符串 |
 
-**一对一关联**
+**一对一关联**  
 定义单一关联
+
 ```php
 <?php
 namespace app\index\model;
@@ -1038,20 +1078,23 @@ class User extends Model
 }
 ```
 
-> hasOne('关联数据库模型 类名' [,'外键','主键']);
+> hasOne\('关联数据库模型 类名' \[,'外键','主键'\]\);
 
-外键：默认的外键规则是当前模型名（不含命名空间，下同）+_id ，例如user_id
+外键：默认的外键规则是当前模型名（不含命名空间，下同）+\_id ，例如user\_id  
 主键：当前模型主键，默认会自动获取也可以指定传入
 
 使用关联
+
 ```php
 $user = User::get(1);
 // 输出Profile关联模型的email属性
 echo $user->profile->email;
 ```
+
 关联的方法返回hasOne的对象是`关联模型的映射`, 方法调用时名字会转化成驼峰写法
 
 定义多个关联
+
 ```php
 // 查询用户昵称是think的用户
 // 注意第一个参数是关联方法名（不是关联模型名）
@@ -1059,12 +1102,13 @@ $users = User::hasWhere('profile', ['nickname'=>'think'])->select();
 
 // 可以使用闭包查询
 $users = User::hasWhere('profile', function($query) {
-	$query->where('nickname', 'like', 'think%');
+    $query->where('nickname', 'like', 'think%');
 })->select();
 ```
 
-**一对多关联**
+**一对多关联**  
 定义一对多关联
+
 ```php
 <?php
 namespace app\index\model;
@@ -1080,9 +1124,10 @@ class Article extends Model
 }
 ```
 
-> hasMany('关联模型','外键','主键');
+> hasMany\('关联模型','外键','主键'\);
 
 使用关联
+
 ```php
 $article = Article::get(1);
 // 获取文章的所有评论
@@ -1091,17 +1136,18 @@ dump($article->comments);
 
 //也可以进行条件搜索
 dump($article->comments()->where('status',1)->select());
-
 ```
 
 根据其关联表的条件进行反向搜索
+
 ```php
 // 查询评论状态正常的文章
 $list = Article::hasWhere('comments',['status'=>1])->select();
 ```
 
-**多对多关联**
+**多对多关联**  
 定义多对多关联
+
 ```php
 <?php
 namespace app\index\model;
@@ -1116,23 +1162,27 @@ class User extends Model
     }
 }
 ```
+
 用户和角色就是一种多对多的关系
-> belongsToMany('关联模型类名','中间表','外键','关联键');
+
+> belongsToMany\('关联模型类名','中间表','外键','关联键'\);
 
 使用关联
+
 ```php
 $user = User::get(1);
 // 获取用户的所有角色
 $roles = $user->roles;
 foreach ($roles as $role) {
-	// 输出用户的角色名
-	echo $role->name;
+    // 输出用户的角色名
+    echo $role->name;
     // 获取中间表模型
     dump($role->pivot);
 }
 ```
 
 新增关联
+
 ```php
 $user = User::get(1);
 // 给用户增加管理员权限 会自动写入角色表和中间表数据
@@ -1145,6 +1195,7 @@ $user->roles()->saveAll([
 ```
 
 只新增中间表
+
 ```php
 $user = User::get(1);
 // 仅增加管理员权限（假设管理员的角色ID是1）
@@ -1152,6 +1203,7 @@ $user->roles()->save(1);
 ```
 
 更新中间表
+
 ```
 user = User::get(1);
 // 增加关联的中间表数据
@@ -1163,6 +1215,7 @@ $user->roles()->attach(1,['remark'=>'test']);
 // 删除中间表数据
 $user->roles()->detach([1,2,3]);
 ```
+
 attach方法的返回值是一个Pivot对象实例
 
 ### 视图
@@ -1180,3 +1233,6 @@ return $this->fetch('admin@member/edit',['think' => 'php']);
 ```php
 return view('admin@member/edit',['think' => 'php'])
 ```
+
+
+
