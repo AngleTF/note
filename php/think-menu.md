@@ -43,21 +43,6 @@
 项目根目录/public/index.php/modelName/controllerName/actionName
 ```
 
-### 视图
-
-可以使用助手函数 view 或者 控制器方法 fetch,
-
-fetch
-
-```php
-return $this->fetch('admin@member/edit',['think' => 'php']);
-```
-
-view助手
-
-```php
-return view('admin@member/edit',['think' => 'php'])
-```
 
 不带任何参数 自动定位当前模块 **view/类名/操作.html** 的模板文件, 以上模板路径是 ** admin/view/member/edit.html **, 并且将模板对应的think变量替换成php
 
@@ -1031,7 +1016,167 @@ User::scope('thinkphp,age')->select();
 
 **模型输出**
 
-|||
+|操作|结果类型|
 |---|---|
 |$user->toArray()|数组|
 |$user->toJson()|json字符串|
+
+**一对一关联**
+定义单一关联
+```php
+<?php
+namespace app\index\model;
+
+use think\Model;
+
+class User extends Model
+{
+    public function profile()
+    {
+        return $this->hasOne('Profile');
+    }
+}
+```
+
+> hasOne('关联数据库模型 类名' [,'外键','主键']);
+
+外键：默认的外键规则是当前模型名（不含命名空间，下同）+_id ，例如user_id
+主键：当前模型主键，默认会自动获取也可以指定传入
+
+使用关联
+```php
+$user = User::get(1);
+// 输出Profile关联模型的email属性
+echo $user->profile->email;
+```
+关联的方法返回hasOne的对象是`关联模型的映射`, 方法调用时名字会转化成驼峰写法
+
+定义多个关联
+```php
+// 查询用户昵称是think的用户
+// 注意第一个参数是关联方法名（不是关联模型名）
+$users = User::hasWhere('profile', ['nickname'=>'think'])->select();
+
+// 可以使用闭包查询
+$users = User::hasWhere('profile', function($query) {
+	$query->where('nickname', 'like', 'think%');
+})->select();
+```
+
+**一对多关联**
+定义一对多关联
+```php
+<?php
+namespace app\index\model;
+
+use think\Model;
+
+class Article extends Model 
+{
+    public function comments()
+    {
+        return $this->hasMany('Comment');
+    }
+}
+```
+
+> hasMany('关联模型','外键','主键');
+
+使用关联
+```php
+$article = Article::get(1);
+// 获取文章的所有评论
+dump($article->comments);
+
+
+//也可以进行条件搜索
+dump($article->comments()->where('status',1)->select());
+
+```
+
+根据其关联表的条件进行反向搜索
+```php
+// 查询评论状态正常的文章
+$list = Article::hasWhere('comments',['status'=>1])->select();
+```
+
+**多对多关联**
+定义多对多关联
+```php
+<?php
+namespace app\index\model;
+
+use think\Model;
+
+class User extends Model 
+{
+    public function roles()
+    {
+        return $this->belongsToMany('Role');
+    }
+}
+```
+用户和角色就是一种多对多的关系
+> belongsToMany('关联模型类名','中间表','外键','关联键');
+
+使用关联
+```php
+$user = User::get(1);
+// 获取用户的所有角色
+$roles = $user->roles;
+foreach ($roles as $role) {
+	// 输出用户的角色名
+	echo $role->name;
+    // 获取中间表模型
+    dump($role->pivot);
+}
+```
+
+新增关联
+```php
+$user = User::get(1);
+// 给用户增加管理员权限 会自动写入角色表和中间表数据
+$user->roles()->save(['name'=>'管理员']);
+// 批量授权
+$user->roles()->saveAll([
+    ['name'=>'管理员'],
+    ['name'=>'操作员'],
+]);
+```
+
+只新增中间表
+```php
+$user = User::get(1);
+// 仅增加管理员权限（假设管理员的角色ID是1）
+$user->roles()->save(1);
+```
+
+更新中间表
+```
+user = User::get(1);
+// 增加关联的中间表数据
+$user->roles()->attach(1);
+
+// 传入中间表的额外属性
+$user->roles()->attach(1,['remark'=>'test']);
+
+// 删除中间表数据
+$user->roles()->detach([1,2,3]);
+```
+attach方法的返回值是一个Pivot对象实例
+
+### 视图
+
+可以使用助手函数 view 或者 控制器方法 fetch,
+
+**fetch**
+
+```php
+return $this->fetch('admin@member/edit',['think' => 'php']);
+```
+
+**view助手**
+
+```php
+return view('admin@member/edit',['think' => 'php'])
+```
