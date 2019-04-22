@@ -1,4 +1,4 @@
-### mysql无法启动, 报错 updating PID file (...).
+### (一) mysql无法启动, 报错 updating PID file (...).
 
 **错误信息**
 ```
@@ -22,7 +22,7 @@ netstat nlp | grep 3306
 ll /path/to/mysql5.6
 ```
 
-**4.查看日志, 发现日志并没有任何记录**
+**4.查看日志, 发现日志并没有任何记录, 日志一定要有可写权限**
 ```
 cat /path/to/mysql.log
 ```
@@ -47,7 +47,7 @@ Staring MySQL...         [ ok ]
 
 发现 group_concat_max_len 导致的, 可能原因是设置过大, 或者是无效参数, 这里把他注释掉.
 
-### client does not support, mysql8.0
+### (二) client does not support, mysql8.0
 
 如果你没有设置认证方式，默认的密码加密方式是：caching_sha2_password，而现在很多客户端工具还不支持这种加密认证方式，连接测试的时候就会报错：client does not support  authentication protocol requested by server; consider upgrading MySQL client，这里的错误信息就是不支持身份认证方式，没关系，去my.ini里面在[mysqld]下面加上这句话即可：
 ```ini
@@ -81,7 +81,7 @@ mysql> select user, host, plugin, authentication_string from user where user='ro
 1 row in set (0.00 sec)
 ```
 
-### MySQLCPU使用过高
+### (三) MySQLCPU使用过高
 通过 `show processlist` 或 `show full processlist` 查看当前执行的语句
 
 ![](/assets/20190412121119.png)
@@ -93,7 +93,7 @@ mysql> select user, host, plugin, authentication_string from user where user='ro
 可以通过执行类似 kill 12 进行来终止长时间执行的会话, 12是进程ID, 通过`show processlist`查看进程ID
 
 
-### ERROR 1840 @@GLOBAL.GTID_EXECUTED is empty
+### (四) ERROR 1840 @@GLOBAL.GTID_EXECUTED is empty
 
 **报错信息**
 ```
@@ -125,4 +125,11 @@ mysql> show global variables like 'max_allowed_packet';
 
 
 mysql> set global max_allowed_packet=1024*1024*128;
+```
+
+### (五) ORDER BY clause is not in GROUP BY clause and contains nonaggregated column 'information_schema.PROFILING.SEQ' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode
+
+**修改my.cnf的sql_mode**
+```ini
+sql_mode=NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES
 ```
