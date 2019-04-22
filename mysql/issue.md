@@ -131,5 +131,7 @@ mysql> set global max_allowed_packet=1024*1024*128;
 
 **修改my.cnf的sql_mode**
 ```ini
+[mysqld]
+
 sql_mode=NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES
 ```
