@@ -14,7 +14,6 @@ C:\Users\username>  cd C:\bin
 C:\bin>  echo @php "%~dp0phpunit.phar" %* > phpunit.cmd
 C:\bin>  exit
 新开一个命令行窗口，确认一下可以在任意路径下执行 PHPUnit：
-
 ```
 
 ### 安装查看
