@@ -26,6 +26,8 @@ PHP_PEAR_BIN_DIR = you phpdoc path
 不进行这一步退出后会出现
 Could not open input file: \phpdoc.php
 
+或者你可以跑一下 pear.bat, 他会设定%PHP_PEAR_PHP_BIN%
+
 ### 生成文档
 ```
 phpdoc -f hello.php -t doc
