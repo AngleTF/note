@@ -55,5 +55,9 @@ pear upgrade-all
 ```
 这条命令将会升级pear本身和所有的pear包
 
+### 列出下载安装的包
+```
+pear list
+```
 
 
