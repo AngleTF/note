@@ -60,4 +60,8 @@ pear upgrade-all
 pear list
 ```
 
+### 删除已经安装的pear包
+```
+pear un packagename
+```
 
