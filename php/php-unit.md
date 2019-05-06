@@ -28,7 +28,8 @@ https://phpunit.readthedocs.io/zh_CN/latest/writing-tests-for-phpunit.html
 ```
 
 ### 规范
-1. 方法命名按照test*的方式开头
+1. 类名命名 `类名 + 'Test'`
+1. 方法命名按照 `test + 方法名`的方式开头
 
 
 ### 例子
