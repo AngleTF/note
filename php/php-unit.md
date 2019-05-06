@@ -27,6 +27,10 @@ PHPUnit x.y.z by Sebastian Bergmann and contributors.
 https://phpunit.readthedocs.io/zh_CN/latest/writing-tests-for-phpunit.html
 ```
 
+### 规范
+1. 
+
+
 ### 例子
 ```php
 <?php
