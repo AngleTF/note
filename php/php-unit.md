@@ -21,3 +21,8 @@ C:\bin>  exit
 C:\Users\username> phpunit --version
 PHPUnit x.y.z by Sebastian Bergmann and contributors.
 ```
+
+### 官方文档
+```
+https://phpunit.readthedocs.io/zh_CN/latest/writing-tests-for-phpunit.html
+```
