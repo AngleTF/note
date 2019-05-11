@@ -32,3 +32,11 @@ xdebug.remote_port = 9001
 ```
 
 ### PHPSTORM + Xdebug (全局配置)
+
+PHPStorm设置端口, 最好不要是9000端口, 因为和cgi默认端口冲突
+![](/assets/wx0511.png)
+
+![](/assets/wx_20190511192512.png)
+
+设置PHP的PE文件
+![](/assets/wx_20190511192634.png)
