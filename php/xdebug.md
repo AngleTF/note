@@ -46,6 +46,7 @@ xdebug.remote_port = 9001
 ![](/assets/wx_20190511192928.png)
 
 **测试Xdebug**
+
 注意: 右上角的爬虫监听电话一定要开启, 如果开启失败看看是不是端口冲突, 修改php.ini的xdebug配置和phpStorm的xdebug端口
 
 ![](/assets/wx_20190511193033.png)
