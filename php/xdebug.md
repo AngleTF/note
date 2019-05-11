@@ -31,7 +31,7 @@ xdebug.remote_host= localhost
 xdebug.remote_port = 9001
 ```
 
-### PHPSTORM + Xdebug (全局配置)
+### PHPSTORM + Xdebug (全局配置, 所有目录均可使用)
 
 **PHPStorm设置端口, 最好不要是9000端口, 因为和cgi默认端口冲突**
 ![](/assets/wx0511.png)
@@ -49,5 +49,9 @@ xdebug.remote_port = 9001
 注意: 右上角的爬虫监听电话一定要开启, 如果开启失败看看是不是端口冲突, 修改php.ini的xdebug配置和phpStorm的xdebug端口
 
 ![](/assets/wx_20190511193033.png)
+
+**输入浏览器地址**
 ![](/assets/wx_20190511193056.png)
+
 ![](/assets/wx_20190511193154.png)
+浏览器请求后会自动打开调试器
