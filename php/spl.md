@@ -243,3 +243,27 @@ $obj = new myObj;
 
 echo $obj['one'];
 ```
+---
+`Countable`接口用于count一个对象
+```
+class Demo implements Countable{
+
+    public $arr = [];
+
+    function __construct($arr)
+    {
+        $this->arr = $arr;
+    }
+
+
+    //实现count方法
+    public function count()
+    {
+        // TODO: Implement count() method.
+
+        return count($this->arr);
+    }
+}
+
+echo count(new Demo([1,2,3]));
+```
