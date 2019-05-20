@@ -187,8 +187,8 @@ print "Trying to delete file...\n";
 unlink('example.txt');
 ```
 
-### 数组接口
-
+### 接口
+`ArrayAccess`接口用于对象像数组的形式访问
 ```php
 class myObj implements ArrayAccess
 {
