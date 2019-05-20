@@ -1,7 +1,7 @@
 ### 什么是SPL?
 SPL 标准库(Standard PHP Library)是用于解决典型问题(standard problems)的一组接口与类的集合, 从PHP5.3开始SPL不能被禁掉.
 
-### 数据结构类
+### 数据结构
 
 双向链表`SplDoublyLinkedList`, 实现了迭代器,及数组的访问 可使用`foreach`进行遍历
 
@@ -90,4 +90,80 @@ var_dump($spl->bottom());
 
 //b
 var_dump($spl->top());
+```
+
+### 迭代器
+`ArrayIterator`是针对数组的迭代器, 可以使用很多高级的操作
+```
+//直接实例化ArrayIterator
+$arrayIter1 = new ArrayIterator([3, 1, 2]);
+
+//更具value排序, 此外还有很多的排序方式
+$arrayIter1->asort();
+
+//实例化
+foreach ($arrayIter1 as $k => $v){
+    printf("key:%s\nvalue:%s\n", $k , $v);
+}
+print_r("\n\n\n");
+
+
+//实例化ArrayObject
+$obj = new ArrayObject(['name'=>'tao', 'age' => 12]);
+
+//获取ArrayIterator类
+$arrayIter2 = $obj->getIterator();
+foreach ($arrayIter2 as $k => $v){
+    printf("key:%s\nvalue:%s\n", $k , $v);
+}
+print_r("\n\n\n");
+```
+
+---
+`FilesystemIterator`和`DirectoryIterator`是针对文件的迭代器, 迭代返回的FileInfo类, 里面封装了很多方法, 值得注意的是资源的释放.
+
+```php
+//文件系统迭代, 继承DirectoryIterator
+$fileIterator = new FilesystemIterator('.');
+
+foreach ($fileIterator as $fileInfo) {
+    //返回 SplFileInfo类
+    print_r($fileInfo->getFileName() . "\n");
+}
+print_r("\n\n\n");
+
+
+//DirectoryIterator会打印 . 和 ..
+$dirIterator = new DirectoryIterator('.');
+foreach ($dirIterator as $fileInfo) {
+    //返回 SplFileInfo类
+    print_r($fileInfo->getFileName() . "\n");
+}
+print_r("\n\n\n");
+
+//单独使用SplFileInfo
+$fileInfo = new SplFileInfo('ArrayAccess.php');
+print_r($fileInfo->getFilename());
+
+
+//关闭文件
+print "Declaring file object\n";
+$file = new SplFileObject('example.txt');
+
+print "Trying to delete file...\n";
+//unset($file) 销毁变量, 及时释放资源, 防止无法删除文件
+unlink('example.txt');
+```
+
+---
+`AppendIterator`合并两个数组迭代器, 类似于`array_merge`方法
+```php
+//给ArrayIterator合并数组
+$append = new AppendIterator();
+$append->append($arrayIter1);
+$append->append($arrayIter2);
+
+foreach ($append as $k => $v){
+    printf("key:%s\nvalue:%s\n", $k , $v);
+}
 ```
