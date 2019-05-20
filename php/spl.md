@@ -41,6 +41,7 @@ var_dump(
 队列`SplQueue`继承了`SplDoublyLinkedList`, 可以使用 `SplDoublyLinkedList`的所有方法, 同时新增`enqueue` 和 `dequeue`两个方法, 用于出队和入队
 
 ![](/assets/c6f77fa3f8635f2f070e10607b3a02b0.jpg)
+```php
 //队列 先进先出, 继承了SplDoublyLinkedList, 新增enqueue, dequeue方法
 
 $spl = new SplQueue();
@@ -58,3 +59,5 @@ echo $spl->current() . "\n";
 $spl->dequeue();
 
 var_dump($spl);
+
+```
