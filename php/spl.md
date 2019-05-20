@@ -152,6 +152,39 @@ foreach ($mult as $v){
 ```
 
 ---
+`RecursiveArrayIterator`迭代器, 一般用于树形结构的遍历, 该类实现了RecursiveIterator, 同时新增hasChildren, 和getChildren两个方法
+```php
+
+$myArray = array(
+    0 => 'a',
+    1 => array('subA', 'subB', array(0 => 'subsubA', 1 => 'subsubB', 2 => array(0 => 'deepA', 1 => 'deepB'))),
+    2 => 'b',
+    3 => array('subA', 'subB', 'subC'),
+    4 => 'c'
+);
+
+//实例化 RecursiveArrayIterator类
+$iterator = new RecursiveArrayIterator($myArray);
+
+
+//树结构的遍历
+function traverseStructure($iterator)
+{
+    while ($iterator->valid()) {
+        if ($iterator->hasChildren()) {
+            traverseStructure($iterator->getChildren());
+        } else {
+            echo $iterator->key() . ' : ' . $iterator->current() . PHP_EOL;
+        }
+        $iterator->next();
+    }
+}
+
+traverseStructure($iterator);
+```
+
+
+---
 `FilesystemIterator`和`DirectoryIterator`是针对文件的迭代器, 迭代返回的FileInfo类, 里面封装了很多方法, 值得注意的是资源的释放.
 
 ```php
@@ -296,3 +329,5 @@ foreach ($demo as $k => $v){
     print_r($k . $v . "\n");
 }
 ```
+
+
