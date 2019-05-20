@@ -33,6 +33,7 @@ if(!$spl->valid()){
 
 //如果溢出current会返回NULL
 //如果指定的节点被pop, 在返回current, 同样会返回NULL
+//current, bottom, top代表不同方向的指针, 分别代表当前, 头部, 尾部
 var_dump(
     $spl->current(), count($spl), $spl, $spl->bottom(), $spl->top()
 );
@@ -60,4 +61,33 @@ echo $spl->current() . "\n";
 $spl->dequeue();
 
 var_dump($spl);
+```
+
+---
+堆栈`SplQueue`继承了`SplDoublyLinkedList`, 可以使用 `SplDoublyLinkedList`的所有方法.
+![](/assets/a61b4edfed878927252207f9571ca00f.jpg)
+```php
+//堆栈 先进先出 后进后出, 和正常的操作结果相反
+$spl = new SplStack();
+$spl->push('a');
+$spl->push('b');
+$spl->push('c');
+
+
+//c
+$spl->rewind();
+var_dump($spl->current());
+
+//b
+$spl->next();
+var_dump($spl->current());
+
+//删除c
+$spl->pop();
+
+//a
+var_dump($spl->bottom());
+
+//b
+var_dump($spl->top());
 ```
