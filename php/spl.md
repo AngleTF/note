@@ -120,6 +120,38 @@ print_r("\n\n\n");
 ```
 
 ---
+`AppendIterator`合并多个迭代器, 类似于`array_merge`方法
+```php
+//合并两个ArrayIterator
+$append = new AppendIterator();
+$append->append($arrayIter1);
+$append->append($arrayIter2);
+
+foreach ($append as $k => $v){
+printf("key:%s\nvalue:%s\n", $k , $v);
+}
+```
+
+---
+`MultipleIterator`组合多个迭代器
+```php
+$i1 = new ArrayIterator([1, 2, 3]);
+$i2 = new ArrayIterator(['taolifeng', 'zhangshan', 'lisi']);
+$i3 = new ArrayIterator([22, 23, 34]);
+
+
+$mult = new MultipleIterator(MultipleIterator::MIT_KEYS_ASSOC);
+
+$mult->attachIterator($i1, 'id');
+$mult->attachIterator($i2, 'name');
+$mult->attachIterator($i3, 'age');
+
+foreach ($mult as $v){
+    print_r($v);
+}
+```
+
+---
 `FilesystemIterator`和`DirectoryIterator`是针对文件的迭代器, 迭代返回的FileInfo类, 里面封装了很多方法, 值得注意的是资源的释放.
 
 ```php
@@ -155,15 +187,59 @@ print "Trying to delete file...\n";
 unlink('example.txt');
 ```
 
----
-`AppendIterator`合并两个数组迭代器, 类似于`array_merge`方法
-```php
-//给ArrayIterator合并数组
-$append = new AppendIterator();
-$append->append($arrayIter1);
-$append->append($arrayIter2);
+### 数组接口
 
-foreach ($append as $k => $v){
-    printf("key:%s\nvalue:%s\n", $k , $v);
+```php
+class myObj implements ArrayAccess
+{
+
+
+    public $arr = [
+
+        'one' => 'hello',
+        'two' => 'word',
+        'three' => 'this',
+        'four' => 'is',
+        'five' => 'blog',
+
+    ];
+
+    function offsetExists($offset)
+    {
+        // TODO: Implement offsetExists() method.
+        return isset($this->arr[$offset]);
+    }
+
+
+    function offsetGet($offset)
+    {
+        // TODO: Implement offsetGet() method.
+        return $this->offsetExists($offset) ? $this->arr[$offset] : null;
+
+    }
+
+    function offsetSet($offset, $value)
+    {
+        // TODO: Implement offsetSet() method.
+
+        if (is_null($offset)) {
+            $this->arr[] = $value;
+        } else {
+            $this->arr[$offset] = $value;
+        }
+    }
+
+    public function offsetUnset($offset)
+    {
+        // TODO: Implement offsetUnset() method.
+        unset($this->arr[$offset]);
+
+    }
+
 }
+
+
+$obj = new myObj;
+
+echo $obj['one'];
 ```
