@@ -76,6 +76,6 @@
     * [二分查询](algorithm/binary-query.md)
 * [html](html/README.md)
     * [教程](html/school/README.md)
-        * [1.0初识HTML](html/教程/1.0know.md)
+        * [1.0初识HTML](html/school/1.0know.md)
     * [meta](html/meta-label.md)
 
