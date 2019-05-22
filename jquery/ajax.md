@@ -7,7 +7,7 @@
 | type| 请求类型 |
 | url| 请求地址 |
 | data | 请求的数据, obj格式 |
-| dateType | 返回时被转化的类型 |
+| dataType | 返回时被转化的类型 |
 | success| 请求成功的回调函数 |
 | error | 请求失败的回调函数 |
 | timeout| 超时时间, 单位毫秒 |
