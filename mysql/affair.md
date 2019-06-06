@@ -35,6 +35,42 @@
 |幻读|同一查询在同一个事务中多次进行, 由于其他事务的"插入"提交导致返回不同的结果集|
 
 在MySQL数据库中默认的隔离级别为Repeatable read (可重复读)
+### 如何操作和使用事务
+关闭自动提交
+```sql
+set autocommit = 0;
+```
+
+开启事务
+```sql
+START TRANSACTION;
+```
+
+设置回滚点
+```sql
+SAVEPOINT name;
+```
+
+回滚至保存点
+```sql
+ROLLBACK TO name;
+```
+
+回滚全部
+```sql
+ROLLBACK;
+```
+
+提交事务
+```sql
+COMMIT;
+```
+
+获取事务的隔离性
+```sql
+select @@tx_isolation
+```
+
 
 
 
