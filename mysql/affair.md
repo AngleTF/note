@@ -42,34 +42,5 @@
 set autocommit = 0;
 ```
 
-开启事务
-```sql
-START TRANSACTION;
-```
-
-设置回滚点
-```sql
-SAVEPOINT name;
-```
-
-回滚至保存点
-```sql
-ROLLBACK TO name;
-```
-
-回滚全部
-```sql
-ROLLBACK;
-```
-
-提交事务
-```sql
-COMMIT;
-```
-
-获取事务的隔离性
-```sql
-select @@tx_isolation
-```
 
 
