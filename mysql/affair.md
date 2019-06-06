@@ -63,7 +63,8 @@ ROLLBACK;
 ```
 
 提交事务
-```
+```mysql
+
 COMMIT;
 ```
 
