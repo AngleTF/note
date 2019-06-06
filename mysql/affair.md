@@ -24,7 +24,7 @@
 |读未提交(read uncommitted)|脏读 , 不可重复读 , 幻读|
 |读以提交(read committed)|不可重复读 , 幻读|
 |可重复读(repeatable read)|幻读|
-|可串行化(serializable)||
+|可串行化(serializable)| |
 多个线程开启各自的事务操作数据库中的数据时, 数据库系统要负责隔离操作 , 以保证各个线程在获取数据时的准确性
 <br>
 
