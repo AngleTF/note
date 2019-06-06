@@ -36,11 +36,6 @@
 
 在MySQL数据库中默认的隔离级别为Repeatable read (可重复读)
 
-### 如何操作和使用事务
-关闭自动提交
-```sql
-set autocommit = 0;
-```
 
 
 
