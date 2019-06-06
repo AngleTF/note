@@ -38,37 +38,36 @@
 
 ### 如何操作和使用事务
 关闭自动提交
-```mysql
+```sql
 set autocommit=0; 
 ```
-
 开启事务
-```mysql
+```sql
 START TRANSACTION;
 ```
 
 设置回滚点
-```mysql
+```sql
 SAVEPOINT name;
 ```
 
 回滚至保存点
-```mysql
+```sql
 ROLLBACK TO name;
 ```
 
 回滚全部
-```mysql
+```sql
 ROLLBACK;
 ```
 
 提交事务
-```mysql
+```sql
 COMMIT;
 ```
 
 获取事务的隔离性
-```mysql
+```sql
 select @@tx_isolation
 ```
 
