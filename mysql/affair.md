@@ -40,8 +40,29 @@
 set autocommit=0; 
 ```
 
-
+开启事务
 ```mysql
 START TRANSACTION;
 ```
+
+设置回滚点
+```mysql
+SAVEPOINT name;
+```
+
+回滚至保存点
+```mysql
+ROLLBACK TO name;
+```
+
+回滚全部
+```mysql
+ROLLBACK;
+```
+
+提交事务
+```
+COMMIT;
+```
+
 
