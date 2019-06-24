@@ -2,7 +2,7 @@
 
 ---
 
-### 配置Tools->Options
+### 配置Fiddler Tools->Options
 
 **配置Https**
 ![](/assets/20190624235015.jpg](/assets/20190624235015.jpg)
