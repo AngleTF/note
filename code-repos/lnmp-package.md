@@ -4,7 +4,7 @@
 ```
 
 ### 下载一键部署安装包
-[lnmp.zip](/assets/lnmp.zip)
+<a target="_blank" href="/assets/lnmp.zip">lnmp.zip</a>
 
 
 ### 使用
