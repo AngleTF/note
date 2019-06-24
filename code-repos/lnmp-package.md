@@ -11,9 +11,6 @@
 ```
 unzip lnmp.zip
 cd lnmp
-vim run.sh
-:set ff=unix
-:wq
 chmod +x run.sh
 ./run.sh
 ```
