@@ -4,9 +4,8 @@
 ```
 
 ### 下载一键部署安装包
-```
-wget http://tlf.freenovel.vip/assets/lnmp.zip
-```
+[lnmp.zip](assets/lnmp.zip)
+
 
 ### 使用
 ```
