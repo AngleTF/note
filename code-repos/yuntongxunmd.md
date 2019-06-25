@@ -130,8 +130,7 @@ class YunTongXun
      */
     public function parse($result)
     {
-        //"{"statusCode":"000000","templateSMS":{"smsMessageSid":"def7a57fa70b40819c955ad0f8f0d305","dateCreated":"20190601122724"}}"
-
+    
         $result_arr = json_decode($result, true);
 
         if (!isset($result_arr['statusCode'])) {
@@ -230,7 +229,7 @@ class YunTongXun
 
 ### 使用
 ```php
-$yun = new \app\cron\YunTongXun([
+$yun = new YunTongXun([
         'phone' => '123456789',
         'account_sid' => '111',
         'app_id' => '222',
@@ -242,7 +241,7 @@ $yun = new \app\cron\YunTongXun([
 try {
 
     //发送短信通知
-    if ($yun->send([$v['title'], $end_time])) {
+    if ($yun->send(['模板变量1', '模板变量2'])) {
         echo 'success';
     } else {
         echo $yun->getError();
