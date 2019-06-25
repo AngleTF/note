@@ -239,10 +239,9 @@ $yun = new \app\cron\YunTongXun([
     ]);
     
     
-    
 try {
 
-    //如果到期则调用短信通知
+    //发送短信通知
     if ($yun->send([$v['title'], $end_time])) {
         echo 'success';
     } else {
