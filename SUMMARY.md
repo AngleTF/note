@@ -55,7 +55,7 @@
   * [lnmp一键安装脚本](code-repos/lnmp-package.md)
   * [mysql配置文件](code-repos/mysql-cnf.md)
   * [mysql备份shell脚本](code-repos/sql-backup.md)
-  * [yuntongxun.md](code-repos/yuntongxunmd.md)
+  * [云通讯短信封装类](code-repos/yuntongxunmd.md)
 * [docker](docker/README.md)
   * [1.0安装](docker/install.md)
   * [1.1使用](docker/use.md)
