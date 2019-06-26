@@ -15,3 +15,13 @@ var_dump(decimal_conver(314156, 16));
 ```
 
 ### N进制转换十进制
+```php
+function conver_decimal($str, $ary)
+{
+    global $ary_map;
+    $len = strlen((string)$str);
+    if ($len > 0) return (int)(array_search($str[0], $ary_map) * pow($ary, $len - 1)) + conver_decimal(substr($str, 1), $ary);
+}
+
+var_dump(conver_decimal('4CB2C', 16));
+```
