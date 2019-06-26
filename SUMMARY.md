@@ -23,6 +23,7 @@
   * [xdebug](php/xdebug.md)
   * [phpunit](php/php-unit.md)
   * [spl](php/spl.md)
+  * [进制转换](php/sysy-convert.md)
 * [git](git/README.md)
   * [git的三种状态](git/git-status.md)
 * [golang](golang/README.md)
