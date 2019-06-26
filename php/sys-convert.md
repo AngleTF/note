@@ -14,6 +14,11 @@ function decimal_conver($number, $ary)
 var_dump(decimal_conver(314156, 16));
 ```
 
+**公式**
+```
+x = q * n + r
+```
+
 ### N进制转换十进制
 ```php
 $ary_map = [
