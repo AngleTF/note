@@ -83,4 +83,7 @@
   * [meta](html/meta-label.md)
 * [fiddler](fiddler/README.md)
   * [抓取Https请求](fiddler/get-https.md)
+* [computer](computer/README.md)
+  * [计算机原理](computer/basics.md)
+
 
