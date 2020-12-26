@@ -1,0 +1,1439 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>mysql报错 · note</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="lifeng tao">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../php/" />
+    
+    
+    <link rel="prev" href="inject.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    summary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    mysql
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="master-slave.html">
+            
+                <a href="master-slave.html">
+            
+                    
+                    主从服务搭建和配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="inject.html">
+            
+                <a href="inject.html">
+            
+                    
+                    sql注入攻击
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.3" data-path="issue.html">
+            
+                <a href="issue.html">
+            
+                    
+                    mysql报错
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../php/">
+            
+                <a href="../php/">
+            
+                    
+                    php
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../php/intcoverstring.html">
+            
+                <a href="../php/intcoverstring.html">
+            
+                    
+                    int与string强制转换的原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../php/lower-upper.html">
+            
+                <a href="../php/lower-upper.html">
+            
+                    
+                    大小写转化原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../php/think-menu.html">
+            
+                <a href="../php/think-menu.html">
+            
+                    
+                    thinkphp框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../php/namespace.html">
+            
+                <a href="../php/namespace.html">
+            
+                    
+                    命名空间
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../php/extension.html">
+            
+                <a href="../php/extension.html">
+            
+                    
+                    加载扩展文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../php/composer.html">
+            
+                <a href="../php/composer.html">
+            
+                    
+                    composer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../php/image-class.html">
+            
+                <a href="../php/image-class.html">
+            
+                    
+                    图片压缩/马赛克/验证码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../php/design-mode.html">
+            
+                <a href="../php/design-mode.html">
+            
+                    
+                    设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../php/psr.html">
+            
+                <a href="../php/psr.html">
+            
+                    
+                    psr
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="../php/route.html">
+            
+                <a href="../php/route.html">
+            
+                    
+                    route原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="../php/pear.html">
+            
+                <a href="../php/pear.html">
+            
+                    
+                    pear安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="../php/php-document.html">
+            
+                <a href="../php/php-document.html">
+            
+                    
+                    phpdoc安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.13" data-path="../php/download-file.html">
+            
+                <a href="../php/download-file.html">
+            
+                    
+                    用户下载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.14" data-path="../php/xdebug.html">
+            
+                <a href="../php/xdebug.html">
+            
+                    
+                    xdebug
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.15" data-path="../php/php-unit.html">
+            
+                <a href="../php/php-unit.html">
+            
+                    
+                    phpunit
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.16" data-path="../php/spl.html">
+            
+                <a href="../php/spl.html">
+            
+                    
+                    spl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../git/">
+            
+                <a href="../git/">
+            
+                    
+                    git
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../git/git-status.html">
+            
+                <a href="../git/git-status.html">
+            
+                    
+                    git的三种状态
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../golang/">
+            
+                <a href="../golang/">
+            
+                    
+                    golang
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../golang/http-proxy.html">
+            
+                <a href="../golang/http-proxy.html">
+            
+                    
+                    http代理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../golang/type-conver.html">
+            
+                <a href="../golang/type-conver.html">
+            
+                    
+                    类型转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../golang/go-build.html">
+            
+                <a href="../golang/go-build.html">
+            
+                    
+                    go编译
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../golang/golang.org-package-download.html">
+            
+                <a href="../golang/golang.org-package-download.html">
+            
+                    
+                    下载golang.org/x包
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../gitbook/">
+            
+                <a href="../gitbook/">
+            
+                    
+                    gitbook
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../gitbook/install.html">
+            
+                <a href="../gitbook/install.html">
+            
+                    
+                    1.0-安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../gitbook/init.html">
+            
+                <a href="../gitbook/init.html">
+            
+                    
+                    1.1-初始化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../gitbook/struct.html">
+            
+                <a href="../gitbook/struct.html">
+            
+                    
+                    1.2-结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../gitbook/plugin.html">
+            
+                <a href="../gitbook/plugin.html">
+            
+                    
+                    1.3-插件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../http/">
+            
+                <a href="../http/">
+            
+                    
+                    http
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../http/http-desc.html">
+            
+                <a href="../http/http-desc.html">
+            
+                    
+                    1.0-什么是http
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../http/message.html">
+            
+                <a href="../http/message.html">
+            
+                    
+                    1.1-请求报文和响应报文
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../http/method.html">
+            
+                <a href="../http/method.html">
+            
+                    
+                    1.2-请求方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../http/cookie.html">
+            
+                <a href="../http/cookie.html">
+            
+                    
+                    1.3-了解cookie
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../http/status.html">
+            
+                <a href="../http/status.html">
+            
+                    
+                    1.4-响应报文的状态码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../linux/">
+            
+                <a href="../linux/">
+            
+                    
+                    linux
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../linux/LMNAP.html">
+            
+                <a href="../linux/LMNAP.html">
+            
+                    
+                    LMNAP安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../linux/mount.html">
+            
+                <a href="../linux/mount.html">
+            
+                    
+                    挂载/分区/格式化磁盘
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../linux/vpn.html">
+            
+                <a href="../linux/vpn.html">
+            
+                    
+                    vpn
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../linux/inode-full.html">
+            
+                <a href="../linux/inode-full.html">
+            
+                    
+                    INode被占满
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../jquery/">
+            
+                <a href="../jquery/">
+            
+                    
+                    Jquery
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../jquery/ajax.html">
+            
+                <a href="../jquery/ajax.html">
+            
+                    
+                    ajax
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../news/">
+            
+                <a href="../news/">
+            
+                    
+                    news
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../news/neihanduanzi.html">
+            
+                <a href="../news/neihanduanzi.html">
+            
+                    
+                    内涵段子关停
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../code-repos/">
+            
+                <a href="../code-repos/">
+            
+                    
+                    code-repository
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../code-repos/tb-magnifying.html">
+            
+                <a href="../code-repos/tb-magnifying.html">
+            
+                    
+                    淘宝放大镜
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../code-repos/lnmp-package.html">
+            
+                <a href="../code-repos/lnmp-package.html">
+            
+                    
+                    lnmp一键安装脚本
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../code-repos/mysql-cnf.html">
+            
+                <a href="../code-repos/mysql-cnf.html">
+            
+                    
+                    mysql配置文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="../code-repos/sql-backup.html">
+            
+                <a href="../code-repos/sql-backup.html">
+            
+                    
+                    mysql备份shell脚本
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../docker/">
+            
+                <a href="../docker/">
+            
+                    
+                    docker
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../docker/install.html">
+            
+                <a href="../docker/install.html">
+            
+                    
+                    1.0安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../docker/use.html">
+            
+                <a href="../docker/use.html">
+            
+                    
+                    1.1使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../rsync/">
+            
+                <a href="../rsync/">
+            
+                    
+                    rsync
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../rsync/install.html">
+            
+                <a href="../rsync/install.html">
+            
+                    
+                    1.0安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2" data-path="../rsync/use.html">
+            
+                <a href="../rsync/use.html">
+            
+                    
+                    1.1使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../css/">
+            
+                <a href="../css/">
+            
+                    
+                    css
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.1" data-path="../css/less.html">
+            
+                <a href="../css/less.html">
+            
+                    
+                    less的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.2" data-path="../css/BFC.html">
+            
+                <a href="../css/BFC.html">
+            
+                    
+                    BFC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.3" data-path="../css/line-block.html">
+            
+                <a href="../css/line-block.html">
+            
+                    
+                    行内块元素line-block
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="../security/">
+            
+                <a href="../security/">
+            
+                    
+                    security
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1" data-path="../security/xss.html">
+            
+                <a href="../security/xss.html">
+            
+                    
+                    xss注入攻击
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="../javascript/">
+            
+                <a href="../javascript/">
+            
+                    
+                    js
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.16.1" data-path="../javascript/async.html">
+            
+                <a href="../javascript/async.html">
+            
+                    
+                    单线程定时器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.2" data-path="../javascript/worke.html">
+            
+                <a href="../javascript/worke.html">
+            
+                    
+                    worke多线程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.3" data-path="../javascript/base.html">
+            
+                <a href="../javascript/base.html">
+            
+                    
+                    基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.4" data-path="../javascript/optimize.html">
+            
+                <a href="../javascript/optimize.html">
+            
+                    
+                    优化点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.5" data-path="../javascript/jsonp.html">
+            
+                <a href="../javascript/jsonp.html">
+            
+                    
+                    JSONP
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="../algorithm/">
+            
+                <a href="../algorithm/">
+            
+                    
+                    algorithm
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.17.1" data-path="../algorithm/binary-query.html">
+            
+                <a href="../algorithm/binary-query.html">
+            
+                    
+                    二分查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="../html/">
+            
+                <a href="../html/">
+            
+                    
+                    html
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.18.1" data-path="../html/school/">
+            
+                <a href="../html/school/">
+            
+                    
+                    教程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.18.1.1" data-path="../html/school/1.0know.html">
+            
+                <a href="../html/school/1.0know.html">
+            
+                    
+                    1.0初识HTML
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18.2" data-path="../html/meta-label.html">
+            
+                <a href="../html/meta-label.html">
+            
+                    
+                    meta
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >mysql报错</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h3 id="&#x4E00;-mysql&#x65E0;&#x6CD5;&#x542F;&#x52A8;-&#x62A5;&#x9519;-updating-pid-file-">(&#x4E00;) mysql&#x65E0;&#x6CD5;&#x542F;&#x52A8;, &#x62A5;&#x9519; updating PID file (...).</h3>
+<p><strong>&#x9519;&#x8BEF;&#x4FE1;&#x606F;</strong></p>
+<pre><code>[root@localhost]service mysqld start
+
+Staring MySQL. The server quit without updating PID file (...).
+</code></pre><p><strong>1.&#x6392;&#x67E5;&#x8FDB;&#x7A0B;&#x662F;&#x5426;&#x542F;&#x52A8;, &#x5982;&#x679C;&#x542F;&#x52A8;&#x4E86;&#x5219;kill&#x6389;&#x518D;&#x8BD5;&#x8BD5;</strong></p>
+<pre><code>ps aux | grep mysql
+</code></pre><p><strong>2.&#x67E5;&#x770B;&#x7AEF;&#x53E3;&#x662F;&#x5426;&#x5360;&#x7528;, &#x5982;&#x679C;&#x5360;&#x7528;&#x5219;&#x6362;&#x5176;&#x4ED6;&#x7AEF;&#x53E3;&#x8BD5;&#x8BD5;</strong></p>
+<pre><code>netstat nlp | grep 3306
+</code></pre><p><strong>3.&#x67E5;&#x770B;mysql&#x5B89;&#x88C5;&#x8DEF;&#x5F84;&#x662F;&#x5426;&#x5C5E;&#x4E8E;mysql&#x6240;&#x6709;</strong></p>
+<pre><code>ll /path/to/mysql5.6
+</code></pre><p><strong>4.&#x67E5;&#x770B;&#x65E5;&#x5FD7;, &#x53D1;&#x73B0;&#x65E5;&#x5FD7;&#x5E76;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x8BB0;&#x5F55;, &#x65E5;&#x5FD7;&#x4E00;&#x5B9A;&#x8981;&#x6709;&#x53EF;&#x5199;&#x6743;&#x9650;</strong></p>
+<pre><code>cat /path/to/mysql.log
+</code></pre><p><strong>5.&#x5907;&#x4EFD;&#x65E7;&#x914D;&#x7F6E;, &#x65B0;&#x5EFA;&#x914D;&#x7F6E;</strong></p>
+<pre><code>mv /path/to/my.cnf /path/to/my.bk.cnf
+
+#&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x6B63;&#x786E;&#x7684;&#x914D;&#x7F6E;
+touch /path/to/my.cnf
+
+#&#x542F;&#x52A8;&#x5C1D;&#x8BD5;
+service mysqld start
+
+#&#x542F;&#x52A8;&#x6210;&#x529F;
+Staring MySQL...         [ ok ]
+</code></pre><p><strong>&#x65E7;&#x914D;&#x7F6E;&#x627E;&#x95EE;&#x9898;</strong></p>
+<p><img src="../assets/20190412120141.png" alt=""></p>
+<p>&#x53D1;&#x73B0; group_concat_max_len &#x5BFC;&#x81F4;&#x7684;, &#x53EF;&#x80FD;&#x539F;&#x56E0;&#x662F;&#x8BBE;&#x7F6E;&#x8FC7;&#x5927;, &#x6216;&#x8005;&#x662F;&#x65E0;&#x6548;&#x53C2;&#x6570;, &#x8FD9;&#x91CC;&#x628A;&#x4ED6;&#x6CE8;&#x91CA;&#x6389;.</p>
+<h3 id="&#x4E8C;-client-does-not-support-mysql80">(&#x4E8C;) client does not support, mysql8.0</h3>
+<p>&#x5982;&#x679C;&#x4F60;&#x6CA1;&#x6709;&#x8BBE;&#x7F6E;&#x8BA4;&#x8BC1;&#x65B9;&#x5F0F;&#xFF0C;&#x9ED8;&#x8BA4;&#x7684;&#x5BC6;&#x7801;&#x52A0;&#x5BC6;&#x65B9;&#x5F0F;&#x662F;&#xFF1A;caching_sha2_password&#xFF0C;&#x800C;&#x73B0;&#x5728;&#x5F88;&#x591A;&#x5BA2;&#x6237;&#x7AEF;&#x5DE5;&#x5177;&#x8FD8;&#x4E0D;&#x652F;&#x6301;&#x8FD9;&#x79CD;&#x52A0;&#x5BC6;&#x8BA4;&#x8BC1;&#x65B9;&#x5F0F;&#xFF0C;&#x8FDE;&#x63A5;&#x6D4B;&#x8BD5;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x4F1A;&#x62A5;&#x9519;&#xFF1A;client does not support  authentication protocol requested by server; consider upgrading MySQL client&#xFF0C;&#x8FD9;&#x91CC;&#x7684;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#x5C31;&#x662F;&#x4E0D;&#x652F;&#x6301;&#x8EAB;&#x4EFD;&#x8BA4;&#x8BC1;&#x65B9;&#x5F0F;&#xFF0C;&#x6CA1;&#x5173;&#x7CFB;&#xFF0C;&#x53BB;my.ini&#x91CC;&#x9762;&#x5728;[mysqld]&#x4E0B;&#x9762;&#x52A0;&#x4E0A;&#x8FD9;&#x53E5;&#x8BDD;&#x5373;&#x53EF;&#xFF1A;</p>
+<pre><code class="lang-ini"><span class="hljs-attr">default_authentication_plugin</span>=mysql_native_password
+</code></pre>
+<pre><code>mysql&gt; use mysql
+Database changed
+mysql&gt; select user, host, plugin, authentication_string from user where user=&apos;test&apos;;
+Empty set (0.00 sec)
+
+#&#x6B64;&#x5904;&#x5BC6;&#x7801;&#x5DF2;&#x7ECF;&#x88AB;&#x52A0;&#x5BC6;&#x4E3A;caching_sha2_password&#x7C7B;&#x578B;
+mysql&gt; select user, host, plugin, authentication_string from user where user=&apos;root&apos;;
++------+-----------+-----------------------+------------------------------------------------------------------------+
+| user | host      | plugin                | authentication_string                                                  |
++------+-----------+-----------------------+------------------------------------------------------------------------+
+| root | localhost | caching_sha2_password | $A$005$x1 WikRO@egf?X&gt;q&gt; K.y2oKvVBN6G2Fu6Y5mtqcDaaa/dsP4319mUkh4p4qdC |
++------+-----------+-----------------------+------------------------------------------------------------------------+
+1 row in set (0.00 sec)
+
+#&#x4FEE;&#x6539;&#x5BC6;&#x7801;&#x7C7B;&#x578B;&#x548C;&#x5BC6;&#x7801;(navicat&#x652F;&#x6301;mysql_native_password)
+mysql&gt; ALTER USER &apos;root&apos;@&apos;localhost&apos; IDENTIFIED WITH mysql_native_password BY &apos;mysql&apos;;
+Query OK, 0 rows affected (0.40 sec)
+
+mysql&gt; select user, host, plugin, authentication_string from user where user=&apos;root&apos;;
++------+-----------+-----------------------+-------------------------------------------+
+| user | host      | plugin                | authentication_string                     |
++------+-----------+-----------------------+-------------------------------------------+
+| root | localhost | mysql_native_password | *E74858DB86EBA20BC33D0AECAE8A8108C56B17FA |
++------+-----------+-----------------------+-------------------------------------------+
+1 row in set (0.00 sec)
+</code></pre><h3 id="&#x4E09;-mysqlcpu&#x4F7F;&#x7528;&#x8FC7;&#x9AD8;">(&#x4E09;) MySQLCPU&#x4F7F;&#x7528;&#x8FC7;&#x9AD8;</h3>
+<p>&#x901A;&#x8FC7; <code>show processlist</code> &#x6216; <code>show full processlist</code> &#x67E5;&#x770B;&#x5F53;&#x524D;&#x6267;&#x884C;&#x7684;&#x8BED;&#x53E5;</p>
+<p><img src="../assets/20190412121119.png" alt=""></p>
+<p>&#x5BF9;&#x4E8E;&#x67E5;&#x8BE2;&#x65F6;&#x95F4;&#x957F;&#x3001;&#x8FD0;&#x884C;&#x72B6;&#x6001;&#xFF08;State &#x5217;&#xFF09;&#x662F;<code>Sending data</code>, <code>Copying to tmp table</code>, <code>Copying to tmp table on disk</code>, <code>Sorting result</code>, <code>Using filesort</code>&#x7B49;&#x90FD;&#x53EF;&#x80FD;&#x662F;&#x6709;&#x6027;&#x80FD;&#x95EE;&#x9898;&#x7684;&#x67E5;&#x8BE2;&#xFF08;SQL&#xFF09;</p>
+<p><strong>&#x6740;&#x6389;mysql&#x5185;&#x90E8;&#x7684;&#x8FDB;&#x7A0B;</strong></p>
+<p>&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6267;&#x884C;&#x7C7B;&#x4F3C; kill 12 &#x8FDB;&#x884C;&#x6765;&#x7EC8;&#x6B62;&#x957F;&#x65F6;&#x95F4;&#x6267;&#x884C;&#x7684;&#x4F1A;&#x8BDD;, 12&#x662F;&#x8FDB;&#x7A0B;ID, &#x901A;&#x8FC7;<code>show processlist</code>&#x67E5;&#x770B;&#x8FDB;&#x7A0B;ID</p>
+<h3 id="&#x56DB;-error-1840-globalgtidexecuted-is-empty">(&#x56DB;) ERROR 1840 @@GLOBAL.GTID_EXECUTED is empty</h3>
+<p><strong>&#x62A5;&#x9519;&#x4FE1;&#x606F;</strong></p>
+<pre><code>ERROR 1840 (HY000) at line 24: @@GLOBAL.GTID_PURGED can only be set when @@GLOBAL.GTID_EXECUTED is empty
+</code></pre><p><strong>&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#x4E00;</strong></p>
+<pre><code>reset mater
+</code></pre><p>&#x8FD9;&#x4E2A;&#x64CD;&#x4F5C;&#x53EF;&#x4EE5;&#x5C06;&#x5F53;&#x524D;&#x5E93;&#x7684;GTID_EXECUTED&#x503C;&#x7F6E;&#x7A7A;</p>
+<p><strong>&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#x4E8C;</strong></p>
+<pre><code>mysqldump -uroot -p --set-gtid-purged=off -d sso &gt; sso1.sql
+</code></pre><p>&#x5728;dump&#x5BFC;&#x51FA;&#x65F6;&#xFF0C;&#x6DFB;&#x52A0;--set-gtid-purged=off&#x53C2;&#x6570;&#xFF0C;&#x907F;&#x514D;&#x5C06;gtid&#x4FE1;&#x606F;&#x5BFC;&#x51FA;</p>
+<h3 id="mysql-server-has-gone-away">MySQL server has gone away</h3>
+<p>&#x9020;&#x6210;&#x8FD9;&#x6837;&#x7684;&#x539F;&#x56E0;&#x4E00;&#x822C;&#x662F;sql&#x64CD;&#x4F5C;&#x7684;&#x65F6;&#x95F4;&#x8FC7;&#x957F;&#xFF0C;&#x6216;&#x8005;&#x662F;&#x4F20;&#x9001;&#x7684;&#x6570;&#x636E;&#x592A;&#x5927;(&#x4F8B;&#x5982;&#x4F7F;&#x7528;insert ... values&#x7684;&#x8BED;&#x53E5;&#x8FC7;&#x957F;&#xFF0C; &#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4FEE;&#x6539;max_allowed_packed&#x7684;&#x914D;&#x7F6E;&#x53C2;&#x6570;&#x6765;&#x907F;&#x514D;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;&#x7A0B;&#x5E8F;&#x4E2D;&#x5C06;&#x6570;&#x636E;&#x5206;&#x6279;&#x63D2;&#x5165;)&#x3002;</p>
+<pre><code>mysql&gt; show global variables like &apos;max_allowed_packet&apos;;
++--------------------+---------+
+| Variable_name      | Value   |
++--------------------+---------+
+| max_allowed_packet | 1048576 |
++--------------------+---------+
+1 row in set (0.00 sec)
+
+
+mysql&gt; set global max_allowed_packet=1024*1024*128;
+</code></pre><h3 id="&#x4E94;-order-by-clause-is-not-in-group-by-clause-and-contains-nonaggregated-column-informationschemaprofilingseq-which-is-not-functionally-dependent-on-columns-in-group-by-clause-this-is-incompatible-with-sqlmode">(&#x4E94;) ORDER BY clause is not in GROUP BY clause and contains nonaggregated column &apos;information_schema.PROFILING.SEQ&apos; which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode</h3>
+<p><strong>&#x4FEE;&#x6539;my.cnf&#x7684;sql_mode</strong></p>
+<pre><code class="lang-ini"><span class="hljs-section">[mysqld]</span>
+
+<span class="hljs-attr">sql_mode</span>=NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="inject.html" class="navigation navigation-prev " aria-label="Previous page: sql注入攻击">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../php/" class="navigation navigation-next " aria-label="Next page: php">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"mysql报错","level":"1.2.3","depth":2,"next":{"title":"php","level":"1.3","depth":1,"path":"php/README.md","ref":"php/README.md","articles":[{"title":"int与string强制转换的原理","level":"1.3.1","depth":2,"path":"php/intcoverstring.md","ref":"php/intcoverstring.md","articles":[]},{"title":"大小写转化原理","level":"1.3.2","depth":2,"path":"php/lower-upper.md","ref":"php/lower-upper.md","articles":[]},{"title":"thinkphp框架","level":"1.3.3","depth":2,"path":"php/think-menu.md","ref":"php/think-menu.md","articles":[]},{"title":"命名空间","level":"1.3.4","depth":2,"path":"php/namespace.md","ref":"php/namespace.md","articles":[]},{"title":"加载扩展文件","level":"1.3.5","depth":2,"path":"php/extension.md","ref":"php/extension.md","articles":[]},{"title":"composer","level":"1.3.6","depth":2,"path":"php/composer.md","ref":"php/composer.md","articles":[]},{"title":"图片压缩/马赛克/验证码","level":"1.3.7","depth":2,"path":"php/image-class.md","ref":"php/image-class.md","articles":[]},{"title":"设计模式","level":"1.3.8","depth":2,"path":"php/design-mode.md","ref":"php/design-mode.md","articles":[]},{"title":"psr","level":"1.3.9","depth":2,"path":"php/psr.md","ref":"php/psr.md","articles":[]},{"title":"route原理","level":"1.3.10","depth":2,"path":"php/route.md","ref":"php/route.md","articles":[]},{"title":"pear安装","level":"1.3.11","depth":2,"path":"php/pear.md","ref":"php/pear.md","articles":[]},{"title":"phpdoc安装","level":"1.3.12","depth":2,"path":"php/php-document.md","ref":"php/php-document.md","articles":[]},{"title":"用户下载","level":"1.3.13","depth":2,"path":"php/download-file.md","ref":"php/download-file.md","articles":[]},{"title":"xdebug","level":"1.3.14","depth":2,"path":"php/xdebug.md","ref":"php/xdebug.md","articles":[]},{"title":"phpunit","level":"1.3.15","depth":2,"path":"php/php-unit.md","ref":"php/php-unit.md","articles":[]},{"title":"spl","level":"1.3.16","depth":2,"path":"php/spl.md","ref":"php/spl.md","articles":[]}]},"previous":{"title":"sql注入攻击","level":"1.2.2","depth":2,"path":"mysql/inject.md","ref":"mysql/inject.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters-small","fontsettings","sharing","lunr","search","highlight","livereload","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters-small":{},"fontsettings":{"family":"sans","size":2,"theme":"white"},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":true,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":false},"lunr":{"ignoreSpecialCharacters":false,"maxIndexSize":1000000},"search":{},"highlight":{},"livereload":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"lifeng tao","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"note","gitbook":"*","description":"我的笔记"},"file":{"path":"mysql/issue.md","mtime":"2019-04-22T06:54:09.067Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-22T10:42:49.985Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+
+    </body>
+</html>
+
